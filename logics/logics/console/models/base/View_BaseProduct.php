@@ -96,23 +96,11 @@ class View_BaseProduct extends BaseModel {
     public function getAllProduct($event, $ispage, $condition, $params, $limit) { 
 
         $sql = "SELECT " . ($ispage ? " sql_calc_found_rows " : "") . "
-                       bp.id,
-                       bp.dnos,
-                       bp.dnames,
-                       bp.image,
-                       bp.descr,
-                       bp.algorithm,
-                       bp.isSetAlgorithm,
-                       bp.display,
-                       bp.categoryId,
-                       bpc.dnames AS categoryName,
-                       bp.seller_id
-                FROM base_product AS bp INNER JOIN
-                     base_product_category AS bpc ON bp.categoryId = bpc.id
+                      *
+                FROM service AS bp 
                 WHERE bp.seller_id = :sellerId
                       $condition
                 ORDER BY bp.creatTime";
-        
         $result = $this->query_SQL($sql, $event, $limit, $params);
 
         return $result;        

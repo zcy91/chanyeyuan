@@ -54,7 +54,7 @@ final class ModuleFactory {
     }
 
     public static function saveAccessInfo($model, $class, $func, $args, $seller_id, $shop_id, $user_id, $client_ip, $site_url, $webserver_ip) {
-        
+
         $returnFlag = 1;
 
         try {
@@ -234,8 +234,7 @@ final class ModuleFactory {
             self::$yii_app = $application;
         }
         $route = $_SERVER["argv"][1];
-        $args = array($_SERVER["request_params"]);  
-
+        $args = array($_SERVER["request_params"]);
         self::$yii_app->runAction($route, $args);
         $returnData = self::$yii_app->ReturnData;
         return $returnData;

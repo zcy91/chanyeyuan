@@ -43,9 +43,7 @@ class ServiceController extends CommonController
         if(isset($post_data['time_limit'])){
             $params['time_limit'] = $post_data['time_limit'];
         }
-
         $apiData = $service->fetchs($params);
-        p($apiData);
         $returnData = array(
             "totalItem" => $apiData['returnData']['recordcount'],
             "time_limit" => $apiData['returnData']['time_limit'],
@@ -61,6 +59,7 @@ class ServiceController extends CommonController
     public function add_save()
     {
         $post_data = $_POST;
+//        M('service')->add(['name'=>'zcy','seller_id'=>2,'icon'=>'ssss']);die;
         if (empty($post_data)) {
             $this->ajaxReturn(array("status" => 0, "info" => "参数异常"));
         }

@@ -14,6 +14,7 @@ class List_BaseService extends BaseModel {
     public function serviceList($event){
 
         $data = &$event->RequestArgs;
+
         $ownSellerId = View_UserLogin::getOperateSellerId($data);
         if (empty($ownSellerId)) {
             return parent::go_error($event, -2011);
@@ -32,16 +33,16 @@ class List_BaseService extends BaseModel {
             ":time_limit" => $time_limit
         );
 
-        //产品名称
-        if (isset($data["dnames"]) && !empty($data["dnames"])) {
-            $condition .= " AND bp.dnames LIKE :dnames";
-            $params[":dnames"] = "%" . $data["dnames"] . "%";
+        //名称
+        if (isset($data["name"]) && !empty($data["name"])) {
+            $condition .= " AND bp.name LIKE :name";
+            $params[":names"] = "%" . $data["name"] . "%";
         }
 
-        //上架/下架
+        //是否展示
         if (isset($data["display"]) && $data["display"]!= "") {
-            $condition .= " AND bp.display = :display";
-            $params[":display"] = $data["display"];
+            $condition .= " AND bp.is_show = :is_show";
+            $params[":is_show"] = $data["is_show"];
         }
 
         $View_BaseProduct = new View_BaseProduct();

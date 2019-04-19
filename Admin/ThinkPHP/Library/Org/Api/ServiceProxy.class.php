@@ -66,7 +66,6 @@ class AccessModule
     public static function get_running_state()
     {
         $running_state = S(self::PROXY_RUNNING_STATE);
-
         //判断当前Session是否有权限访问(或者当前IP是否有权限访问)
         //调试时，不判断session的访问次数，因为要性能测试
         if($running_state == 1 && !APP_DEBUG)
@@ -509,20 +508,16 @@ class AccessModule
     public function get_module_id($module_name="", $controller_name="", $action_name="")
     {
         $module_id = 0;
-        //echo $module_name.'---'.$controller_name.'------'.$action_name;
+//        echo $module_name.'---'.$controller_name.'------'.$action_name;
         if(empty($module_name) ||
             empty($controller_name) ||
             empty($action_name))
         {
             $single_module_key = self::PREFIX_CACHE."module_info"."_".$this->module."_".$this->class."_".$this->func;
-            echo "xxx";
-            p($single_module_key);
         }
         else
         {
-            $single_module_key = self::PREFIX_CACHE."module_info"."_".$val['module_name']."_".$val['controller_name']."_".$val['action_name'];
-            echo "11xxx222";
-            p($single_module_key);
+//            $single_module_key = self::PREFIX_CACHE."module_info"."_".$val['module_name']."_".$val['controller_name']."_".$val['action_name'];
         }
         try
         {
@@ -914,16 +909,15 @@ class ServiceProxy {
     private function checkAccessModule($module_name="", $controller_name="", $action_name="")
     {
         $module_id = $this->access_module->get_module_id($module_name, $controller_name, $action_name);
-p($module_id);
-echo time().rand(0,999);
+//p($module_id);
+//echo time().rand(0,999);
         //有可能是新的模板，需要更新系统信息
         if(empty($module_id))
         {
            // echo $action_name;die;
             $this->cache_system_info();
-            echo $module_name.'----111----'.$controller_name.'---222'.$action_name;
+//            echo $module_name.'----111----'.$controller_name.'---222'.$action_name;
             $module_id = $this->access_module->get_module_id($module_name, $controller_name, $action_name);
-
         }
 
         return $module_id;
@@ -974,7 +968,6 @@ echo time().rand(0,999);
         //核对当前访问的模块的编号
         $module_id = $this->checkAccessModule();
 
-        var_dump($module_id);
         if(empty($module_id))
         {
             //3	I	模块调用错误，请核对是否有模块的使用权限。	2014-12-19 12:10:13
@@ -986,18 +979,17 @@ echo time().rand(0,999);
 
         $args = self::arrToJson($this->access_module->createOperateArgs($module_id,$token));
 
-        //失败时，允许重试两次
-        while($retry_times < self::SN_UPDATE_TIMES)
+        //失败时，允许重试两次 修改
+        while($retry_times==0)
         {
             try{
                 //只有第一次重试时，需要重新生成yarclient对象，因为首次执行时，有可能该对象已经失效，但是第一次重试之后，应该推断yarclient是良好的
+
                 $reset = $retry_times == 1 ? 1 : 0;
                 $clientObj = $this->getYarClient($reset);
 
                 $reData=$clientObj->operate($args);
-
                 $result=self::jsonToArr($reData);
-//               p($result);echo 556677;
                 /**
                  * 如果返回的结果不是空，且返回的状态值不为以下几个，表示中间层调用是成功的
                  * -4 当前客户不存在，有可能是客户更改了域名或者关闭了站点
@@ -1005,8 +997,8 @@ echo time().rand(0,999);
                  */
                 if(!empty($result) && !in_array($result["returnState"],[-4,-5]))
                 {
-                    $response_data = $this->access_module->proxy_response($module_id, $result);
 
+                    $response_data = $this->access_module->proxy_response($module_id, $result);
                     $retry_times = self::SN_UPDATE_TIMES;
 
                     goto kuba_end;
@@ -1019,7 +1011,6 @@ echo time().rand(0,999);
                     {
                         $this->fetch_site_info(true);
                     }
-
                     $retry_times ++;
                 }
             }

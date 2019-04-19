@@ -92,6 +92,7 @@ final class Services {
 
         try {
             $args_In = $this->checkArgs($args);
+
             if ($args_In == INF || $args_In == NAN) {
                 //参数解包失败
                 $returnData = ServerResponse::response(-1);
@@ -114,7 +115,7 @@ final class Services {
 
                 goto kuba_end;
             }
-            
+
             $site_info = $site_info[0];
 
             $seller_id = $args_In["seller_id"] = $site_info["seller_id"];
@@ -138,7 +139,7 @@ final class Services {
                 $returnData = ServerResponse::response(-4);
                 goto kuba_end;
             }
-            
+
             //创建访问对象
             $access_module = new AccessModule();
             $access_module->set($signature, $timestamp, $nonce, $seller_id, $shop_id, $user_id, $module_id, $client_ip, $site_url);
@@ -160,13 +161,14 @@ final class Services {
 
                 goto kuba_end;
             }
-            
+
             $module_obj = $module_obj[0];
             //如果不是调试状态，则按正常执行
             if (!defined('IS_DEBUG') || !IS_DEBUG) {
                 //获取Web服务器的Token值	
                 if (empty($site_info["token"])) {
                     //token为空
+
                     $returnData = ServerResponse::response(-7);
                     goto kuba_end;
                 }

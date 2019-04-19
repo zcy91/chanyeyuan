@@ -10,7 +10,6 @@ class ServiceController extends BaseController {
 
     public function init() {
         parent::init();
-
         $this->behavior = new ServiceBehavior();
         $this->attachBehavior("Servicebehavior", $this->behavior);
         $this->event = new ServiceEvent();
@@ -52,6 +51,7 @@ class ServiceController extends BaseController {
     }
 
     public function actionServicelist($data) {
+
         $this->event->set($data, BaseBehavior::FETCH_ALL_ACTION);
         parent::fetch_all($this->getModels_ServiceList(), $this->event, false);
         $this->event->Display();

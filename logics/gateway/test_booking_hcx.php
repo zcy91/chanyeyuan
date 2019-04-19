@@ -142,6 +142,12 @@ $site_url = "admin.yhjr.com";
 $site_url = "admin.park.com";
 $params = json_decode('{"dnames":"\u674e\u56db","mobile":"18357991416","idCard":"362565985525412589","address":"\u4e49\u4e4c","bank":"\u4e2d\u56fd\u94f6\u884c","bankNo":"251236212523651","wxNo":"","zfbNo":"","logUserId":"100"}', true);
 
+$module_id = 533;
+$user_id = 100;
+$ip = '127.0.0.1';
+$site_url = "admin.cyy.com";
+$params = json_decode('{"dnames":"\u674e\u56db","mobile":"18357991416","idCard":"362565985525412589","address":"\u4e49\u4e4c","bank":"\u4e2d\u56fd\u94f6\u884c","bankNo":"251236212523651","wxNo":"","zfbNo":"","logUserId":"100"}', true);
+
 
 
 
