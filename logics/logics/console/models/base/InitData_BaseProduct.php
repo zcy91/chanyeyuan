@@ -3,6 +3,8 @@ namespace console\models\base;
 
 use console\models\BaseModel;
 use console\models\base\BaseProductOperate;
+use console\models\service\BaseService;
+use console\models\service\View_BaseService;
 use console\models\user\View_UserLogin;
 use console\models\base\View_BaseAttr;
 use console\models\base\View_BaseProductcategory;
@@ -60,18 +62,38 @@ class InitData_BaseProduct extends BaseModel {
         
         unset($View_BaseAttr);
     }
-    
+    public function serviceAdd($event){
+        $data = &$event->RequestArgs;
+
+        if (empty($data) || !isset($data["name"]) || empty($data["icon"])) {
+            return parent::go_error($event, -12);
+        }
+        $ownSellerId = $this->sellerId = View_UserLogin::getOperateSellerId($data);
+
+        if (empty($ownSellerId)) {
+            return parent::go_error($event, -2011);
+        }
+        $nowTime = date('Y-m-d H:i:s');
+        $event->service_data = array(
+//            "id" => &$event->serviceId,
+            //"dnos" => $dnos,
+            "name" => $data["name"],
+            "icon" => $data["icon"],
+
+            "is_show" => (isset($data["is_show"]) && is_string($data["is_show"]) && !empty($data["is_show"])) ? $data["is_show"] : 0,
+            "des" => (isset($data["des"]) && is_string($data["des"]) && !empty($data["des"])) ? $data["des"] : "",
+            "seller_id" => $ownSellerId,
+            "creatTime" => $nowTime,
+        );
+    }
+
     public function productAdd($event){
         
         $data = &$event->RequestArgs;
-    
-        if (empty($data) ||
-            /*!isset($data["dnos"]) || empty($data["dnos"]) || is_string($data["dnos"]) ||*/
-            !isset($data["dnames"]) || empty($data["dnames"]) || !is_string($data["dnames"]) ||
-            !isset($data["categoryId"]) || empty($data["categoryId"]) || !is_numeric($data["categoryId"])) {
+
+        if (empty($data) || !isset($data["name"]) || empty($data["icon"])) {
             return parent::go_error($event, -12);
         }
-        
         $ownSellerId = $this->sellerId = View_UserLogin::getOperateSellerId($data);
         if (empty($ownSellerId)) {
             return parent::go_error($event, -2011);
@@ -137,7 +159,7 @@ return parent::go_error($event, -10000);
 */
     }
     
-    public function productEdit($event){
+    public function serviceEdit($event){
         
         $data = &$event->RequestArgs;
         
@@ -147,10 +169,9 @@ return parent::go_error($event, -10000);
         }  
         
         if (/*!(isset($data["dnos"]) && !empty($data["dnos"]) && is_string($data["dnos"])) ||*/
-            !(isset($data["dnames"]) && !empty($data["dnames"]) && is_string($data["dnames"])) ||
-            !(isset($data["descr"]) && !empty($data["descr"]) && is_string($data["descr"])) ||
-            !(isset($data["display"]) && is_numeric($data["display"])) ||
-            !(isset($data["categoryId"]) && !empty($data["categoryId"]) && is_numeric($data["categoryId"]))) {
+            !(isset($data["name"]) && !empty($data["name"]) && is_string($data["name"])) ||
+            !(isset($data["des"]) && !empty($data["des"]) && is_string($data["des"])) ||
+            !(isset($data["is_show"]) && is_numeric($data["is_show"]))) {
             return parent::go_error($event, -12);
         } 
         
@@ -159,38 +180,37 @@ return parent::go_error($event, -10000);
             return parent::go_error($event, -2011);
         }    
 
-        $View_BaseProduct = new View_BaseProduct();
-
-        $id = $event->productId = $data["id"];
-        $oldProduct = $View_BaseProduct->getOne($event, $id, $ownSellerId);
+        $View_BaseService = new View_BaseService();
+        $id = $event->serviceId = $data["id"];
+        $oldProduct = $View_BaseService->getOne($event, $id, $ownSellerId);
             unset($View_BaseProduct); 
         if (empty($oldProduct)) {
             return parent::go_error($event, -2132);
         }
         
-        $logSectionId = View_UserLogin::getOperateSectionId($data);
-        $logUserId = View_UserLogin::getOperateUserId($data);        
+//        $logSectionId = View_UserLogin::getOperateSectionId($data);
+//        $logUserId = View_UserLogin::getOperateUserId($data);
         $nowTime = date('Y-m-d H:i:s');         
         $newProduct = $data;
+        BaseService::setEditData($event,$id,$nowTime,$newProduct,$oldProduct);
+//        BaseProduct::setEditData($event, $id, $nowTime, $newProduct, $oldProduct);
         
-        BaseProduct::setEditData($event, $id, $nowTime, $newProduct, $oldProduct);
+//        if (isset($data["attrs"]) && !empty($data["attrs"]) && is_array($data["attrs"])) {
+//            $this->attrs = $data["attrs"];
+//            $this->handlAttr($event);
+//
+//            $event->base_product_attr_del = array(
+//                "sellerId" => $ownSellerId,
+//                "Id" => $event->productId
+//            );
+//
+//            $event->base_product_attr_item_del = array(
+//                "sellerId" => $ownSellerId,
+//                "Id" => $event->productId
+//            );
+//        }
         
-        if (isset($data["attrs"]) && !empty($data["attrs"]) && is_array($data["attrs"])) {
-            $this->attrs = $data["attrs"];
-            $this->handlAttr($event);
-            
-            $event->base_product_attr_del = array(
-                "sellerId" => $ownSellerId,
-                "productId" => $event->productId
-            );    
-            
-            $event->base_product_attr_item_del = array(
-                "sellerId" => $ownSellerId,
-                "productId" => $event->productId
-            );              
-        }     
-        
-        BaseProductOperate::setAddData($event, 2, $ownSellerId, $logSectionId, $logUserId, $nowTime);
+//        BaseProductOperate::setAddData($event, 2, $ownSellerId, $logSectionId, $logUserId, $nowTime);
 /*       
 var_dump("base_product_data",$event->base_product_data);  
 var_dump("base_product_attr_data",$event->base_product_attr_data);  
@@ -327,8 +347,44 @@ var_dump("base_product_commission_quot_del",$event->base_product_commission_quot
 var_dump("base_product_commission_percentage_del",$event->base_product_commission_percentage_del); 
 return parent::go_error($event, -10000);
 */           
-    }   
-    
+    }
+
+    public function serviceDelete($event){
+
+        $data = &$event->RequestArgs;
+
+        if (empty($data) || !isset($data["id"]) || empty($data["id"]) || !is_numeric($data["id"])) {
+            return parent::go_error($event, -12);
+        }
+
+        $ownSellerId = View_UserLogin::getOperateSellerId($data);
+        if (empty($ownSellerId)) {
+            return parent::go_error($event, -2011);
+        }
+
+        $id = $event->serviceId = $data["id"];
+
+        $View_BaseService = new View_BaseService();
+        $oldProduct = $View_BaseService->getOne($event, $id, $ownSellerId);
+        unset($View_BaseProduct);
+        if (empty($oldProduct)) {
+            return parent::go_error($event, -2132);
+        }
+
+        $event->service_data = array(
+            "id" => $id,
+            "sellerId" => $ownSellerId
+        );
+        /*
+        var_dump("base_product_data",$event->base_product_data);
+        var_dump("base_product_attr_del",$event->base_product_attr_del);
+        var_dump("base_product_attr_item_del",$event->base_product_attr_item_del);
+        var_dump("base_product_commission_quot_del",$event->base_product_commission_quot_del);
+        var_dump("base_product_commission_percentage_del",$event->base_product_commission_percentage_del);
+        return parent::go_error($event, -10000);
+        */
+    }
+
     public function productCommission($event){
         
         $data = &$event->RequestArgs;

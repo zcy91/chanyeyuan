@@ -17,47 +17,7 @@ class UserController extends BaseController {
         //整理Web服务器传入的参数
         $this->event = new UserEvent();
     }
-    public function actions()
-    {
-        return [
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => null,
-                //背景颜色
-                'backColor' => 0x000000,
-                //最大显示个数
-                'maxLength' => 4,
-                //最少显示个数
-                'minLength' => 4,
-                //间距
-                'padding' => 2,
-                //高度
-                'height' => 30,
-                //宽度
-                'width' => 85,
-                //字体颜色
-                'foreColor' => 0xffffff,
-                //设置字符偏移量
-                'offset' => 4,
-            ],
-        ];
-    }
-    public function actionCode(){
-        if (\Yii::$app->request->isPost) {
-            //获取post过来的验证码
-            $verify = \Yii::$app->request->post('verify');
 
-            //我们手动进行验证，第二个参数表示是否区分大小写
-            if ($this->createAction('captcha')->validate($verify, false)) {
-                echo '成功';
-            } else {
-                echo '失败';
-            }
-
-        } else {
-            return 11;
-        }
-    }
     public function actionLogin($data) {
         //整理传入的数据
         $this->event->set($data, BaseBehavior::FETCH_ALL_ACTION);

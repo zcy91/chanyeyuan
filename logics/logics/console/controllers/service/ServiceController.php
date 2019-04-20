@@ -22,7 +22,7 @@ class ServiceController extends BaseController {
         return 0;
     }
 
-    public function actionServiceredit($data) {
+    public function actionServiceedit($data) {
         $this->event->set($data, BaseBehavior::ADD_ACTION);
         parent::modify($this->getModels_ServiceEdit(), $this->event);
         $this->event->Display();

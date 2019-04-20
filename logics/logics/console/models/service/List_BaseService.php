@@ -73,7 +73,7 @@ class List_BaseService extends BaseModel {
         $event->Postback($return_data);
     }
 
-    public function productDesc($event){
+    public function serviceDesc($event){
 
         $data = &$event->RequestArgs;
 
@@ -81,55 +81,55 @@ class List_BaseService extends BaseModel {
             return parent::go_error($event, -12);
         }
 
-        $productId = $data["id"];
-        $needItem = (isset($data["needItem"]) && is_numeric($data["needItem"]) && in_array($data["needItem"], [0,1])) ? $data["needItem"] : 0;
+        $serviceId = $data["id"];
+//        $needItem = (isset($data["needItem"]) && is_numeric($data["needItem"]) && in_array($data["needItem"], [0,1])) ? $data["needItem"] : 0;
 
         $ownSellerId = View_UserLogin::getOperateSellerId($data);
         if (empty($ownSellerId)) {
             return parent::go_error($event, -2011);
         }
 
-        $condition = " AND bp.id = :productId";
+        $condition = " AND bp.id = :serviceId";
         $params = array(
             ":sellerId" => $ownSellerId,
-            ":productId" => $productId
+            ":serviceId" => $serviceId
         );
 
-        $View_BaseProduct = new View_BaseProduct();
-        $dataProduct = $View_BaseProduct->getAllProduct($event, 0, $condition, $params, null);
+        $View_BaseService = new View_BaseService();
+        $dataProduct = $View_BaseService->getAllProduct($event, 0, $condition, $params, null);
         unset($View_BaseProduct);
 
         if (!empty($dataProduct)) {
             $dataProduct = $dataProduct[0];
-            $View_BaseProductAttr = new View_BaseProductAttr();
-            $dataAttr = $View_BaseProductAttr->getProductAttr($event, $ownSellerId, $productId);
-            unset($View_BaseProductAttr);
-            if (!empty($dataAttr)) {
-                $dataProduct["attrs"] = &$dataAttr;
-                if ($needItem) {
-                    $View_BaseProductAttrItem = new View_BaseProductAttrItem();
-                    $dataAttrItem = $View_BaseProductAttrItem->getProductAttrItem($event, $ownSellerId, $productId);
-                    unset($View_BaseProductAttrItem);
-
-                    $attrItems = [];
-                    foreach ($dataAttrItem as $item) {
-                        $attrId = $item["attrId"] . "_id";
-                        $attrItems[$attrId][] = $item;
-                    }
-
-                    foreach ($dataAttr as &$itemAttr) {
-
-                        $keyId = $itemAttr["attrId"] . "_id";
-
-                        if (array_key_exists($keyId, $attrItems)) {
-                            $itemAttr["items"] = $attrItems[$keyId];
-                        }
-
-                        unset($itemAttr);
-
-                    }
-                }
-            }
+//            $View_BaseProductAttr = new View_BaseProductAttr();
+//            $dataAttr = $View_BaseProductAttr->getProductAttr($event, $ownSellerId, $serviceId);
+//            unset($View_BaseProductAttr);
+//            if (!empty($dataAttr)) {
+//                $dataProduct["attrs"] = &$dataAttr;
+//                if ($needItem) {
+//                    $View_BaseProductAttrItem = new View_BaseProductAttrItem();
+//                    $dataAttrItem = $View_BaseProductAttrItem->getProductAttrItem($event, $ownSellerId, $serviceId);
+//                    unset($View_BaseProductAttrItem);
+//
+//                    $attrItems = [];
+//                    foreach ($dataAttrItem as $item) {
+//                        $attrId = $item["attrId"] . "_id";
+//                        $attrItems[$attrId][] = $item;
+//                    }
+//
+//                    foreach ($dataAttr as &$itemAttr) {
+//
+//                        $keyId = $itemAttr["attrId"] . "_id";
+//
+//                        if (array_key_exists($keyId, $attrItems)) {
+//                            $itemAttr["items"] = $attrItems[$keyId];
+//                        }
+//
+//                        unset($itemAttr);
+//
+//                    }
+//                }
+//            }
         }
 
         if (empty($dataProduct)) {

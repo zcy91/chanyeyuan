@@ -12,7 +12,7 @@ class UserModel extends BaseModel{
     private $intermediary_controller = "medium";
     
     private $login_router = "login";                   //登录
-    
+    private $login_code = "code";                   //登录验证码
     private $admin_fetchs_router = "stafflist";
     private $user_fetchs_router = "customerlist";
     private $intermediary_fetchs_router = "mediumlist";
@@ -36,8 +36,9 @@ class UserModel extends BaseModel{
     
     private $setpost_router = "staffsetpost";
     private $code = "code";
-    public function code(){
-        $apiData = c_call_service($this->Module, $this->admin_controller, $this->code);
+
+    public function code($params) {
+        $apiData = c_call_service($this->Module, $this->admin_controller, $this->login_code,$params);
         return $apiData;
     }
    //staffsetpost

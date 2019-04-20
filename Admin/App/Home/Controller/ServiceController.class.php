@@ -58,6 +58,9 @@ class ServiceController extends CommonController
     //添加、编辑
     public function add_save()
     {
+//        $memcache_obj = memcache_connect('192.168.0.135', 11211);
+//
+//        memcache_flush($memcache_obj);
         $post_data = $_POST;
 //        M('service')->add(['name'=>'zcy','seller_id'=>2,'icon'=>'ssss']);die;
         if (empty($post_data)) {
@@ -70,8 +73,8 @@ class ServiceController extends CommonController
 //            p($_FILES['file']);die;
             $post_data['icon'] = $file->get_url();
         }
-//        p($post_data);die;
-        $post_data['attrs'] = json_decode($post_data['attrs'], 'json');
+
+//        $post_data['attrs'] = json_decode($post_data['attrs'], 'json');
         $service_id = I("id", 0, intval);
 
         $Service = new ServiceModel();
@@ -89,5 +92,42 @@ class ServiceController extends CommonController
         }
 
         $this->ajaxReturn(array("status" => $apiData['returnState'], "info" => $info, "id" => $id), json);
+    }
+    //查询单个
+    public function single_view(){
+        $service_id = I("post.id",1,intval);
+        if($service_id == 0){
+            $this->ajaxReturn(array("status"=>0,"info"=>"参数异常"));
+        }
+
+        $Service = new ServiceModel();
+        $apiData = $Service->single_view(["id"=>$service_id]);
+        $response_data = [];$info = "";
+        if($apiData['returnState'] == 1 && !empty($apiData['returnData'])){
+            $response_data = $apiData['returnData'];
+        }else{
+            $info = get_error_info($apiData['returnState']);
+        }
+        $this->ajaxReturn(array("status"=>1,"data"=>$response_data,"info"=>$info),json);
+    }
+
+    /**
+    删除
+     **/
+    public function delete(){
+        $post_data = I("post.");
+
+        if(!isset($post_data['id']) || $post_data['id'] == "" ||  $post_data['id'] == 0){
+            $this->ajaxReturn(array("status"=>0,"info"=>"参数异常"));
+        }
+
+        $Service = new ServiceModel();
+        $apiData = $Service->delete($post_data);
+        $info = "";
+        if($apiData['returnState'] != 1){
+            $info = get_error_info($apiData['returnState']);
+        }
+
+        $this->ajaxReturn(array("status"=>$apiData['returnState'],"info"=>$info),json);
     }
 }

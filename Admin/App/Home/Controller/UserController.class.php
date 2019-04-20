@@ -16,7 +16,8 @@ class UserController extends CommonController {
             'fontSize'    => 20,    // 验证码字体大小,仅为调整清晰度
             'length'      => 4,     // 验证码位数
             'useNoise'    => false, // 关闭验证码杂点
-            'codeSet'     => '23456789ABCDEFGHJKLMNPQRSTUVWXYZ',
+            'codeSet'     => '23456789',
+            'codeSet'     => '123456789',
             'fontttf'     => '5.ttf',//5.ttf此字体为think最大号字体
             'ratioX'      => 1.5,   //X方向缩放比例，计算文字X方向位置使用
             'ratioY'      => 1.5    //Y方向缩放比例，计算文字Y方向位置使用
@@ -30,17 +31,46 @@ class UserController extends CommonController {
      * @param  $id 多个验证码时的编号
      * @return $state true or false
      */
-    public function check_verify($id = ''){
-        $code = I('get.code');
+    public function check_verify($code,$id = ''){
+
         $verify = new \Think\Verify();
-        return $verify->check($code, $id);
+        if( $verify->check($code, $id)){
+            $returnData['status'] = 1;
+            return json_encode($returnData);
+//            $this->ajaxReturn($returnData,json);
+        }else{
+            return json_encode(['status'=>0]);
+//            $this->ajaxReturn(['status'=>0],json);
+        }
 
     }
+    public function get_code(){
+        $data = I('get.');
+        $code = new UserModel();
+        $apiData = $code->code($data);
+        return $apiData;
+        $returnData = array(
+            "status" => &$status,
+            "isSuper" => &$isSuper,
+            "data"   => &$user_info,
+            "info"   => &$info,
+//            "accessMenu" => $power_node['accessMenu'],
+//            "accessOperate" => &$power_node
+        );
 
+    }
     /**
     获取用户信息登录
     **/
     public function get_user_info(){
+        $code = I('post.code');
+        $res = $this->check_verify($code);
+        $res = json_decode($res,true);
+        if($res['status'] != 1){
+           $arr['status']=0;
+           $arr['info']="验证码不正确";
+            $this->ajaxReturn($arr,json);
+        }
         $post_data = I("post.");
         $tmp_noce = c_get_rand();
         cookie("X-XSRF-YHJR",$tmp_noce);
