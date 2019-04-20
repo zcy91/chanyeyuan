@@ -59,10 +59,8 @@ class ServiceController extends CommonController
     public function add_save()
     {
 //        $memcache_obj = memcache_connect('192.168.0.135', 11211);
-//
 //        memcache_flush($memcache_obj);
         $post_data = $_POST;
-//        M('service')->add(['name'=>'zcy','seller_id'=>2,'icon'=>'ssss']);die;
         if (empty($post_data)) {
             $this->ajaxReturn(array("status" => 0, "info" => "参数异常"));
         }
@@ -74,11 +72,10 @@ class ServiceController extends CommonController
             $post_data['icon'] = $file->get_url();
         }
 
-//        $post_data['attrs'] = json_decode($post_data['attrs'], 'json');
         $service_id = I("id", 0, intval);
-
         $Service = new ServiceModel();
         if ($service_id == 0) {
+//            var_dump($sellerInfo);
             $apiData = $Service->add($post_data);
         } else {
             $apiData = $Service->save($post_data);

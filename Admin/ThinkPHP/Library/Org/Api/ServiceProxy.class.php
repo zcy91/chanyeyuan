@@ -299,7 +299,7 @@ class AccessModule
         $this->func = $func;
         $this->params = $params;
         $this->site_url = c_get_site_url();
-
+        session('site_url',$this->site_url);
 
         //当前店铺的显示语言
         $this->dis_lang_id = $dis_lang_id > 0 ? $dis_lang_id : ( defined("LANGUAGE_VIWE") ? LANGUAGE_VIWE : 1);

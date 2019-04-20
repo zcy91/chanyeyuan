@@ -9,16 +9,16 @@ class View_UserLogin extends BaseModel {
 
     public static function getOperateSellerId($data) {
 
-        if ($_SERVER["seller_info"]["seller_id"] == 1) {
-            if (isset($data["logSellerId"]) && is_numeric($data["logSellerId"])) {
-                $ownSellerId = $data["logSellerId"];
-            }
-            if (isset($data["ownSellerId"]) && is_numeric($data["ownSellerId"])) {
-                $ownSellerId = $data["ownSellerId"];
-            }
-        } else {
+//        if ($_SERVER["seller_info"]["seller_id"] == 1) {
+//            if (isset($data["logSellerId"]) && is_numeric($data["logSellerId"])) {
+//                $ownSellerId = $data["logSellerId"];
+//            }
+//            if (isset($data["ownSellerId"]) && is_numeric($data["ownSellerId"])) {
+//                $ownSellerId = $data["ownSellerId"];
+//            }
+//        } else {
             $ownSellerId = $_SERVER["seller_info"]["seller_id"];
-        }        
+//        }
         
         return $ownSellerId;
     }
@@ -56,7 +56,7 @@ class View_UserLogin extends BaseModel {
     public function getOneAccount($event, $operate, $account) {
         
         if ($operate) {
-            $condition = " t1.dnames = :account OR t1.mobile = :account OR t1.email = :account";
+            $condition = " (t1.dnames = :account OR t1.mobile = :account OR t1.email = :account) AND seller_id = :seller_id";
         } else {
             $condition = " t1.openId = :account";
         }
@@ -75,7 +75,8 @@ class View_UserLogin extends BaseModel {
                 WHERE $condition";
 
         $params = array(
-            ":account" => $account
+            ":account" => $account,
+            ":seller_id"=>$_SERVER['seller_info']['seller_id']
         );
 
         $result = $this->query_SQL($sql, $event, null, $params);

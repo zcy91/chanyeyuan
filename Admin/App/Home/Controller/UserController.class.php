@@ -37,10 +37,8 @@ class UserController extends CommonController {
         if( $verify->check($code, $id)){
             $returnData['status'] = 1;
             return json_encode($returnData);
-//            $this->ajaxReturn($returnData,json);
         }else{
             return json_encode(['status'=>0]);
-//            $this->ajaxReturn(['status'=>0],json);
         }
 
     }
@@ -98,6 +96,7 @@ class UserController extends CommonController {
             session("userId",$user_info['userId']);
             session("ADMIN_ID",$user_info['userId']);
             session("currentRoleId",$user_info['currentRoleId']);
+//           var_dump($sellerInfo);
             $isSuper = $user_info['isSuper'];
             if($isSuper == 1){
                 session("sectionId",0);  //超级管理员 
@@ -445,6 +444,10 @@ class UserController extends CommonController {
             $info = get_error_info($apiData['returnState']);
         }
         $this->ajaxReturn(array("status"=>$apiData['returnState'],"info"=>$info));
+    }
+
+    public function login_out(){
+        session_destroy();
     }
     
 }

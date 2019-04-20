@@ -79,9 +79,7 @@ class List_User extends BaseModel {
         if (empty($User)) {
             return parent::go_error($event, -2001);
         }
-
         $userId = $User["id"];
-        
         if (!$isOpenId) {
         $originalPasswd = $User["password"];
         $salt = $User["salt"];
@@ -92,7 +90,8 @@ class List_User extends BaseModel {
         }
         
         $View_UserRole = new View_UserRole();
-        $Roles = $View_UserRole->getDefaultRole($event, $userId);  
+
+        $Roles = $View_UserRole->getDefaultRole($event, $userId);
         unset($View_UserRole);
         if (empty($Roles)) {
             return parent::go_error($event, -2003);
@@ -113,9 +112,10 @@ class List_User extends BaseModel {
         if ($roleId == 1) {
             
             $View_UserSeller = new View_UserSeller();
-           
-            if ($_SERVER["seller_info"]["seller_id"] != 1) {
-                $LogSeller = $View_UserSeller->getDefaultsSeller($event, $userId);        
+//           var_dump($_SERVER['seller_info']);
+//            if ($_SERVER["seller_info"]["seller_id"] != 1) {
+                $LogSeller = $View_UserSeller->getDefaultsSeller($event, $userId);
+//                var_dump($LogSection);
                 if (empty($LogSeller)) {
                     return parent::go_error($event, -2004);
                 }
@@ -123,9 +123,9 @@ class List_User extends BaseModel {
                 $LogSeller = $LogSeller[0];
 
                 $logSellerId = $LogSeller["seller_id"];                
-            } else {
-                $logSellerId = $_SERVER["seller_info"]["seller_id"];
-            }
+//            } else {
+//                $logSellerId = $_SERVER["seller_info"]["seller_id"];
+//            }
             
             $result["currentSellerId"] = $LogSeller["seller_id"];
             

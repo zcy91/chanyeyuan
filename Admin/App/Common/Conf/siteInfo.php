@@ -2,6 +2,7 @@
 $api = new \Org\Api\ServiceProxy();
 
 $sellerInfo = $api->fetch_site_info(true);
+//var_dump($sellerInfo);
 if($sellerInfo["returnState"] == 1){
     $sellerInfo = $sellerInfo["returnData"];
     //客户编号
