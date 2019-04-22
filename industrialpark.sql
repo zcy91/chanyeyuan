@@ -10,10 +10,42 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2019-04-22 08:39:42
+Date: 2019-04-22 16:56:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for business_service_category
+-- ----------------------------
+DROP TABLE IF EXISTS `business_service_category`;
+CREATE TABLE `business_service_category` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `sort` int(3) DEFAULT '0',
+  `creatTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `nowTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `uid` int(10) DEFAULT NULL,
+  `seller_id` int(10) DEFAULT NULL,
+  `parent_id` int(3) DEFAULT NULL,
+  `parent_id_path` varchar(125) DEFAULT NULL,
+  `is_show` int(1) DEFAULT '0',
+  `level` int(2) DEFAULT NULL,
+  `des` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of business_service_category
+-- ----------------------------
+INSERT INTO `business_service_category` VALUES ('1', 'wx0', 'http55', '10', '2019-04-22 15:01:55', '2019-04-22 15:42:31', '102', '3', '0', null, '0', '1', null);
+INSERT INTO `business_service_category` VALUES ('2', 'wx', 'http55', '1', '2019-04-22 15:02:24', '2019-04-22 15:41:33', '102', '3', '1', null, '0', '2', null);
+INSERT INTO `business_service_category` VALUES ('3', 'wx00', 'http55', '0', '2019-04-22 15:45:03', '2019-04-22 15:45:03', '101', '2', '1', null, '0', '2', null);
+INSERT INTO `business_service_category` VALUES ('4', 'wx00', 'http55', '0', '2019-04-22 16:14:22', '2019-04-22 16:14:22', '101', '2', '2', null, '0', '2', null);
+INSERT INTO `business_service_category` VALUES ('5', 'wx00', 'http55', '0', '2019-04-22 16:17:44', '2019-04-22 16:17:44', '101', '2', '0', null, '0', '1', null);
+INSERT INTO `business_service_category` VALUES ('6', 'zcy', 'http55', '0', '2019-04-22 16:18:38', '2019-04-22 16:18:38', '101', '2', '0', null, '0', '1', null);
+INSERT INTO `business_service_category` VALUES ('7', 'zcy', 'http55', '0', '2019-04-22 16:19:02', '2019-04-22 16:19:02', '101', '2', '4', null, '0', '2', null);
 
 -- ----------------------------
 -- Table structure for right_base
@@ -407,32 +439,51 @@ CREATE TABLE `service` (
   `creatTime` datetime DEFAULT CURRENT_TIMESTAMP,
   `seller_id` int(10) DEFAULT NULL COMMENT '添加人',
   `nowTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `uid` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of service
 -- ----------------------------
-INSERT INTO `service` VALUES ('1', 'text', null, null, '0', null, null, '1111', null, '2', '2019-04-20 08:52:16');
-INSERT INTO `service` VALUES ('3', 'zcy11', '', null, '0', '0', '0', 'sdfd', '2019-04-19 17:01:57', '1', '2019-04-20 08:52:16');
-INSERT INTO `service` VALUES ('5', 'zcy112', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 12:46:17', '2', '2019-04-20 12:54:11');
-INSERT INTO `service` VALUES ('6', 'zcy114', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 12:57:30', '2', '2019-04-20 12:57:30');
-INSERT INTO `service` VALUES ('7', 'zcy1140', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:13:46', '2', '2019-04-20 15:13:46');
-INSERT INTO `service` VALUES ('8', 'zcy11400', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:15:19', '2', '2019-04-20 15:15:19');
-INSERT INTO `service` VALUES ('9', 'zcy114000', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:29:01', '2', '2019-04-20 15:29:01');
-INSERT INTO `service` VALUES ('10', 'zcy2', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:34:20', '2', '2019-04-20 15:34:20');
-INSERT INTO `service` VALUES ('11', 'zcy21', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:39:36', '1', '2019-04-20 15:39:36');
-INSERT INTO `service` VALUES ('12', 'zcy212', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:40:03', '2', '2019-04-20 15:40:03');
-INSERT INTO `service` VALUES ('13', 'zcy2125', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:40:29', '1', '2019-04-20 15:40:29');
-INSERT INTO `service` VALUES ('14', 'zcy212577', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:51:29', '1', '2019-04-20 15:51:29');
-INSERT INTO `service` VALUES ('15', 'y', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:53:13', '2', '2019-04-20 15:53:13');
-INSERT INTO `service` VALUES ('16', 'y1', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:06:34', '2', '2019-04-20 16:06:34');
-INSERT INTO `service` VALUES ('17', 'y12', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:07:14', '2', '2019-04-20 16:07:14');
-INSERT INTO `service` VALUES ('18', 'y125', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:14:33', '2', '2019-04-20 16:14:33');
-INSERT INTO `service` VALUES ('19', 'z', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:23:18', '1', '2019-04-20 16:23:18');
-INSERT INTO `service` VALUES ('20', 'z1', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:43:56', '1', '2019-04-20 16:43:56');
-INSERT INTO `service` VALUES ('21', 'z12', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:44:59', '1', '2019-04-20 16:44:59');
+INSERT INTO `service` VALUES ('1', 'text', null, null, '0', null, null, '1111', null, '2', '2019-04-20 08:52:16', '0');
+INSERT INTO `service` VALUES ('3', 'zcy11', '', null, '0', '0', '0', 'sdfd', '2019-04-19 17:01:57', '1', '2019-04-20 08:52:16', '0');
+INSERT INTO `service` VALUES ('5', 'z7112', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 12:46:17', '2', '2019-04-22 09:33:44', '0');
+INSERT INTO `service` VALUES ('6', 'zcy114', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 12:57:30', '2', '2019-04-20 12:57:30', '0');
+INSERT INTO `service` VALUES ('7', 'zcy1140', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:13:46', '2', '2019-04-20 15:13:46', '0');
+INSERT INTO `service` VALUES ('8', 'zcy11400', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:15:19', '2', '2019-04-20 15:15:19', '0');
+INSERT INTO `service` VALUES ('9', 'zcy114000', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:29:01', '2', '2019-04-20 15:29:01', '0');
+INSERT INTO `service` VALUES ('10', 'zcy2', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:34:20', '2', '2019-04-20 15:34:20', '0');
+INSERT INTO `service` VALUES ('11', 'zcy21', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:39:36', '1', '2019-04-20 15:39:36', '0');
+INSERT INTO `service` VALUES ('12', 'zcy212', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:40:03', '2', '2019-04-20 15:40:03', '0');
+INSERT INTO `service` VALUES ('13', 'zcy2125', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:40:29', '1', '2019-04-20 15:40:29', '0');
+INSERT INTO `service` VALUES ('14', 'zcy212577', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:51:29', '1', '2019-04-20 15:51:29', '0');
+INSERT INTO `service` VALUES ('15', 'y', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 15:53:13', '2', '2019-04-20 15:53:13', '0');
+INSERT INTO `service` VALUES ('16', 'y1', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:06:34', '2', '2019-04-20 16:06:34', '0');
+INSERT INTO `service` VALUES ('17', 'y12', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:07:14', '2', '2019-04-20 16:07:14', '0');
+INSERT INTO `service` VALUES ('18', 'y125', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:14:33', '2', '2019-04-20 16:14:33', '0');
+INSERT INTO `service` VALUES ('19', 'z', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:23:18', '1', '2019-04-20 16:23:18', '0');
+INSERT INTO `service` VALUES ('20', 'z1', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:43:56', '1', '2019-04-20 16:43:56', '0');
+INSERT INTO `service` VALUES ('21', 'z12', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-20 16:44:59', '1', '2019-04-20 16:44:59', '0');
+INSERT INTO `service` VALUES ('22', 'z120', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 08:44:29', '2', '2019-04-22 08:44:29', '0');
+INSERT INTO `service` VALUES ('23', 'z8', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 09:01:35', '2', '2019-04-22 09:01:35', '0');
+INSERT INTO `service` VALUES ('24', 'z7', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 09:06:28', '2', '2019-04-22 09:06:28', '0');
+INSERT INTO `service` VALUES ('25', 'z71', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 09:07:40', '2', '2019-04-22 09:07:40', '0');
+INSERT INTO `service` VALUES ('26', 'z71120', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 10:19:33', '2', '2019-04-22 10:19:33', '0');
+INSERT INTO `service` VALUES ('27', 'z711200', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 10:20:35', '2', '2019-04-22 10:20:35', '0');
+INSERT INTO `service` VALUES ('28', 'z7112000', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 10:21:44', '2', '2019-04-22 10:21:44', '0');
+INSERT INTO `service` VALUES ('29', 'z717', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 10:22:13', '2', '2019-04-22 10:22:13', '0');
+INSERT INTO `service` VALUES ('30', 'z7178', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 10:24:58', '2', '2019-04-22 10:24:58', '101');
+INSERT INTO `service` VALUES ('31', 'z71785', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 10:38:11', '2', '2019-04-22 10:38:11', '101');
+INSERT INTO `service` VALUES ('32', 'z717858', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 11:17:37', '2', '2019-04-22 11:17:37', '102');
+INSERT INTO `service` VALUES ('33', 'a', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 12:05:41', '2', '2019-04-22 12:05:41', '101');
+INSERT INTO `service` VALUES ('34', 'a1', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 12:20:33', '2', '2019-04-22 12:20:33', '101');
+INSERT INTO `service` VALUES ('35', 'a2', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 12:21:21', '3', '2019-04-22 12:21:21', '102');
+INSERT INTO `service` VALUES ('36', 'a23', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 12:24:15', '3', '2019-04-22 12:24:15', '102');
+INSERT INTO `service` VALUES ('37', 'a238', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 12:26:18', '3', '2019-04-22 12:26:18', '102');
+INSERT INTO `service` VALUES ('38', 'a7', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 12:30:07', '3', '2019-04-22 12:30:07', '102');
+INSERT INTO `service` VALUES ('39', 'a77', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 12:43:11', '3', '2019-04-22 12:43:11', '102');
 
 -- ----------------------------
 -- Table structure for system_index
@@ -454,7 +505,7 @@ INSERT INTO `system_index` VALUES ('201', '账号资料', '4');
 INSERT INTO `system_index` VALUES ('301', '销售订单', '1');
 INSERT INTO `system_index` VALUES ('501', '商品分类', '13');
 INSERT INTO `system_index` VALUES ('502', '商品属性', '2');
-INSERT INTO `system_index` VALUES ('503', '商品资料', '20');
+INSERT INTO `system_index` VALUES ('503', '商品资料', '45');
 
 -- ----------------------------
 -- Table structure for system_role
@@ -516,7 +567,7 @@ CREATE TABLE `user_login` (
   KEY `openId` (`openId`) USING BTREE,
   KEY `mobile` (`mobile`) USING BTREE,
   KEY `dnames` (`dnames`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8 COMMENT='系统用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8 COMMENT='系统用户表';
 
 -- ----------------------------
 -- Records of user_login
@@ -534,8 +585,9 @@ INSERT INTO `user_login` VALUES ('13', 'fk001', '15212351235', '', '7d24a329320e
 INSERT INTO `user_login` VALUES ('14', '15258965126', '15258965126', '', '', '', null, '', '0', '0', null, '', '0', '2019-04-13 09:49:41', '0');
 INSERT INTO `user_login` VALUES ('15', '13967406338', '13967406338', '', '', '', '2019-04-15 12:47:57', '192.168.0.150', '2', '0', null, 'ozCQF5pZAg3kLM4A-LoS-VOdnw5c', '0', '2019-04-15 10:31:28', '0');
 INSERT INTO `user_login` VALUES ('16', '15258965122', '15258965122', '', '', '', '2019-04-15 15:38:59', '127.0.0.1', '1', '0', null, 'ozCQF5unEnM8EztLsG8YZ2NFu4Ng', '0', '2019-04-15 10:36:12', '0');
-INSERT INTO `user_login` VALUES ('100', 'admin', '15258965120', '1793182685@qq.com', '4189c0867f4e3630b68846e97917be11183a705c', 'salt', '2019-04-20 17:04:47', '192.168.0.199', '260', '0', null, '', '0', null, '2');
-INSERT INTO `user_login` VALUES ('101', 'zcy', '18257990958', '18257990958@139.com', '4189c0867f4e3630b68846e97917be11183a705c', 'salt', '2019-04-20 16:44:46', '192.168.0.199', '20', '0', '0000-00-00 00:00:00', '', '0', '0000-00-00 00:00:00', '1');
+INSERT INTO `user_login` VALUES ('100', 'admin', '15258965120', '1793182685@qq.com', '4189c0867f4e3630b68846e97917be11183a705c', 'salt', '2019-04-22 10:37:02', '192.168.0.199', '267', '0', null, '', '0', null, '1');
+INSERT INTO `user_login` VALUES ('101', 'zcy', '18257990958', '18257990958@139.com', '4189c0867f4e3630b68846e97917be11183a705c', 'salt', '2019-04-22 16:14:05', '192.168.0.199', '31', '0', '0000-00-00 00:00:00', '', '0', '0000-00-00 00:00:00', '2');
+INSERT INTO `user_login` VALUES ('102', 'wx', '18357991416', '18357991416@139.com', '4189c0867f4e3630b68846e97917be11183a705c', 'salt', '2019-04-22 13:50:03', '192.168.0.199', '8', '0', null, '', '0', null, '3');
 
 -- ----------------------------
 -- Table structure for user_medium
@@ -646,7 +698,7 @@ CREATE TABLE `user_role` (
   `roleId` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `index_user` (`useId`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_role
@@ -656,6 +708,7 @@ INSERT INTO `user_role` VALUES ('101', '0', '1', '2');
 INSERT INTO `user_role` VALUES ('105', '0', '2', '2');
 INSERT INTO `user_role` VALUES ('107', '0', '3', '2');
 INSERT INTO `user_role` VALUES ('108', '1', '101', '3');
+INSERT INTO `user_role` VALUES ('109', '1', '102', '3');
 
 -- ----------------------------
 -- Table structure for user_seller
@@ -707,6 +760,7 @@ CREATE TABLE `user_seller` (
 -- ----------------------------
 INSERT INTO `user_seller` VALUES ('1', '义乌市九域网络科技有限公司', '喻军荣', '3', '0', '322000', '0', '0', '浙江省 金华市 义乌市', '国际商贸城五区五楼网商服务区71001,71003,70989,70991(109号大门上)', 'www.shoperp.cn', 'manager.shoperp.cn', '', 'http://www.shoperp.cn/images/', '0579-85871717', 'hahavipfish@hotmail.com', '喻军荣', '', '0000-00-00', '18006517333', '1648255065 ', '', '', '浙江九域网络技术有限公司成立于2007年，注册基本资金1000万，公司专注于电子商务平台的研发及相关解决方案与服务的提供，以先进的商业理念，优秀的软件产品和专业的配套服务，引领电子商务行业技术的发展方向，推动电商模式的创新和发展。', '2015-03-01', '2020-02-29', '1', '0', '0', '0', '', '2015-03-01 21:12:42', '1', '2015-03-01 21:14:30', '1', '0');
 INSERT INTO `user_seller` VALUES ('2', '盈云科技有限公司', '许总', '3', '0', '', '1', '15860', '中国 浙江省 金华市 义乌市', '北苑街道秋实路106号7楼', '', 'manager.yingyun.com', 'yingyun.com', 'http://119.37.197.41:4869/761b9d36cfd0b776211507b055f59d5c', '0579-89972306', 'hahavipfish@hotmail.com', '盈云科技', '', '0000-00-00', '13957928871', '1664823253', '', '', '', '2015-07-06', '2016-07-05', '1', '0', '1', '0', '', '2015-07-06 17:05:38', '1', '2016-04-02 10:57:29', '1', '0');
+INSERT INTO `user_seller` VALUES ('3', '', '王欣', '3', '0', '322100', '0', '0', '', '', null, null, '', null, null, '', '', null, null, '', '', '', '', '', null, null, '1', '0', '0', '0', '', null, '1', null, '0', '0');
 
 -- ----------------------------
 -- Table structure for user_seller_relation
@@ -781,8 +835,9 @@ CREATE TABLE `user_shop` (
 -- ----------------------------
 -- Records of user_shop
 -- ----------------------------
-INSERT INTO `user_shop` VALUES ('1', '1', '默认店铺', '', '测试店铺1', '电子商务平台', '浙江九域网络技术有限公司成立于2007年，注册基本资金1000万，公司专注于电子商务平台的研发及相关解决方案与服务的提供，以先进的商业理念，优秀的软件产品和专业的配套服务，引领电子商务行业技术的发展方向，推动电商模式的创新和发展。', '1648255065', '', '喻军荣', 'manager.shoperp.cn', 'zcy.cyy.com', 'shoperp', '1', '1', '1', '1', 'http://www.shoperp.cn/images/', 'logo.png', '电子商务平台演示店铺', '0', '0', '浙江省 金华市 义乌市', '国际商贸城五区五楼网商服务区71001,71003,70989,70991(109号大门上)-china', '0579-85871717', 'Copyright ©2015-2020 www.wanghuo.hk, All Rights Reserved', '0', '', '0', '', '0000-00-00 00:00:00', '', '12', '0');
-INSERT INTO `user_shop` VALUES ('2', '1', '御华金融', '客户的总店，在有分店的情况下，可以管理所有分店商品和订单', '御华金融-标题', '御华金融-关键字', '御华金融-描述', '33637025@qq.com', '', '御华金融', 'smallprogram.yhjr.com', 'admin.cyy.com', '', '1', '1', '1', '1', 'http://47.96.95.57:4869/6edd87c228b63312d797b09a1eba866e', '', '', '1', '15860', '浙江省 金华市 义乌市', '北苑街道秋实路106号7楼', '0579-89972306', 'Copyright ©2018 盈云科技YingYun-link.com 版权所有', '0', '', '0', '', null, '浙ICP备09021316号-1', '123456', '173');
+INSERT INTO `user_shop` VALUES ('1', '1', '默认店铺', '', '测试店铺1', '电子商务平台', '浙江九域网络技术有限公司成立于2007年，注册基本资金1000万，公司专注于电子商务平台的研发及相关解决方案与服务的提供，以先进的商业理念，优秀的软件产品和专业的配套服务，引领电子商务行业技术的发展方向，推动电商模式的创新和发展。', '1648255065', '', '喻军荣', 'manager.shoperp.cn', 'admin.cyy.com', 'shoperp', '1', '1', '1', '1', 'http://www.shoperp.cn/images/', 'logo.png', '电子商务平台演示店铺', '0', '0', '浙江省 金华市 义乌市', '国际商贸城五区五楼网商服务区71001,71003,70989,70991(109号大门上)-china', '0579-85871717', 'Copyright ©2015-2020 www.wanghuo.hk, All Rights Reserved', '0', '', '0', '', '0000-00-00 00:00:00', '', '12655', '0');
+INSERT INTO `user_shop` VALUES ('2', '1', '御华金融', '客户的总店，在有分店的情况下，可以管理所有分店商品和订单', '御华金融-标题', '御华金融-关键字', '御华金融-描述', '33637025@qq.com', '', '御华金融', 'smallprogram.yhjr.com', 'zcy.cyy.com', '', '1', '1', '1', '1', 'http://47.96.95.57:4869/6edd87c228b63312d797b09a1eba866e', '', '', '1', '15860', '浙江省 金华市 义乌市', '北苑街道秋实路106号7楼', '0579-89972306', 'Copyright ©2018 盈云科技YingYun-link.com 版权所有', '0', '', '0', '', null, '浙ICP备09021316号-1', '123456', '173');
+INSERT INTO `user_shop` VALUES ('3', '1', '王欣', '', null, null, null, '', null, '', '', 'wx.cyy.com', '', '1', '1', '1', '1', null, null, null, '0', '0', '', '', '', '', '0', '', '0', '', null, null, '123456', '0');
 
 -- ----------------------------
 -- Function structure for getKeyValue
