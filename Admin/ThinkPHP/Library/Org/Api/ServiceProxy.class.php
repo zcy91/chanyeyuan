@@ -300,7 +300,6 @@ class AccessModule
         $this->params = $params;
         $this->site_url = c_get_site_url();
         session('site_url',$this->site_url);
-
         //当前店铺的显示语言
         $this->dis_lang_id = $dis_lang_id > 0 ? $dis_lang_id : ( defined("LANGUAGE_VIWE") ? LANGUAGE_VIWE : 1);
     }
@@ -462,13 +461,12 @@ class AccessModule
     {
         //该数据是为了同一个请求里不需要多次访问缓存
         $site_info = self::$s_site_info;
-
         //如果是本次前端访问的首次连接中间层，则为空
         if(empty($site_info))
         {
+
             //站点信息的缓存里的存放关键字
             $cache_key_Name = self::PREFIX_CACHE.  c_get_site_url();
-
             //获取站点信息对应的缓存关键字
             $key_cache_data = S($cache_key_Name);
             if(isset($key_cache_data) && !empty($key_cache_data))
@@ -647,7 +645,6 @@ class ServiceProxy {
 
         $access_module->init_data($module, $class, $func,$params,$AccessType);
         $this->access_module = $access_module;
-//        p($this->access_module);
     }
 
     /**
@@ -702,11 +699,12 @@ class ServiceProxy {
         $current_site_url1 = empty($p_site_url) ? c_get_site_url() : $p_site_url;
 
         $current_site_url = !empty($per_seller_url) ? $per_seller_url : $current_site_url1;
-
+        //修改site_url
+//        $current_site_url =c_host_url();
         if(!$is_clear_all)
         {
             $current_site_info = $this->access_module->get_seller_info();
-
+//var_dump($current_site_info);echo 88;
             //如果已经存在，则直接返回
             if(!empty($current_site_info))
             {
@@ -862,7 +860,6 @@ class ServiceProxy {
     private function checkSign(){
 
         $token = $this->access_module->get_access_token();
-
         if(empty($token))
         {
             $this->fetch_site_info();
@@ -947,11 +944,12 @@ class ServiceProxy {
         }
 
         $token = $this->checkSign();
+//        $token = 1;
         //如果token为空，则返回错误
         if(empty($token))
         {
             //38	I	访问服务器失败，请稍微重试（有可能Web端客户信息丢失）	2016-03-04 09:41:32
-            $return_state = -38;
+            $return_state = -388;
             goto kuba_end;
         }
 
@@ -967,7 +965,6 @@ class ServiceProxy {
         }
         //核对当前访问的模块的编号
         $module_id = $this->checkAccessModule();
-
         if(empty($module_id))
         {
             //3	I	模块调用错误，请核对是否有模块的使用权限。	2014-12-19 12:10:13

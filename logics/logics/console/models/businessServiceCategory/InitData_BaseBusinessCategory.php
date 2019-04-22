@@ -1,5 +1,5 @@
 <?php
-namespace console\models\service;
+namespace console\models\businessServiceCategory;
 
 use console\models\BaseModel;
 use console\models\base\BaseProductOperate;
@@ -10,7 +10,7 @@ use console\models\base\View_BaseAttr;
 use console\models\base\View_BaseProductcategory;
 use console\models\base\View_BaseProductCommission;
 
-class InitData_BaseService extends BaseModel {
+class InitData_BaseBusinessCategory extends BaseModel {
 
     private $sellerId;
     private $attrs;
@@ -61,45 +61,44 @@ class InitData_BaseService extends BaseModel {
         }
         unset($View_BaseAttr);
     }
-    public function serviceAdd($event){
+    public function add($event){
         $data = &$event->RequestArgs;
-        if (empty($data) || !isset($data["name"]) || empty($data["icon"])) {
+
+        if (empty($data) || !isset($data["name"]) || empty($data["image"])) {
             return parent::go_error($event, -12);
         }
-        //判断名字是否重复
-        $name = $data['name'];
-        $model = new View_BaseService();
-        $count = $model -> checkName(0,$name,$event);
-        if($count > 0){
-            return parent::go_error($event, -5044);
-        }
-
         $ownSellerId = $this->sellerId = View_UserLogin::getOperateSellerId($data);
         if (empty($ownSellerId)) {
             return parent::go_error($event, -2011);
         }
         $nowTime = date('Y-m-d H:i:s');
-        $event->service_data = array(
+        if(!empty($data['parent_id'])){
+            $level = 2;
+        }else{
+            $level = 1;
+        }
+        $event->business_service_category_data = array(
             "name" => $data["name"],
-            "icon" => $data["icon"],
+            "image" => $data["image"],
             "is_show" => (isset($data["is_show"]) && is_string($data["is_show"]) && !empty($data["is_show"])) ? $data["is_show"] : 0,
-            "des" => (isset($data["des"]) && is_string($data["des"]) && !empty($data["des"])) ? $data["des"] : "",
+            'parent_id' =>(isset($data["parent_id"]) && is_string($data["parent_id"]) && !empty($data["parent_id"])) ? $data["parent_id"] : 0,
             "seller_id" => $ownSellerId,
             "creatTime" => $nowTime,
             "uid" => $data['uid'],
+            "level"=> $level
         );
     }
 
-    public function serviceEdit($event){
+    public function edit($event){
         $data = &$event->RequestArgs;
         if (empty($data) ||
             !isset($data["id"]) || empty($data["id"]) || !is_numeric($data["id"])) {
             return $this->go_error($event, -12);
         }
         if (!(isset($data["name"]) && !empty($data["name"]) && is_string($data["name"])) ||
-            !(isset($data["des"]) && !empty($data["des"]) && is_string($data["des"])) ||
-            !(isset($data["is_show"]) && is_numeric($data["is_show"]))
-        ) {
+            !(isset($data["image"]) && !empty($data["image"]) && is_string($data["image"]))
+           )
+         {
             return parent::go_error($event, -12);
         }
 
@@ -107,20 +106,21 @@ class InitData_BaseService extends BaseModel {
         if (empty($ownSellerId)) {
             return parent::go_error($event, -2011);
         }
-        $View_BaseService = new View_BaseService();
-        $count = $View_BaseService->checkName($data['id'],$data['name'],$event);
-        if($count > 0){
-            return parent::go_error($event, -5044);
-        }
-        $id = $event->serviceId = $data["id"];
-        $oldProduct = $View_BaseService->getOne($event, $id, $ownSellerId);
+        $View_BaseBusinessServiceCategory = new View_BaseBusinessServiceCategory();
+//        $count = $View_BaseService->checkName($data['id'],$data['name'],$event);
+//        if($count > 0){
+//            return parent::go_error($event, -5044);
+//        }
+        $id = $event->categoryId = $data["id"];
+        $oldProduct = $View_BaseBusinessServiceCategory->getOne($event, $id, $ownSellerId);
+
         unset($View_BaseProduct);
         if (empty($oldProduct)) {
             return parent::go_error($event, -2132);
         }
         $nowTime = date('Y-m-d H:i:s');
         $newProduct = $data;
-        BaseService::setEditData($event,$id,$nowTime,$newProduct,$oldProduct);
+        BaseBusinessServiceCategory::setEditData($event,$id,$nowTime,$newProduct,$oldProduct);
     }
 
     public function serviceDelete($event){

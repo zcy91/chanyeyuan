@@ -50,6 +50,13 @@ class List_User extends BaseModel {
     }
     public function userLogin($event) {
         $data = &$event->RequestArgs;
+        $site_url = ($data['site_url']);
+        $sql = "SELECT `seller_id` FROM user_shop where shop_url_self = :shop_url_self";
+        $params = array(
+            ":shop_url_self"=>$site_url
+        );
+        $result = $this->query_SQL($sql, $event, null, $params);
+        $_SERVER['seller_info']['seller_id'] = $result[0]['seller_id'];
         $isOpenId = 1;
         if (isset($data["openId"])) {
             if (!is_string($data["openId"]) || empty($data["openId"])) {
@@ -61,14 +68,11 @@ class List_User extends BaseModel {
                  !isset($data["password"]) || !is_string($data["password"]) || empty($data["account"]) ||empty($data['code'])) {
             return parent::go_error($event, -12);
         }        
-        $isOpenId = 0;
-        $account = $data["account"];
-        $password = $data["password"];
-        $code = $data['code'];
+            $isOpenId = 0;
+            $account = $data["account"];
+            $password = $data["password"];
+            $code = $data['code'];
         }
-
-
-
         $View_UserLogin = new View_UserLogin();
         if ($isOpenId) {
             $User = $View_UserLogin->getOneAccount($event, 0, $account);

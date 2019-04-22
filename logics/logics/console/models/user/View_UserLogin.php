@@ -8,17 +8,16 @@ use console\models\user\View_UserProfile;
 class View_UserLogin extends BaseModel {
 
     public static function getOperateSellerId($data) {
-
-//        if ($_SERVER["seller_info"]["seller_id"] == 1) {
-//            if (isset($data["logSellerId"]) && is_numeric($data["logSellerId"])) {
-//                $ownSellerId = $data["logSellerId"];
-//            }
-//            if (isset($data["ownSellerId"]) && is_numeric($data["ownSellerId"])) {
-//                $ownSellerId = $data["ownSellerId"];
-//            }
-//        } else {
+        if ($_SERVER["seller_info"]["seller_id"] == 1) {
+            if (isset($data["logSellerId"]) && is_numeric($data["logSellerId"])) {
+                $ownSellerId = $data["logSellerId"];
+            }
+            if (isset($data["ownSellerId"]) && is_numeric($data["ownSellerId"])) {
+                $ownSellerId = $data["ownSellerId"];
+            }
+        } else {
             $ownSellerId = $_SERVER["seller_info"]["seller_id"];
-//        }
+        }
         
         return $ownSellerId;
     }
@@ -78,7 +77,7 @@ class View_UserLogin extends BaseModel {
             ":account" => $account,
             ":seller_id"=>$_SERVER['seller_info']['seller_id']
         );
-
+        var_dump($params);
         $result = $this->query_SQL($sql, $event, null, $params);
 
         if (!empty($result)) {

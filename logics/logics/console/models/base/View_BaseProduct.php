@@ -104,6 +104,19 @@ class View_BaseProduct extends BaseModel {
         $result = $this->query_SQL($sql, $event, $limit, $params);
 
         return $result;        
-    }    
-    
+    }
+//企业服务分类
+    public function getAllCategory($event, $ispage, $condition, $params, $limit) {
+
+        $sql = "SELECT " . ($ispage ? " sql_calc_found_rows " : "") . "
+                      *
+                FROM business_service_category AS bp 
+                WHERE bp.seller_id = :sellerId
+                      $condition
+                ORDER BY bp.creatTime";
+        $result = $this->query_SQL($sql, $event, $limit, $params);
+
+        return $result;
+    }
+
 }

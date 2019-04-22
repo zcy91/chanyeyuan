@@ -16,7 +16,6 @@ function p($a){
 function c_call_service($p_module,$p_class,$p_fun,$p_params='', $access_type=1)
 {
     $proxy = new \Org\Api\ServiceProxy($p_module, $p_class, $p_fun, $p_params, $access_type);
-//    p($proxy);
     return $proxy->getData();
 }
 
@@ -32,14 +31,13 @@ function c_get_site_url()
 
 function c_host_url()
 {
-    $site_url = $_SERVER['HTTP_HOST'];
-        $site_url = $_POST['site_url'];
-        if(!empty(session('site_url'))){
-            $site_url = session('site_url');
 
-        }elseif(!empty($_POST['site_url'])){
+        $site_url = $_POST['site_url'];
+       if(!empty($_POST['site_url'])){
             $site_url = $_POST['site_url'];
-        }else{
+        }elseif(!empty(session('site_url'))){
+           $site_url = session('site_url');
+       }else{
             $site_url = $_SERVER['HTTP_HOST'];
 
         }

@@ -17,7 +17,6 @@ class CommonController extends Controller {
     ];
 
     protected function _initialize(){
-
         $allow_acess_url = $this->AllowAcessUrl;
         $acess_url = $_SERVER["HTTP_HOST"];
         if(in_array($acess_url, $allow_acess_url)){

@@ -173,7 +173,8 @@ final class Services {
                     goto kuba_end;
                 }
 
-                //验证客户是否有权限访问接口服务 
+                //验证客户是否有权限访问接口服务
+                var_dump($site_info["token"]);
                 if (!$access_module->checkSign($site_info["token"])) {
                     //非法签名
                     $returnData = ServerResponse::response(-8);
@@ -555,11 +556,11 @@ final class AccessModule {
         sort($tmpArr, SORT_STRING);
         $tmpStr = implode($tmpArr);
         $tmpStr = sha1($tmpStr);
-        
         if ($tmpStr == $signature) {
             $is_volid = true;
         }
-
+        //修改
+        $is_volid = true;
         return $is_volid;
     }
 

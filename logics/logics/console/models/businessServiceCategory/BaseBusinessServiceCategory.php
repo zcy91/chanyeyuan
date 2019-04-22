@@ -1,11 +1,11 @@
 <?php
-namespace console\models\service;
+namespace console\models\businessServiceCategory;
 
 use console\models\BaseModel;
 
-class BaseService extends BaseModel {
+class BaseBusinessServiceCategory extends BaseModel {
 
-    const TABLE_NAME = "service";
+    const TABLE_NAME = "business_service_category";
 
     public function primaryKey() {
         return ['id' => 'auto'];
@@ -16,15 +16,16 @@ class BaseService extends BaseModel {
         $subset = array(
             "id",
             "name",
-            "icon",
+            "image",
             "sort",
             "is_show",
-            "des",
             "seller_id",
-            "information",
             "creatTime",
             "nowTime",
-            'uid'
+            'uid',
+            'parent_id',
+            'des',
+            'level'
         );
 
         $info_arr = parent::key_values_intersect($v, $subset, $default_arr);
@@ -41,47 +42,47 @@ class BaseService extends BaseModel {
     }
 
     public function refer_to($event, $data_arr, $array_dim, $seq_no, $count) {
-        $event->set_service_id($seq_no);
+        $event->set_category_id($seq_no);
     }
 
     public static function setEditData($event, $id, $nowTime, $newData, $oldData){
 
         if (isset($newData["name"]) && !empty($newData["name"]) && $newData["name"] != $oldData["name"]) {
-            $event->service_data["name"] = $newData["name"];
+            $event->business_service_category_data["name"] = $newData["name"];
         }
 
-        if (isset($newData["icon"]) && !empty($newData["icon"]) && $newData["icon"] != $oldData["icon"]) {
-            $event->service_data["icon"] = $newData["icon"];
+        if (isset($newData["image"]) && !empty($newData["image"]) && $newData["image"] != $oldData["image"]) {
+            $event->business_service_category_data["image"] = $newData["image"];
         }
 
         if (isset($newData["is_show"]) && !empty($newData["is_show"]) && $newData["is_show"] != $oldData["is_show"]) {
-            $event->service_data["is_show"] = $newData["is_show"];
+            $event->business_service_category_data["is_show"] = $newData["is_show"];
         }
 
         if (isset($newData["sort"]) && !empty($newData["sort"]) && $newData["sort"] != $oldData["sort"]) {
-            $event->service_data["sort"] = $newData["sort"];
+            $event->business_service_category_data["sort"] = $newData["sort"];
         }
-
+        if (isset($newData["parent_id"]) && !empty($newData["parent_id"]) && $newData["sort"] != $oldData["parent_id"]) {
+            $event->business_service_category_data["parent_id"] = $newData["parent_id"];
+        }
         if (isset($newData["des"]) && !empty($newData["des"]) && $newData["des"] != $oldData["des"]) {
-            $event->service_data["des"] = $newData["des"];
-        }
-        if (isset($newData["information"]) && !empty($newData["information"]) && $newData["information"] != $oldData["information"]) {
-            $event->service_data["information"] = $newData["information"];
+            $event->business_service_category_data["des"] = $newData["des"];
         }
 
-        if (!empty($event->service_data)) {
-            $event->service_data["id"] = $id;
-            $event->service_data["nowTime"] = $nowTime;
+
+        if (!empty($event->business_service_category_data)) {
+            $event->business_service_category_data["id"] = $id;
+            $event->business_service_category_data["nowTime"] = $nowTime;
         }
     }
 
     public function delete($event) {
 
-        $data = $event->service_data;
+        $data = $event->business_service_category_data;
 
         if (!empty($data)) {
 
-            $sql = "DELETE FROM service WHERE seller_id = :sellerId AND id = :Id";
+            $sql = "DELETE FROM business_service_category WHERE seller_id = :sellerId AND id = :Id";
             $params = array(
                 ":sellerId" => $data["sellerId"],
                 ":Id" => $data["id"],

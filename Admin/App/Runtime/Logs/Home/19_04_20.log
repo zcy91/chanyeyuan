@@ -4137,3 +4137,360 @@ INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
 
+[ 2019-04-20T16:56:56+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004727s ]
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 70 行.
+
+[ 2019-04-20T16:56:59+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 70 行.
+
+[ 2019-04-20T16:57:32+08:00 ] 192.168.0.199 /u/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+
+[ 2019-04-20T16:58:15+08:00 ] 192.168.0.199 /u/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: shop_url D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 404 行.
+NOTIC: [8] Undefined index: platform_domain D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 405 行.
+NOTIC: [8] Undefined index: TOKEN D:\wamp\www\chanyeyuan\Admin\App\Common\Conf\siteInfo.php 第 15 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000799s ]
+
+[ 2019-04-20T16:58:28+08:00 ] 192.168.0.199 /u/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000705s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000780s ]
+
+[ 2019-04-20T16:59:16+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 113 行.
+
+[ 2019-04-20T17:00:14+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001681s ]
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 70 行.
+
+[ 2019-04-20T17:00:55+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 111 行.
+
+[ 2019-04-20T17:01:21+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 111 行.
+
+[ 2019-04-20T17:01:54+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: shop_url D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 404 行.
+NOTIC: [8] Undefined index: platform_domain D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 405 行.
+NOTIC: [8] Undefined index: TOKEN D:\wamp\www\chanyeyuan\Admin\App\Common\Conf\siteInfo.php 第 15 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000720s ]
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 111 行.
+
+[ 2019-04-20T17:03:06+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: shop_url D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 404 行.
+NOTIC: [8] Undefined index: platform_domain D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 405 行.
+NOTIC: [8] Undefined index: TOKEN D:\wamp\www\chanyeyuan\Admin\App\Common\Conf\siteInfo.php 第 15 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000732s ]
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 111 行.
+
+[ 2019-04-20T17:03:43+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: shop_url D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 404 行.
+NOTIC: [8] Undefined index: platform_domain D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 405 行.
+NOTIC: [8] Undefined index: TOKEN D:\wamp\www\chanyeyuan\Admin\App\Common\Conf\siteInfo.php 第 15 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 111 行.
+
+[ 2019-04-20T17:03:55+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000464s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 111 行.
+
+[ 2019-04-20T17:04:07+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: shop_url D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 404 行.
+NOTIC: [8] Undefined index: platform_domain D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 405 行.
+NOTIC: [8] Undefined index: TOKEN D:\wamp\www\chanyeyuan\Admin\App\Common\Conf\siteInfo.php 第 15 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 111 行.
+
+[ 2019-04-20T17:04:31+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: shop_url D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 404 行.
+NOTIC: [8] Undefined index: platform_domain D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 405 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 111 行.
+
+[ 2019-04-20T17:04:40+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: shop_url D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 404 行.
+NOTIC: [8] Undefined index: platform_domain D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 405 行.
+NOTIC: [8] Undefined index: TOKEN D:\wamp\www\chanyeyuan\Admin\App\Common\Conf\siteInfo.php 第 15 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000846s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000984s ]
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 111 行.
+
+[ 2019-04-20T17:04:47+08:00 ] 192.168.0.199 /u/get_user_info.html?account=admin&password=ec7f92c539ceafc8aab3396a86b3ffb3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: shop_url D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 404 行.
+NOTIC: [8] Undefined index: platform_domain D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 405 行.
+NOTIC: [8] Undefined index: TOKEN D:\wamp\www\chanyeyuan\Admin\App\Common\Conf\siteInfo.php 第 15 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Use of undefined constant json - assumed 'json' D:\wamp\www\chanyeyuan\Admin\App\Home\Controller\UserController.class.php 第 111 行.
+
+[ 2019-04-20T17:04:52+08:00 ] 192.168.0.199 /u/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000764s ]
+
+[ 2019-04-20T17:05:40+08:00 ] 192.168.0.199 /user/login_out
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+NOTIC: [8] Use of undefined constant SELLER_ID - assumed 'SELLER_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 277 行.
+NOTIC: [8] Use of undefined constant SHOP_ID - assumed 'SHOP_ID' D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 278 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [2] Yar_Client::setOpt(): expects a long integer timeout value D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 673 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: shop_url D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 404 行.
+NOTIC: [8] Undefined index: platform_domain D:\wamp\www\chanyeyuan\Admin\ThinkPHP\Library\Org\Api\ServiceProxy.class.php 第 405 行.
+NOTIC: [8] Undefined index: site_url D:\wamp\www\chanyeyuan\Admin\App\Common\Common\function.php 第 36 行.
+NOTIC: [8] Undefined index: TOKEN D:\wamp\www\chanyeyuan\Admin\App\Common\Conf\siteInfo.php 第 15 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000742s ]
+

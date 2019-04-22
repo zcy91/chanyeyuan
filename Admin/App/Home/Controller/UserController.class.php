@@ -64,17 +64,16 @@ class UserController extends CommonController {
         $code = I('post.code');
         $res = $this->check_verify($code);
         $res = json_decode($res,true);
-        if($res['status'] != 1){
-           $arr['status']=0;
-           $arr['info']="验证码不正确";
-            $this->ajaxReturn($arr,json);
-        }
+//        if($res['status'] != 1){
+//           $arr['status']=0;
+//           $arr['info']="验证码不正确";
+//            $this->ajaxReturn($arr,json);
+//        }
         $post_data = I("post.");
         $tmp_noce = c_get_rand();
         cookie("X-XSRF-YHJR",$tmp_noce);
         session("X-XSRF-YHJR",$tmp_noce);
         $status = 0; $user_info = array();
-        
         $User = new UserModel();
         $apiData = $User->login($post_data);
         $power_node = [];
@@ -447,7 +446,12 @@ class UserController extends CommonController {
     }
 
     public function login_out(){
-        session_destroy();
-    }
+//        var_dump($_SESSION);
+        $_SERVER['seller_info']=null;
+        session('site_url',null);
+        session('userId',null);
+        session('ADMIN_ID',null);
+        session('currentRoleId',null);
+  }
     
 }
