@@ -27,8 +27,8 @@ class BusinessServiceCategoryBehavior extends BaseBehavior {
 
     public function getModels_ServiceDelete() {
         return array(
-            'console\models\service\InitData_BaseService' => 'serviceDelete',
-            'console\models\service\BaseService' => 'delete',
+            'console\models\businessServiceCategory\InitData_BaseBusinessCategory' => 'delete',
+            'console\models\businessServiceCategory\BaseBusinessServiceCategory' => 'delete',
 //            'console\models\base\BaseProductAttr' => 'delete',
 //            'console\models\base\BaseProductAttrItem' => 'delete',
 //            'console\models\base\BaseProductCommissionQuot' => 'delete',

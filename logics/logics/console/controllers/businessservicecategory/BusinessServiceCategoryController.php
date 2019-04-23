@@ -31,7 +31,7 @@ class BusinessServiceCategoryController extends BaseController {
         return 0;
     }
 
-    public function actionServicedelete($data) {
+    public function actionBusinessservicecategorydelete($data) {
         $this->event->set($data, BaseBehavior::ADD_ACTION);
         parent::delete($this->getModels_ServiceDelete(), $this->event);
         $this->event->Display();

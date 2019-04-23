@@ -10,7 +10,7 @@ class BusinessServiceCategoryModel extends BaseModel{
     private $fetchs_router = "businessservicecategorylist";
     private $add_router = "businessservicecategoryadd";
     private $save_router = "businessservicecategoryedit";
-    private $delete_router = "servicedelete";
+    private $delete_router = "businessservicecategorydelete";
     private $setvisible_router = "servicedisplay";
     private $singleview_router = "servicedesc";
 

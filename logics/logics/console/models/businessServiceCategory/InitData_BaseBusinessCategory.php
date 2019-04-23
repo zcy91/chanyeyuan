@@ -123,7 +123,7 @@ class InitData_BaseBusinessCategory extends BaseModel {
         BaseBusinessServiceCategory::setEditData($event,$id,$nowTime,$newProduct,$oldProduct);
     }
 
-    public function serviceDelete($event){
+    public function delete($event){
 
         $data = &$event->RequestArgs;
 
@@ -136,16 +136,16 @@ class InitData_BaseBusinessCategory extends BaseModel {
             return parent::go_error($event, -2011);
         }
 
-        $id = $event->serviceId = $data["id"];
+        $id = $event->categoryId = $data["id"];
 
-        $View_BaseService = new View_BaseService();
-        $oldProduct = $View_BaseService->getOne($event, $id, $ownSellerId);
+        $View_BaseBusinessServiceCategory = new View_BaseBusinessServiceCategory();
+        $oldProduct = $View_BaseBusinessServiceCategory->getOne($event, $id, $ownSellerId);
         unset($View_BaseProduct);
         if (empty($oldProduct)) {
             return parent::go_error($event, -2132);
         }
 
-        $event->service_data = array(
+        $event->business_service_category_data = array(
             "id" => $id,
             "sellerId" => $ownSellerId
         );

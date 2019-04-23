@@ -108,4 +108,18 @@ class BusinessServiceController extends CommonController
 
         $this->ajaxReturn(array("status" => $apiData['returnState'], "info" => $info, "id" => $id), json);
     }
+    //删除分类
+    public function category_delete(){
+        $post_data = I("post.");
+        if(!isset($post_data['id']) || $post_data['id'] == "" ||  $post_data['id'] == 0){
+            $this->ajaxReturn(array("status"=>0,"info"=>"参数异常"));
+        }
+        $category = new BusinessServiceCategoryModel();
+        $apiData = $category->delete($post_data);
+        $info = "";
+        if($apiData['returnState'] != 1){
+            $info = get_error_info($apiData['returnState']);
+        }
+        $this->ajaxReturn(array("status"=>$apiData['returnState'],"info"=>$info),json);
+    }
 }
