@@ -1,44 +1,43 @@
 <?php
-namespace console\controllers\businessservicecategory;
+namespace console\controllers\businessservice;
 
-use console\behaviors\businessServiceCategory\BusinessServiceCategoryBehavior;
-use console\behaviors\service\ServiceBehavior;
-use console\events\business_service_category\BusinessServiceCategoryEvent;
-use console\events\service\ServiceEvent;
+use console\behaviors\businessService\BusinessServiceBehavior;
+
+use console\events\business_service\BusinessServiceEvent;
 use console\controllers\BaseController;
 use console\behaviors\BaseBehavior;
 
-class BusinessServiceCategoryController extends BaseController {
+class BusinessServiceController extends BaseController {
 
     public function init() {
         parent::init();
-        $this->behavior = new BusinessServiceCategoryBehavior();
-        $this->attachBehavior("BusinessServiceCategorybehavior", $this->behavior);
-        $this->event = new BusinessServiceCategoryEvent();
+        $this->behavior = new BusinessServiceBehavior();
+        $this->attachBehavior("BusinessServicebehavior", $this->behavior);
+        $this->event = new BusinessServiceEvent();
     }
 
-    public function actionBusinessservicecategoryadd($data) {
+    public function actionBusinessserviceadd($data) {
         $this->event->set($data, BaseBehavior::ADD_ACTION);
         parent::add($this->getModels_ServiceAdd(), $this->event);
         $this->event->Display();
         return 0;
     }
 
-    public function actionBusinessservicecategoryedit($data) {
+    public function actionBusinessserviceedit($data) {
         $this->event->set($data, BaseBehavior::ADD_ACTION);
         parent::modify($this->getModels_ServiceEdit(), $this->event);
         $this->event->Display();
         return 0;
     }
 
-    public function actionBusinessservicecategorydelete($data) {
+    public function actionBusinessservicedelete($data) {
         $this->event->set($data, BaseBehavior::ADD_ACTION);
         parent::delete($this->getModels_ServiceDelete(), $this->event);
         $this->event->Display();
         return 0;
     }
 
-    public function actionBusinessservicecategorylist($data) {
+    public function actionBusinessservicelist($data) {
 
         $this->event->set($data, BaseBehavior::FETCH_ALL_ACTION);
         parent::fetch_all($this->getModels_ServiceList(), $this->event, false);

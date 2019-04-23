@@ -1,5 +1,5 @@
 <?php
-namespace console\models\businessServiceCategory;
+namespace console\models\businessService;
 
 
 use console\models\BaseModel;
@@ -10,9 +10,9 @@ use console\models\base\View_BaseProductAttrItem;
 use console\models\base\View_BaseProductCommission;
 use yii\helpers\ArrayHelper;
 
-class List_BaseBusinessServiceCategory extends BaseModel {
+class List_BaseBusinessService extends BaseModel {
 
-    public function categoryList($event){
+    public function business_service_list($event){
 
         $data = &$event->RequestArgs;
 
@@ -33,7 +33,10 @@ class List_BaseBusinessServiceCategory extends BaseModel {
             ":sellerId" => $ownSellerId,
             ":time_limit" => $time_limit
         );
-
+        if (isset($data["cat_id"]) && !empty($data["cat_id"])) {
+            $condition .= " AND bp.cat_id = :cat_id";
+            $params[":cat_id"] = $data["cat_id"];
+        }
         //名称
         if (isset($data["name"]) && !empty($data["name"])) {
             $condition .= " AND bp.name LIKE :name";
@@ -47,46 +50,31 @@ class List_BaseBusinessServiceCategory extends BaseModel {
         }
 
         //是否展示
-        if (isset($data["display"]) && $data["display"]!= "") {
+        if (isset($data["is_show"]) && $data["is_show"]!= "") {
             $condition .= " AND bp.is_show = :is_show";
             $params[":is_show"] = $data["is_show"];
         }
-        //1级还是2级展示
-        if (isset($data["level"]) && !empty($data["level"])) {
-            $condition .= " AND bp.level = :level";
-            $params[":level"] = $data["level"];
-        }
-        $View_BaseProduct = new View_BaseProduct();
-        $dataAttr = $View_BaseProduct->getAllCategory($event, $ispage, $condition, $params, $limit);
-        if(!empty($data['level']) && $data['level'] == 2){
-            $condition = "AND bp.id = :parent_id";
-            $params = array();
-            $params[':sellerId'] = $ownSellerId;
-            foreach ($dataAttr as $k=>$v){
-                $params[':parent_id'] = $v['parent_id'];
-                $category = $View_BaseProduct->getAllCategory($event, $ispage, $condition, $params, $limit);
-                $dataAttr[$k]['parent_name'] = ($category[0]['name']);
-            }
-        }
-        if(!empty($data['id']) && !empty($dataAttr[0]['level']) && $dataAttr[0]['level']==2){
-            $condition = " AND ";
-            $params = array(
-                ":sellerId" => $ownSellerId,
-            );
 
-                $condition .= "bp.level = :level";
-                $params[":level"] = 1;
-                $condition .= " AND bp.is_show = :is_show";
-                $params[":is_show"] = 1;
-            $category = $View_BaseProduct->getAllCategory($event, $ispage, $condition, $params, $limit);
-            $dataAttr[0]['parent']=($category);
-            $condition = "AND bp.id = :parent_id";
-            $params = array();
-            $params[':sellerId'] = $ownSellerId;
-            $params[':parent_id'] = $dataAttr[0]['parent_id'];
-            $farth = $View_BaseProduct->getAllCategory($event, $ispage, $condition, $params, $limit);
-            $dataAttr[0]['parent_name'] = $farth[0]['name'];
+        $View_BaseProduct = new View_BaseProduct();
+        $dataAttr = $View_BaseProduct->getAllService($event, $ispage, $condition, $params, $limit);
+        $params = array(
+            ":sellerId" => $ownSellerId,
+        );
+        foreach ($dataAttr as $k=>$v){
+            $cat_id = $v['cat_id'];
+            $fcat_id = $v['fcat_id'];
+            $condition = " AND bp.id = :cat_id";
+            $params[':cat_id'] = $cat_id;
+            $data = $View_BaseProduct->getAllCategory($event, $ispage, $condition, $params, $limit);
+            $dataAttr[$k]['cat_name'] = ($data[0]['name']);
+            $condition = " AND bp.id = :fcat_id";
+            unset($params[':cat_id']);
+            $params[':fcat_id'] = $fcat_id;
+            $arr = $View_BaseProduct->getAllCategory($event, $ispage, $condition, $params, $limit);
+//            var_dump($arr);
+            $dataAttr[$k]['fcat_name'] = ($arr[0]['name']);
         }
+
         unset($View_BaseProduct);
 
         if (empty($dataAttr)) {

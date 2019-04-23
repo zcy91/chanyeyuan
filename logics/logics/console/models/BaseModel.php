@@ -1267,7 +1267,6 @@ class BaseModel extends Component {
     public function add($event) {
 
         $data_arr = $this->get_model_data($event);
-
         if (empty($data_arr)) {
             return 1;
         }//参数为空数组，则直接返回成功，不做处理
@@ -1299,7 +1298,6 @@ class BaseModel extends Component {
         if (!empty($merge_data)) {
             $return_data = $merge_data;
         }
-var_dump($return_data);
         $event->Postback($return_data, false, $this->get_table_name());
     }
 
@@ -1466,7 +1464,7 @@ var_dump($return_data);
 
         $default_arr = $this->get_default_data(false);
 
-        $data_list = $this->resolveParameter($data_arr, $default_arr); //解析数组参数字段信息 
+        $data_list = $this->resolveParameter($data_arr, $default_arr); //解析数组参数字段信息
         //first_id为自增字段,所以返回first_id
         $rtn_data = $this->insert($this->get_table_name(), $data_list, $event);
 

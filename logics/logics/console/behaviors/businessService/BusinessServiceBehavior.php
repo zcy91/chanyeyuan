@@ -1,14 +1,14 @@
 <?php
-namespace console\behaviors\businessServiceCategory;
+namespace console\behaviors\businessService;
 
 use console\behaviors\BaseBehavior;
 
-class BusinessServiceCategoryBehavior extends BaseBehavior {
+class BusinessServiceBehavior extends BaseBehavior {
 
     public function getModels_ServiceAdd() {
         return array(
-            'console\models\businessServiceCategory\InitData_BaseBusinessCategory' => 'add',
-            'console\models\businessServiceCategory\BaseBusinessServiceCategory' => 'add',
+            'console\models\businessService\InitData_BaseBusiness' => 'add',
+            'console\models\businessService\BaseBusinessService' => 'add',
 //            'console\models\base\BaseProductAttr' => 'add',
 //            'console\models\base\BaseProductAttrItem' => 'add',
 //            'console\models\base\BaseProductOperate' => 'add',
@@ -17,8 +17,8 @@ class BusinessServiceCategoryBehavior extends BaseBehavior {
 
     public function getModels_ServiceEdit() {
         return array(
-            'console\models\businessServiceCategory\InitData_BaseBusinessCategory' => 'edit',
-            'console\models\businessServiceCategory\BaseBusinessServiceCategory' => 'modify',
+            'console\models\businessService\InitData_BaseBusiness' => 'edit',
+            'console\models\businessService\BaseBusinessService' => 'modify',
 //            'console\models\base\BaseProductAttr' => 'deleteAdd',
 //            'console\models\base\BaseProductAttrItem' => 'deleteAdd',
 //            'console\models\base\BaseProductOperate' => 'add',
@@ -27,8 +27,8 @@ class BusinessServiceCategoryBehavior extends BaseBehavior {
 
     public function getModels_ServiceDelete() {
         return array(
-            'console\models\businessServiceCategory\InitData_BaseBusinessCategory' => 'delete',
-            'console\models\businessServiceCategory\BaseBusinessServiceCategory' => 'delete',
+            'console\models\businessService\InitData_BaseBusiness' => 'delete',
+            'console\models\businessService\BaseBusinessService' => 'delete',
 //            'console\models\base\BaseProductAttr' => 'delete',
 //            'console\models\base\BaseProductAttrItem' => 'delete',
 //            'console\models\base\BaseProductCommissionQuot' => 'delete',
@@ -39,7 +39,7 @@ class BusinessServiceCategoryBehavior extends BaseBehavior {
 
     public function getModels_ServiceList() {
         return array(
-            'console\models\businessServiceCategory\List_BaseBusinessServiceCategory' => "categorylist"
+            'console\models\businessService\List_BaseBusinessService' => "business_service_list"
         );
     }
 
