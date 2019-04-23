@@ -49,6 +49,7 @@ class BusinessServiceController extends CommonController
         }
         if(isset($post_data['id']) && !empty($post_data['id'])) {
             $params['id'] = $post_data['id'];
+            unset($params['level']);
         }
         if(isset($post_data['name']) && !empty($post_data['name'])){
             $params['name'] = $post_data['name'];

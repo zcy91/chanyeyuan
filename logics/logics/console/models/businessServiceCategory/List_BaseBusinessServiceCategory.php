@@ -8,6 +8,7 @@ use console\models\base\View_BaseProduct;
 use console\models\base\View_BaseProductAttr;
 use console\models\base\View_BaseProductAttrItem;
 use console\models\base\View_BaseProductCommission;
+use yii\helpers\ArrayHelper;
 
 class List_BaseBusinessServiceCategory extends BaseModel {
 
@@ -40,6 +41,7 @@ class List_BaseBusinessServiceCategory extends BaseModel {
         }
         //id
         if (isset($data["id"]) && !empty($data["id"])) {
+
             $condition .= " AND bp.id = :id";
             $params[":id"] = $data["id"];
         }
@@ -56,7 +58,40 @@ class List_BaseBusinessServiceCategory extends BaseModel {
         }
         $View_BaseProduct = new View_BaseProduct();
         $dataAttr = $View_BaseProduct->getAllCategory($event, $ispage, $condition, $params, $limit);
-        var_dump($dataAttr);
+        //查找父类名称
+       // $dataAttr = ArrayHelper::map($dataAttr, 'id', 'name');
+
+        if(!empty($data['level']) == 2){
+            $condition = "AND bp.id = :parent_id";
+            $params = array();
+            $params[':sellerId'] = $ownSellerId;
+            foreach ($dataAttr as $k=>$v){
+                $params[':parent_id'] = $v['parent_id'];
+                $category = $View_BaseProduct->getAllCategory($event, $ispage, $condition, $params, $limit);
+                $dataAttr[$k]['parent_name'] = ($category[0]['name']);
+            }
+        }
+//        $condition = " AND bp.id = :parent_id";
+//        $params = array(":parent_id" => )
+        if(!empty($data['id']) && !empty($dataAttr[0]['level']) ==2){
+            $condition = " AND ";
+            $params = array(
+                ":sellerId" => $ownSellerId,
+            );
+
+                $condition .= "bp.level = :level";
+                $params[":level"] = 1;
+                $condition .= " AND bp.is_show = :is_show";
+                $params[":is_show"] = 1;
+            $category = $View_BaseProduct->getAllCategory($event, $ispage, $condition, $params, $limit);
+            $dataAttr[0]['parent']=($category);
+            $condition = "AND bp.id = :parent_id";
+            $params = array();
+            $params[':sellerId'] = $ownSellerId;
+            $params[':parent_id'] = $dataAttr[0]['parent_id'];
+            $farth = $View_BaseProduct->getAllCategory($event, $ispage, $condition, $params, $limit);
+            $dataAttr[0]['parent_name'] = $farth[0]['name'];
+        }
         unset($View_BaseProduct);
 
         if (empty($dataAttr)) {

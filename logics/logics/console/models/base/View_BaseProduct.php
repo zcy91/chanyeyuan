@@ -118,5 +118,4 @@ class View_BaseProduct extends BaseModel {
 
         return $result;
     }
-
 }
