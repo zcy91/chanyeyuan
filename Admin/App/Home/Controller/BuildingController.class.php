@@ -3,12 +3,13 @@
 用户控制器
  *  */
 namespace Home\Controller;
+use Home\Model\BuildingModel;
 use Home\Model\RepairModel;
-use Home\Model\ServiceModel;
+
 use Home\Model\UserModel;
 use Home\Model\RoleModel;
 use Home\Plugin\Upfile;
-class RepairController extends CommonController
+class BuildingController extends CommonController
 {
     protected function _initialize(){
         //判断登录
@@ -19,7 +20,7 @@ class RepairController extends CommonController
     /**
     列表
      **/
-    public function repair_list(){
+    public function building_list(){
         $p = isset($_POST['p'])?$_POST['p']:1;
         $pagesize = I("post.page_size");
         $post_data = I("post.");
@@ -32,7 +33,7 @@ class RepairController extends CommonController
             }
         }
 
-        $repair = new RepairModel();
+        $building = new BuildingModel();
         $params = array(
             "pagination" => array(
                 "pagesize" => $pagesize,
@@ -41,23 +42,15 @@ class RepairController extends CommonController
             )
         );
 
-        if(isset($post_data['contacts']) && !empty($post_data['contacts'])){
-            $params['contacts'] = $post_data['contacts'];
-        }
-        if(isset($post_data['phone']) && !empty($post_data['phone'])){
-            $params['phone'] = $post_data['phone'];
-        }
-        if(isset($post_data['handler']) && !empty($post_data['handler'])){
-            $params['handler'] = $post_data['handler'];
-        }
-        if(isset($post_data['status']) && !empty($post_data['status'])){
-            $params['status'] = $post_data['status'];
+
+        if(isset($post_data['name']) && !empty($post_data['name'])){
+            $params['name'] = $post_data['name'];
         }
         if(isset($post_data['id']) && !empty($post_data['id'])){
             $params['id'] = $post_data['id'];
         }
 
-        $apiData = $repair->fetchs($params);
+        $apiData = $building->fetchs($params);
         $returnData = array(
             "totalItem" => $apiData['returnData']['recordcount'],
             "time_limit" => $apiData['returnData']['time_limit'],
@@ -84,12 +77,17 @@ class RepairController extends CommonController
             }
             $post_data['ownSellerId'] = $_POST['seller_id'];
         }
+        //处理图片上传
+        if ($_FILES['file']['name']) {
+            $file = new Upfile($_FILES['file']);
+            $post_data['image'] = $file->get_url();
+        }
         $id = I("id", 0, intval);
-        $repair = new RepairModel();
+        $building = new BuildingModel();
         if ($id == 0) {
-            $apiData = $repair->add($post_data);
+            $apiData = $building->add($post_data);
         } else {
-            $apiData = $repair->save($post_data);
+            $apiData = $building->save($post_data);
         }
 
         $info = "";
@@ -128,8 +126,8 @@ class RepairController extends CommonController
             $this->ajaxReturn(array("status"=>0,"info"=>"参数异常"));
         }
 
-        $repair = new RepairModel();
-        $apiData = $repair->delete($post_data);
+        $Service = new BuildingModel();
+        $apiData = $Service->delete($post_data);
         $info = "";
         if($apiData['returnState'] != 1){
             $info = get_error_info($apiData['returnState']);
@@ -137,9 +135,9 @@ class RepairController extends CommonController
         $this->ajaxReturn(array("status"=>$apiData['returnState'],"info"=>$info),json);
     }
 
-    //获取报修类型
-    public function get_repair_type(){
-        $data = M('repair_type')->select();
+    //获取用途类型
+    public function get_use(){
+        $data = M('building_use')->select();
         if(!empty($data)){
             $this->ajaxReturn(array("status"=>1,"data"=>$data,"info"=>'获取成功'));
         }else{
@@ -147,33 +145,5 @@ class RepairController extends CommonController
         }
     }
 
-    //获取来源类型
-    public function get_source(){
-        $data = M('repair_source')->select();
-        if(!empty($data)){
-            $this->ajaxReturn(array("status"=>1,"data"=>$data,"info"=>'获取成功'));
-        }else{
-            $this->ajaxReturn(array("status"=>0,"data"=>[],"info"=>'无数据'));
-        }
-    }
 
-    //获取紧急程度
-    public function get_urgency(){
-        $data = M('repair_urgency')->select();
-        if(!empty($data)){
-            $this->ajaxReturn(array("status"=>1,"data"=>$data,"info"=>'获取成功'));
-        }else{
-            $this->ajaxReturn(array("status"=>0,"data"=>[],"info"=>'无数据'));
-        }
-    }
-
-    //处理状态
-    public function get_status(){
-        $data = M('handle_status')->select();
-        if(!empty($data)){
-            $this->ajaxReturn(array("status"=>1,"data"=>$data,"info"=>'获取成功'));
-        }else{
-            $this->ajaxReturn(array("status"=>0,"data"=>[],"info"=>'无数据'));
-        }
-    }
 }

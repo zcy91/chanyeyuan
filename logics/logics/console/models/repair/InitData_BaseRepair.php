@@ -76,7 +76,7 @@ class InitData_BaseRepair extends BaseModel {
         BaseRepair::setEditData($event,$id,$nowTime,$newProduct,$oldProduct);
     }
 
-    public function serviceDelete($event){
+    public function repairDelete($event){
 
         $data = &$event->RequestArgs;
 
@@ -89,16 +89,16 @@ class InitData_BaseRepair extends BaseModel {
             return parent::go_error($event, -2011);
         }
 
-        $id = $event->serviceId = $data["id"];
+        $id = $event->repairId = $data["id"];
 
-        $View_BaseService = new View_BaseService();
-        $oldProduct = $View_BaseService->getOne($event, $id, $ownSellerId);
+        $View_Base = new View_BaseRapair();
+        $oldProduct = $View_Base->getOne($event, $id, $ownSellerId);
         unset($View_BaseProduct);
         if (empty($oldProduct)) {
             return parent::go_error($event, -2132);
         }
 
-        $event->service_data = array(
+        $event->repair_data = array(
             "id" => $id,
             "sellerId" => $ownSellerId
         );
