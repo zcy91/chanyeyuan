@@ -73,7 +73,6 @@ class InitData_BaseService extends BaseModel {
         if($count > 0){
             return parent::go_error($event, -5044);
         }
-
         $ownSellerId = $this->sellerId = View_UserLogin::getOperateSellerId($data);
         if (empty($ownSellerId)) {
             return parent::go_error($event, -2011);

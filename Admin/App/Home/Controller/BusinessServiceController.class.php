@@ -235,5 +235,21 @@ class BusinessServiceController extends CommonController
            $this->ajaxReturn(array("status"=>0,"data"=>[],"info"=>'无数据'));
        }
     }
+    //获取1级类目
+    public function get_one_category(){
+        if($_SESSION['userId'] == 100){
+            $seller_id = I('post.seller_id');
+        }else{
+            $site_url = $_SESSION['site_url'];
+            $seller_id = M("user_shop")->where(['shop_url_self'=>$site_url])->field('seller_id')->find();
+            $seller_id = $seller_id['seller_id'];
+        }
+        $catrgory = M('business_service_category')->where(['seller_id'=>$seller_id,"level"=>1,"is_show"=>1])->select();
+        if(!empty($catrgory)){
+            $this->ajaxReturn(array("status"=>1,"data"=>$catrgory,"info"=>'获取成功'));
+        }else{
+            $this->ajaxReturn(array("status"=>0,"data"=>[],"info"=>'无数据'));
+        }
+    }
 
 }
