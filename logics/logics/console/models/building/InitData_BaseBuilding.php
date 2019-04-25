@@ -95,10 +95,10 @@ class InitData_BaseBuilding extends BaseModel {
 
     public function get_num($seller_id = 1,$event){
         $seller_id = $seller_id;
-        $condition = "seller_id = :seller_id AND is_delete=:is_delete";
+        $condition = "seller_id = :seller_id ";
         $args = array(
             ":seller_id" => $seller_id,
-            ":is_delete" => 0,
+
         );
         $result = $this->count("building",$condition,$args,'id',$event);
         return $result;

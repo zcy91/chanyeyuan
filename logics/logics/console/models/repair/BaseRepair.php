@@ -31,7 +31,10 @@ class BaseRepair extends BaseModel {
             'handler',
             'handle_phone',
             'handleTime',
-            'remarks'
+            'remarks',
+            'seller_id',
+            'creatTime',
+            'nowTime'
         );
 
         $info_arr = parent::key_values_intersect($v, $subset, $default_arr);

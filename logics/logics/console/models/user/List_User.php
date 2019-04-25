@@ -65,13 +65,12 @@ class List_User extends BaseModel {
             $account = $data["openId"];
         } else {
             if (!isset($data["account"]) || !is_string($data["account"]) || empty($data["account"]) ||
-                 !isset($data["password"]) || !is_string($data["password"]) || empty($data["account"]) ||empty($data['code'])) {
+                 !isset($data["password"]) || !is_string($data["password"]) || empty($data["account"]) ) {
             return parent::go_error($event, -12);
         }        
             $isOpenId = 0;
             $account = $data["account"];
             $password = $data["password"];
-            $code = $data['code'];
         }
         $View_UserLogin = new View_UserLogin();
         if ($isOpenId) {

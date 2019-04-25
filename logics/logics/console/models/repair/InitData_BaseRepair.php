@@ -27,17 +27,17 @@ class InitData_BaseRepair extends BaseModel {
         }
         $nowTime = date('Y-m-d H:i:s');
         $event->repair_data = array(
-            "type" =>  (isset($data["type"]) && is_string($data["type"]) && !empty($data["type"])) ? $data["type"] : 1,
-            "source" => (isset($data["source"]) && is_string($data["source"]) && !empty($data["source"])) ? $data["source"] : 1,
+            "type" =>  (isset($data["type"])  && !empty($data["type"])) ? $data["type"] : 1,
+            "source" => (isset($data["source"])  && !empty($data["source"])) ? $data["source"] : 1,
             "phone" => $data["phone"],
             "contacts" => $data["contacts"],
-            "urgency" => (isset($data["urgency"]) && is_string($data["urgency"]) && !empty($data["urgency"])) ? $data["urgency"] : 1,
+            "urgency" => (isset($data["urgency"]) && !empty($data["urgency"])) ? $data["urgency"] : 1,
             "detail" => $data["detail"],
             "job_sn" =>(isset($data["job_sn"]) && is_string($data["job_sn"]) && !empty($data["job_sn"])) ? $data["job_sn"] : '',
-            "status" => (isset($data["status"]) && is_string($data["status"]) && !empty($data["status"])) ? $data["status"] : 1,
+            "status" => (isset($data["status"])  && !empty($data["status"])) ? $data["status"] : 1,
             "handler" => (isset($data["handler"]) && is_string($data["handler"]) && !empty($data["handler"])) ? $data["handler"] : '',
             "handleTime" => (isset($data["handleTime"]) && is_string($data["handleTime"]) && !empty($data["handleTime"])) ? $data["handleTime"] : '',
-            "handle_phone" => (isset($data["handle_phone"]) && is_string($data["handle_phone"]) && !empty($data["handle_phone"])) ? $data["handle_phone"] : '',
+            "handle_phone" => (isset($data["handle_phone"]) && !empty($data["handle_phone"])) ? $data["handle_phone"] : '',
             "remarks" => (isset($data["remarks"]) && is_string($data["remarks"]) && !empty($data["remarks"])) ? $data["remarks"] : '',
             "address" => $data["address"],
 //            "is_show" => (isset($data["is_show"]) && is_string($data["is_show"]) && !empty($data["is_show"])) ? $data["is_show"] : 0,

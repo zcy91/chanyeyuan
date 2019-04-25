@@ -61,9 +61,9 @@ class UserController extends CommonController {
     获取用户信息登录
     **/
     public function get_user_info(){
-        $code = I('post.code');
-        $res = $this->check_verify($code);
-        $res = json_decode($res,true);
+//        $code = I('post.code');
+//        $res = $this->check_verify($code);
+//        $res = json_decode($res,true);
 //        if($res['status'] != 1){
 //           $arr['status']=0;
 //           $arr['info']="验证码不正确";

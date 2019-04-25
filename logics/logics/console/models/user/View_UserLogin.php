@@ -77,7 +77,6 @@ class View_UserLogin extends BaseModel {
             ":account" => $account,
             ":seller_id"=>$_SERVER['seller_info']['seller_id']
         );
-        var_dump($params);
         $result = $this->query_SQL($sql, $event, null, $params);
 
         if (!empty($result)) {

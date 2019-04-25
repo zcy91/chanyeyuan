@@ -106,8 +106,7 @@ class BaseBuilding extends BaseModel {
                 ":Id" => $data["id"],
             );
 
-            $data = $this->update_sql($sql, $event, $params);
-            var_dump($data);
+           $this->update_sql($sql, $event, $params);
 
         }
     }

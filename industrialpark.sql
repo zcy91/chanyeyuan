@@ -10,10 +10,102 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2019-04-22 16:56:03
+Date: 2019-04-24 16:51:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for building
+-- ----------------------------
+DROP TABLE IF EXISTS `building`;
+CREATE TABLE `building` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `address` varchar(250) DEFAULT NULL,
+  `use` int(2) DEFAULT '1' COMMENT '用途',
+  `floors` int(3) DEFAULT '1' COMMENT '总层数',
+  `starting_floor` int(3) DEFAULT '1' COMMENT '起始层数',
+  `end_floor` int(3) DEFAULT '1' COMMENT '结束层数',
+  `floor_area` float(10,2) DEFAULT '0.00' COMMENT '建筑面积',
+  `management_area` float(10,2) DEFAULT '0.00' COMMENT '管理面积',
+  `builtTime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '建成时间',
+  `image` varchar(255) DEFAULT NULL,
+  `seller_id` int(10) DEFAULT NULL,
+  `uid` int(10) DEFAULT NULL,
+  `creatTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `nowTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `num` int(10) DEFAULT NULL COMMENT '序号',
+  `is_delete` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `name` (`name`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of building
+-- ----------------------------
+INSERT INTO `building` VALUES ('1', 'wx大厦3', '东阳', '1', '18', '1', '1', '1000.00', '800.00', '2018-04-24 10:10:10', 'image', '2', '101', '2019-04-24 15:09:33', '2019-04-24 15:43:43', '1', '1');
+INSERT INTO `building` VALUES ('2', 'wx大厦', '东阳', '1', '18', '1', '1', '1000.00', '800.00', '2019-04-24 15:25:51', 'image', '2', '101', '2019-04-24 15:25:51', '2019-04-24 15:25:51', '2', '0');
+INSERT INTO `building` VALUES ('3', 'wx大厦3', '东阳', '1', '18', '1', '1', '1000.00', '800.00', '2019-04-24 15:27:05', 'image', '2', '101', '2019-04-24 15:27:05', '2019-04-24 15:27:05', '3', '0');
+
+-- ----------------------------
+-- Table structure for building_use
+-- ----------------------------
+DROP TABLE IF EXISTS `building_use`;
+CREATE TABLE `building_use` (
+  `use_id` int(2) NOT NULL AUTO_INCREMENT,
+  `use_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`use_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of building_use
+-- ----------------------------
+INSERT INTO `building_use` VALUES ('1', '办公楼');
+INSERT INTO `building_use` VALUES ('2', '综合楼');
+INSERT INTO `building_use` VALUES ('3', '住宿');
+INSERT INTO `building_use` VALUES ('4', '商铺');
+
+-- ----------------------------
+-- Table structure for business_service
+-- ----------------------------
+DROP TABLE IF EXISTS `business_service`;
+CREATE TABLE `business_service` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `cat_id` int(3) DEFAULT NULL COMMENT '分类id',
+  `name` varchar(255) DEFAULT NULL,
+  `image` varchar(250) DEFAULT NULL,
+  `contacts` varchar(20) DEFAULT NULL COMMENT '联系人',
+  `address` varchar(255) DEFAULT NULL,
+  `is_show` tinyint(1) DEFAULT '1',
+  `sort` int(2) DEFAULT NULL,
+  `remarks` text COMMENT '备注',
+  `seller_id` int(10) DEFAULT NULL,
+  `uid` int(10) DEFAULT NULL,
+  `creatTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `nowTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `phone` varchar(50) DEFAULT NULL,
+  `fcat_id` int(3) DEFAULT NULL COMMENT '一级分类',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of business_service
+-- ----------------------------
+INSERT INTO `business_service` VALUES ('2', '7', '2', 'image2', '张陈奕', '地址2', '1', '0', 'remarks2', '2', '101', '2019-04-23 11:10:33', '2019-04-23 11:10:33', '18257990958', '4');
+INSERT INTO `business_service` VALUES ('3', '7', '3', 'image3', '张晨跃', '地址3', '1', '0', 'remarks3', '2', '101', '2019-04-23 11:14:33', '2019-04-23 11:14:33', '18257990958', '4');
+INSERT INTO `business_service` VALUES ('4', '7', '4', 'image4', '张晨跃', '地址4', '1', '0', 'remarks4', '2', '101', '2019-04-23 11:15:15', '2019-04-23 11:15:15', '18257990958', '4');
+INSERT INTO `business_service` VALUES ('5', '3', '5', 'image5', '张晨跃', '地址5', '1', '0', 'remarks5', '2', '101', '2019-04-23 12:38:59', '2019-04-23 12:38:59', '18257990958', '5');
+INSERT INTO `business_service` VALUES ('6', '3', '6', 'image6', '张晨跃', '地址5', '1', '0', 'remarks5', '2', '101', '2019-04-23 12:40:14', '2019-04-23 12:40:14', '18257990958', '5');
+INSERT INTO `business_service` VALUES ('8', '3', '8', 'image7', '张晨跃', '地址5', '1', '0', 'remarks5', '2', '101', '2019-04-23 12:44:20', '2019-04-23 12:44:20', '18257990958', '5');
+INSERT INTO `business_service` VALUES ('9', '3', '9', 'image7', '张晨跃', '地址5', '1', '0', 'remarks5', '2', '101', '2019-04-23 12:49:49', '2019-04-23 12:49:49', '18257990958', '5');
+INSERT INTO `business_service` VALUES ('10', '3', '10', 'image7', '张晨跃', '地址5', '1', '0', 'remarks5', '2', '101', '2019-04-23 12:50:39', '2019-04-23 12:50:39', '18257990958', '5');
+INSERT INTO `business_service` VALUES ('11', '3', '11', 'image7', '张晨跃', '地址5', '1', '0', 'remarks5', '2', '101', '2019-04-23 12:54:08', '2019-04-23 12:54:08', '18257990958', '5');
+INSERT INTO `business_service` VALUES ('12', '3', '12', 'image7', '张晨跃', '地址5', '1', '0', 'remarks5', '2', '101', '2019-04-23 12:55:10', '2019-04-23 12:55:10', '18257990958', '5');
+INSERT INTO `business_service` VALUES ('13', '3', '13', 'image7', '张晨跃', '地址5', '1', '0', 'remarks5', '2', '101', '2019-04-23 12:56:17', '2019-04-23 12:56:17', '18257990958', '5');
+INSERT INTO `business_service` VALUES ('14', '3', '14', 'image7', '张晨跃', '地址5', '1', '0', 'remarks5', '2', '101', '2019-04-23 12:57:05', '2019-04-23 12:57:05', '18257990958', '5');
+INSERT INTO `business_service` VALUES ('15', '3', '15', 'image15', '王欣', '地址5', '1', '0', 'remarks5', '2', '101', '2019-04-23 13:01:17', '2019-04-23 13:05:10', '18257990958', '5');
+INSERT INTO `business_service` VALUES ('16', '3', '16', 'image20', '王欣', '地址5', '1', '0', 'remarks5', '2', '100', '2019-04-24 08:56:27', '2019-04-24 08:56:27', '18357991416', null);
 
 -- ----------------------------
 -- Table structure for business_service_category
@@ -30,22 +122,144 @@ CREATE TABLE `business_service_category` (
   `seller_id` int(10) DEFAULT NULL,
   `parent_id` int(3) DEFAULT NULL,
   `parent_id_path` varchar(125) DEFAULT NULL,
-  `is_show` int(1) DEFAULT '0',
+  `is_show` int(1) NOT NULL DEFAULT '1',
   `level` int(2) DEFAULT NULL,
   `des` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of business_service_category
 -- ----------------------------
-INSERT INTO `business_service_category` VALUES ('1', 'wx0', 'http55', '10', '2019-04-22 15:01:55', '2019-04-22 15:42:31', '102', '3', '0', null, '0', '1', null);
-INSERT INTO `business_service_category` VALUES ('2', 'wx', 'http55', '1', '2019-04-22 15:02:24', '2019-04-22 15:41:33', '102', '3', '1', null, '0', '2', null);
-INSERT INTO `business_service_category` VALUES ('3', 'wx00', 'http55', '0', '2019-04-22 15:45:03', '2019-04-22 15:45:03', '101', '2', '1', null, '0', '2', null);
-INSERT INTO `business_service_category` VALUES ('4', 'wx00', 'http55', '0', '2019-04-22 16:14:22', '2019-04-22 16:14:22', '101', '2', '2', null, '0', '2', null);
-INSERT INTO `business_service_category` VALUES ('5', 'wx00', 'http55', '0', '2019-04-22 16:17:44', '2019-04-22 16:17:44', '101', '2', '0', null, '0', '1', null);
-INSERT INTO `business_service_category` VALUES ('6', 'zcy', 'http55', '0', '2019-04-22 16:18:38', '2019-04-22 16:18:38', '101', '2', '0', null, '0', '1', null);
-INSERT INTO `business_service_category` VALUES ('7', 'zcy', 'http55', '0', '2019-04-22 16:19:02', '2019-04-22 16:19:02', '101', '2', '4', null, '0', '2', null);
+INSERT INTO `business_service_category` VALUES ('1', 'wx1', 'http55', '10', '2019-04-22 15:01:55', '2019-04-22 15:42:31', '102', '3', '0', null, '1', '1', null);
+INSERT INTO `business_service_category` VALUES ('2', 'wx2', 'http55', '1', '2019-04-22 15:02:24', '2019-04-22 15:41:33', '102', '3', '1', null, '1', '2', null);
+INSERT INTO `business_service_category` VALUES ('3', 'wx3', 'http55', '0', '2019-04-22 15:45:03', '2019-04-22 15:45:03', '101', '2', '5', null, '1', '2', null);
+INSERT INTO `business_service_category` VALUES ('4', 'wx4', 'http55', '0', '2019-04-22 16:14:22', '2019-04-22 16:14:22', '101', '2', '6', null, '1', '2', null);
+INSERT INTO `business_service_category` VALUES ('5', 'wx5', 'http55', '0', '2019-04-22 16:17:44', '2019-04-22 16:17:44', '101', '2', '0', null, '1', '1', null);
+INSERT INTO `business_service_category` VALUES ('6', 'zcy6', 'http55', '0', '2019-04-22 16:18:38', '2019-04-22 16:18:38', '101', '2', '0', null, '1', '1', null);
+INSERT INTO `business_service_category` VALUES ('7', 'zcy7', 'http55', '0', '2019-04-22 16:19:02', '2019-04-22 16:19:02', '101', '2', '4', null, '1', '2', null);
+INSERT INTO `business_service_category` VALUES ('8', 'zcy8', 'h', '0', '2019-04-23 15:06:40', '2019-04-23 15:06:40', '101', '2', '6', null, '1', '2', null);
+INSERT INTO `business_service_category` VALUES ('9', '9', null, '0', '2019-04-23 15:06:56', '2019-04-23 15:06:56', '101', '2', '6', null, '1', '2', null);
+
+-- ----------------------------
+-- Table structure for handle
+-- ----------------------------
+DROP TABLE IF EXISTS `handle`;
+CREATE TABLE `handle` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `rid` int(10) DEFAULT NULL COMMENT '对应repair的id',
+  `status` int(2) DEFAULT '1' COMMENT '处理状态',
+  `name` varchar(20) DEFAULT NULL COMMENT '处理人',
+  `phone` varchar(255) DEFAULT NULL,
+  `remarks` text,
+  `creatTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `nowTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `uid` int(10) DEFAULT NULL,
+  `seller_id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of handle
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for handle_status
+-- ----------------------------
+DROP TABLE IF EXISTS `handle_status`;
+CREATE TABLE `handle_status` (
+  `handle_id` int(10) NOT NULL AUTO_INCREMENT,
+  `handle_name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`handle_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of handle_status
+-- ----------------------------
+INSERT INTO `handle_status` VALUES ('1', '未处理');
+INSERT INTO `handle_status` VALUES ('2', '处理中');
+INSERT INTO `handle_status` VALUES ('3', '已处理');
+
+-- ----------------------------
+-- Table structure for repair
+-- ----------------------------
+DROP TABLE IF EXISTS `repair`;
+CREATE TABLE `repair` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `type` int(2) NOT NULL DEFAULT '1' COMMENT '保修类型',
+  `address` varchar(255) DEFAULT NULL,
+  `source` int(2) NOT NULL DEFAULT '1' COMMENT '来源',
+  `phone` varchar(20) DEFAULT NULL,
+  `contacts` varchar(50) DEFAULT NULL COMMENT '联系人',
+  `urgency` int(2) DEFAULT '1' COMMENT '紧急程度',
+  `detail` text COMMENT '详细描述',
+  `job_sn` varchar(20) DEFAULT NULL COMMENT '工单号',
+  `status` int(2) DEFAULT '1' COMMENT '处理状态',
+  `handler` varchar(20) DEFAULT NULL COMMENT '处理人',
+  `seller_id` int(10) DEFAULT NULL,
+  `uid` int(10) DEFAULT NULL,
+  `creatTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `nowTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `handleTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `handle_phone` varchar(20) DEFAULT NULL,
+  `remarks` text COMMENT '处理备注',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of repair
+-- ----------------------------
+INSERT INTO `repair` VALUES ('2', '1', '义乌', '1', '18257990958', '联系人', '1', '详情', '', '1', '王欣', '2', '101', '2019-04-24 10:02:46', '2019-04-24 10:50:57', '2019-04-24 10:50:10', '18357991416', '');
+
+-- ----------------------------
+-- Table structure for repair_source
+-- ----------------------------
+DROP TABLE IF EXISTS `repair_source`;
+CREATE TABLE `repair_source` (
+  `source_id` int(2) NOT NULL AUTO_INCREMENT,
+  `source_name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`source_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of repair_source
+-- ----------------------------
+INSERT INTO `repair_source` VALUES ('1', '电话');
+INSERT INTO `repair_source` VALUES ('2', '网上');
+INSERT INTO `repair_source` VALUES ('3', '来访');
+INSERT INTO `repair_source` VALUES ('4', '其他');
+
+-- ----------------------------
+-- Table structure for repair_type
+-- ----------------------------
+DROP TABLE IF EXISTS `repair_type`;
+CREATE TABLE `repair_type` (
+  `type_id` int(2) NOT NULL AUTO_INCREMENT,
+  `type_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of repair_type
+-- ----------------------------
+INSERT INTO `repair_type` VALUES ('1', '报修');
+INSERT INTO `repair_type` VALUES ('2', '报事');
+
+-- ----------------------------
+-- Table structure for repair_urgency
+-- ----------------------------
+DROP TABLE IF EXISTS `repair_urgency`;
+CREATE TABLE `repair_urgency` (
+  `urgency_id` int(2) NOT NULL AUTO_INCREMENT,
+  `urgency_name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`urgency_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of repair_urgency
+-- ----------------------------
+INSERT INTO `repair_urgency` VALUES ('1', '一般');
+INSERT INTO `repair_urgency` VALUES ('2', '紧急');
 
 -- ----------------------------
 -- Table structure for right_base
@@ -442,7 +656,7 @@ CREATE TABLE `service` (
   `uid` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of service
@@ -484,6 +698,7 @@ INSERT INTO `service` VALUES ('36', 'a23', '111222', null, '1', '0', '0', 'sdfd2
 INSERT INTO `service` VALUES ('37', 'a238', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 12:26:18', '3', '2019-04-22 12:26:18', '102');
 INSERT INTO `service` VALUES ('38', 'a7', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 12:30:07', '3', '2019-04-22 12:30:07', '102');
 INSERT INTO `service` VALUES ('39', 'a77', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-22 12:43:11', '3', '2019-04-22 12:43:11', '102');
+INSERT INTO `service` VALUES ('40', 'a8', '111222', null, '1', '0', '0', 'sdfd2', '2019-04-24 08:55:25', '2', '2019-04-24 08:55:25', '100');
 
 -- ----------------------------
 -- Table structure for system_index
@@ -505,7 +720,7 @@ INSERT INTO `system_index` VALUES ('201', '账号资料', '4');
 INSERT INTO `system_index` VALUES ('301', '销售订单', '1');
 INSERT INTO `system_index` VALUES ('501', '商品分类', '13');
 INSERT INTO `system_index` VALUES ('502', '商品属性', '2');
-INSERT INTO `system_index` VALUES ('503', '商品资料', '45');
+INSERT INTO `system_index` VALUES ('503', '商品资料', '68');
 
 -- ----------------------------
 -- Table structure for system_role
@@ -585,8 +800,8 @@ INSERT INTO `user_login` VALUES ('13', 'fk001', '15212351235', '', '7d24a329320e
 INSERT INTO `user_login` VALUES ('14', '15258965126', '15258965126', '', '', '', null, '', '0', '0', null, '', '0', '2019-04-13 09:49:41', '0');
 INSERT INTO `user_login` VALUES ('15', '13967406338', '13967406338', '', '', '', '2019-04-15 12:47:57', '192.168.0.150', '2', '0', null, 'ozCQF5pZAg3kLM4A-LoS-VOdnw5c', '0', '2019-04-15 10:31:28', '0');
 INSERT INTO `user_login` VALUES ('16', '15258965122', '15258965122', '', '', '', '2019-04-15 15:38:59', '127.0.0.1', '1', '0', null, 'ozCQF5unEnM8EztLsG8YZ2NFu4Ng', '0', '2019-04-15 10:36:12', '0');
-INSERT INTO `user_login` VALUES ('100', 'admin', '15258965120', '1793182685@qq.com', '4189c0867f4e3630b68846e97917be11183a705c', 'salt', '2019-04-22 10:37:02', '192.168.0.199', '267', '0', null, '', '0', null, '1');
-INSERT INTO `user_login` VALUES ('101', 'zcy', '18257990958', '18257990958@139.com', '4189c0867f4e3630b68846e97917be11183a705c', 'salt', '2019-04-22 16:14:05', '192.168.0.199', '31', '0', '0000-00-00 00:00:00', '', '0', '0000-00-00 00:00:00', '2');
+INSERT INTO `user_login` VALUES ('100', 'admin', '15258965120', '1793182685@qq.com', '4189c0867f4e3630b68846e97917be11183a705c', 'salt', '2019-04-24 08:47:23', '192.168.0.199', '268', '0', null, '', '0', null, '1');
+INSERT INTO `user_login` VALUES ('101', 'zcy', '18257990958', '18257990958@139.com', '4189c0867f4e3630b68846e97917be11183a705c', 'salt', '2019-04-24 09:32:07', '192.168.0.199', '36', '0', '0000-00-00 00:00:00', '', '0', '0000-00-00 00:00:00', '2');
 INSERT INTO `user_login` VALUES ('102', 'wx', '18357991416', '18357991416@139.com', '4189c0867f4e3630b68846e97917be11183a705c', 'salt', '2019-04-22 13:50:03', '192.168.0.199', '8', '0', null, '', '0', null, '3');
 
 -- ----------------------------

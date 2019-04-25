@@ -174,7 +174,7 @@ final class Services {
                 }
 
                 //验证客户是否有权限访问接口服务
-                var_dump($site_info["token"]);
+//                var_dump($site_info["token"]);
                 if (!$access_module->checkSign($site_info["token"])) {
                     //非法签名
                     $returnData = ServerResponse::response(-8);
