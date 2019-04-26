@@ -9,16 +9,17 @@ use Home\Model\RoleModel;
 use Home\Plugin\Upfile;
 class ServiceController extends CommonController
 {
-    protected function _initialize(){
-        //判断登录
-        if (session('userId') == null){
-            $this->ajaxReturn(array("status" => 0, "info" => "未登录"));
-        }
-    }
+//    protected function _initialize(){
+//        //判断登录
+//        if (session('userId') == null){
+//            $this->ajaxReturn(array("status" => 0, "info" => "未登录"));
+//        }
+//    }
     /**
     列表
      **/
     public function service_list(){
+
         $p = isset($_POST['p'])?$_POST['p']:1;
         $pagesize = I("post.page_size");
         $post_data = I("post.");

@@ -18,6 +18,7 @@ use Kuba\Core\ModuleFactory;
  * @author    思涵 <si812cn@163.com>
  * @version   $Id: V01 2014-12-06 17:05:00Z shoperp $
  */
+define("IS_DEBUG",TRUE);
 final class Services {
 
     private $access_module;

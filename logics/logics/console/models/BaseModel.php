@@ -1452,7 +1452,6 @@ class BaseModel extends Component {
 
         if (!$is_key_data_existed || empty($out_seq_no)) {
             $seq_no = $this->get_seq_no($event, $data_arr, 1);
-
             //只有通过get_seq_no才会调用refer_to
             if (!empty($seq_no)) {
                 $this->refer_to($event, $data_arr, 1, $seq_no, $count);
@@ -1483,6 +1482,8 @@ class BaseModel extends Component {
                 $auto_id = $seq_no;
             }
         }
+        //修改$auto_id
+        $auto_id = $rtn_data;
 
         return $return_data;
     }
