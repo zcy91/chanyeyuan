@@ -13,14 +13,39 @@ use console\models\base\View_BaseProductCommission;
 class InitData_BaseContract extends BaseModel {
 
     private $sellerId;
+
+    public function costAdd($event){
+        $data = &$event->RequestArgs;
+        if (empty($data) || empty($data['type']) ||empty($data['payTime']) ||empty($data['price']) ||empty($data['contract_id'])
+        ) {
+            return parent::go_error($event, -12);
+        }
+        $ownSellerId = $this->sellerId = View_UserLogin::getOperateSellerId($data);
+        if (empty($ownSellerId)) {
+            return parent::go_error($event, -2011);
+        }
+        $event->cost_data=array(
+            "type" =>$data['type'],
+            "remarks"=>!empty($data['remarks'])?$data['remarks']:'',
+            "image"=>!empty($data['image'])?$data['image']:'',
+            "payTime"=>$data['payTime'],
+            "price"=>$data['price'],
+            "contract_id"=>$data['contract_id'],
+            'creatTime'=>date("Y-m-d",time()),
+            'uid'=>$data['uid'],
+            'seller_id'=>$ownSellerId
+        );
+    }
+
     public function contractAdd($event){
         $data = &$event->RequestArgs;
         if (empty($data) || empty($data['contract_sn']) ||empty($data['follow_man']) ||empty($data['tenant']) ||empty($data['industry'])
             ||empty($data['legal_person']) ||empty($data['id_number']) ||empty($data['tenant_contact'])||empty($data['phone'])
-            ||empty($data['startTime']) ||empty($data['endTime'] || empty($data['housing_id']))
+            ||empty($data['startTime']) ||empty($data['endTime']) || empty($data['housing_id'])
         ) {
             return parent::go_error($event, -12);
         }
+
         //检查是否已出租
         $housing_id = $data['housing_id'];
         $model = new View_BaseContract();
@@ -58,6 +83,12 @@ class InitData_BaseContract extends BaseModel {
             'startTime' => $data['startTime'],
             'endTime' => $data['endTime'],
             'warningDay' => !empty($data['warningDay']) ? $data['warningDay'] : 1,
+            'type' => !empty($data['type']) ? $data['type'] : '',
+            'remarks' => !empty($data['remarks']) ? $data['remarks'] : '',
+            'image' => !empty($data['image']) ? $data['image'] : '',
+            'payTime' => !empty($data['payTime']) ? $data['payTime'] : '',
+            'price' => !empty($data['price']) ? $data['price'] : '',
+
         );
 
     }

@@ -11,7 +11,12 @@ class ContractBehavior extends BaseBehavior {
             'console\models\Contract\BaseContract' => 'add',
         );
     }
-
+    public function getModels_CostAdd() {
+        return array(
+            'console\models\Contract\InitData_BaseContract' => 'costAdd',
+            'console\models\Contract\BaseContract' => 'costadd',
+        );
+    }
     public function getModels_ServiceEdit() {
         return array(
             'console\models\Contract\InitData_BaseContract' => 'contractEdit',

@@ -12,6 +12,7 @@ use Home\Plugin\Upfile;
 class BuildingController extends CommonController
 {
     protected function _initialize(){
+        parent::_initialize();
         //判断登录
         if (session('userId') == null){
             $this->ajaxReturn(array("status" => 0, "info" => "未登录"));

@@ -32,9 +32,11 @@ class View_BaseContract extends BaseModel {
     public function getAllProduct($event, $ispage, $condition, $params, $limit) {
         $sql = "SELECT " . ($ispage ? " sql_calc_found_rows " : "") . "
                      bp.* , hg.room_num,hg.area,bg.name
-                FROM contract AS bp left join housing AS hg ON bp.housing_id=hg.id 
+                FROM contract AS bp
+                left join housing AS hg ON bp.housing_id=hg.id 
                  left join building AS bg ON bp.housing_id=bg.id
-                WHERE bp.seller_id = :sellerId
+               
+                WHERE bp.seller_id = :sellerId  AND bp.is_delete=0 
                       $condition
                 ORDER BY bp.creatTime";
         $result = $this->query_SQL($sql, $event, $limit, $params);
@@ -53,6 +55,12 @@ class View_BaseContract extends BaseModel {
         }else{
             return false;
         }
+    }
+
+    public function get_cost($event,$contract_id){
+        $sql = "SELECT ct.* FROM cost as ct  where ct.contract_id = $contract_id and is_delete = 0";
+        $result = $this->query_SQL($sql, $event, '', $params=[]);
+        return $result;
     }
 
 

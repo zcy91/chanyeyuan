@@ -43,6 +43,11 @@ class List_BaseContract extends BaseModel {
         }
         $View_BaseProduct = new View_BaseContract();
         $dataAttr = $View_BaseProduct->getAllProduct($event, $ispage, $condition, $params, $limit);
+        foreach ($dataAttr as $k=>$v){
+            $contract_id = $v['id'];
+            $res = $View_BaseProduct->get_cost($event,$contract_id);
+            $dataAttr[$k]['cost'] = $res;
+        }
         unset($View_BaseProduct);
 
         if (empty($dataAttr)) {

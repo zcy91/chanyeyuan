@@ -128,6 +128,16 @@ class BaseContract extends BaseModel {
 
         }
     }
+
+    public function costadd($event){
+        $data_arr =$event->cost_data;
+        if (empty($data_arr)) {
+            return 1;
+        }//参数为空数组，则直接返回成功，不做处理
+        $rtn_data = $this->insert('cost', $data_arr, $event);
+        $event->Postback($rtn_data, false, 'cost');
+    }
+
     public function add($event) {
 
         $data_arr = $this->get_model_data($event);
@@ -171,7 +181,21 @@ class BaseContract extends BaseModel {
         $res = $this->update_sql($sql, $event, $params=[]);
 //        var_dump($res); 1,0
         //修改building表合同数
-       Building::updateAllCounters(['contract_num'=>1],["id"=>$data_arr['building_id']]);
+        Building::updateAllCounters(['contract_num'=>1],["id"=>$data_arr['building_id']]);
+        //cost表
+        if(!empty($data_arr['price'])){
+            $data_list['price'] = $data_arr['price'];
+            $data_list['type'] = $data_arr['type'];
+            $data_list['contract_id'] = $contract_id;
+            $data_list['remarks'] = $data_arr['remarks'];
+            $data_list['image'] = $data_arr['image'];
+            $data_list['payTime'] = $data_arr['payTime'];
+            $data_list['uid'] = $data_arr['uid'];
+            $data_list['creatTime'] = $data_arr['creatTime'];
+            $data_list['seller_id'] = $data_arr['seller_id'];
+            $rtn_data = $this->insert('cost', $data_list, $event);
+
+        }
         $event->Postback($return_data, false, $this->get_table_name());
     }
 
@@ -219,7 +243,7 @@ class BaseContract extends BaseModel {
             $building_id = $arr[0]['building_id'];
             $contract_id = $data_arr['id'];
             $sql = " UPDATE  housing SET endTime='',is_use=0,warningDay=1,contract_id='' where contract_id=$contract_id ";
-            var_dump( $sql);
+
             $res = $this->update_sql($sql, $event, $params=[]);
             if($res){
                 Building::updateAllCounters(['contract_num'=>-1],['id'=>$building_id]);

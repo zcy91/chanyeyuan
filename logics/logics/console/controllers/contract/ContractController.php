@@ -19,7 +19,13 @@ class ContractController extends BaseController {
 
     public function actionContractadd($data) {
         $this->event->set($data, BaseBehavior::ADD_ACTION);
-        parent::add($this->getModels_ServiceAdd(), $this->event);
+
+        if(!empty($data['contract_id'])){
+            parent::add($this->getModels_CostAdd(), $this->event);
+        }else{
+            parent::add($this->getModels_ServiceAdd(), $this->event);
+        }
+
         $this->event->Display();
         return 0;
     }

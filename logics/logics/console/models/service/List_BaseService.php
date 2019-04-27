@@ -36,17 +36,24 @@ class List_BaseService extends BaseModel {
         //名称
         if (isset($data["name"]) && !empty($data["name"])) {
             $condition .= " AND bp.name LIKE :name";
-            $params[":names"] = "%" . $data["name"] . "%";
+            $params[":name"] = "%" . $data["name"] . "%";
         }
 
         //是否展示
-        if (isset($data["display"]) && $data["display"]!= "") {
+        if (!is_null($data["is_show"])) {
+
             $condition .= " AND bp.is_show = :is_show";
             $params[":is_show"] = $data["is_show"];
         }
+        if (isset($data["id"]) && $data["id"]!= "") {
+            $condition .= " AND bp.id = :id";
+            $params[":id"] = $data["id"];
+        }
 
         $View_BaseProduct = new View_BaseProduct();
+
         $dataAttr = $View_BaseProduct->getAllProduct($event, $ispage, $condition, $params, $limit);
+
         unset($View_BaseProduct);
 
         if (empty($dataAttr)) {

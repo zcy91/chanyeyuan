@@ -9,12 +9,13 @@ use Home\Model\RoleModel;
 use Home\Plugin\Upfile;
 class ServiceController extends CommonController
 {
-//    protected function _initialize(){
-//        //判断登录
-//        if (session('userId') == null){
-//            $this->ajaxReturn(array("status" => 0, "info" => "未登录"));
-//        }
-//    }
+    protected function _initialize(){
+        parent::_initialize();
+        //判断登录
+        if (session('userId') == null){
+            $this->ajaxReturn(array("status" => 0, "info" => "未登录"));
+        }
+    }
     /**
     列表
      **/
@@ -44,12 +45,16 @@ class ServiceController extends CommonController
         if(isset($post_data['name']) && !empty($post_data['name'])){
             $params['name'] = $post_data['name'];
         }
-        if(isset($post_data['is_show'])){
+        if(($post_data['is_show'])|| $post_data['is_show'] ==0){
             $params['is_show'] = $post_data['is_show'];
+        }
+        if(isset($post_data['id'])){
+            $params['id'] = $post_data['id'];
         }
         if(isset($post_data['time_limit'])){
             $params['time_limit'] = $post_data['time_limit'];
         }
+        //var_dump($params);
         $apiData = $service->fetchs($params);
         $returnData = array(
             "totalItem" => $apiData['returnData']['recordcount'],

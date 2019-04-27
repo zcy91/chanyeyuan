@@ -14,6 +14,7 @@ use Home\Plugin\Upfile;
 class ContractController extends CommonController
 {
     protected function _initialize(){
+        parent::_initialize();
         //判断登录
         if (session('userId') == null){
             $this->ajaxReturn(array("status" => 0, "info" => "未登录"));
@@ -82,7 +83,12 @@ class ContractController extends CommonController
             }
             $post_data['ownSellerId'] = $_POST['seller_id'];
         }
-
+        //处理图片上传
+        if ($_FILES['file']['name']) {
+            $file = new Upfile($_FILES['file']);
+//            p($_FILES['file']);die;
+            $post_data['image'] = $file->get_url();
+        }
         $id = I("id", 0, intval);
         $contract = new ContractModel();
         if ($id == 0) {
@@ -187,6 +193,73 @@ class ContractController extends CommonController
         }else{
             $this->ajaxReturn(array("status"=>0,"data"=>[],"info"=>'无数据'));
         }
+    }
+    //费用记录修改
+    public function cost_edit(){
+        $data = I('post.');
+        if(empty($data['cost_id'])){
+            $this->ajaxReturn(array("status" => 0, "info" => "参数异常"));
+        }
+        $cost_id = $data['cost_id'];
+        unset($data['cost_id']);
+        $res = M('cost')->where(['cost_id'=>$cost_id])->save($data);
+        if($res){
+            $this->ajaxReturn(array("status"=>1,"data"=>[],"info"=>'成功'));
+        }else{
+            $this->ajaxReturn(array("status"=>0,"data"=>[],"info"=>'失败'));
+        }
+    }
+
+    public function cost_delete(){
+        $data = I('post.');
+        if(empty($data['cost_id'])){
+            $this->ajaxReturn(array("status" => 0, "info" => "参数异常"));
+        }
+        $cost_id = $data['cost_id'];
+        unset($data['cost_id']);
+        $res = M('cost')->where("cost_id = $cost_id")->save(['is_delete'=>1]);
+        if($res){
+            $this->ajaxReturn(array("status"=>1,"data"=>[],"info"=>'成功'));
+        }else{
+            $this->ajaxReturn(array("status"=>0,"data"=>[],"info"=>'失败'));
+        }
+    }
+
+    public function cost_add(){
+        $post_data = $_POST;
+        if (empty($post_data ||empty($post_data['contract_id']) )) {
+            $this->ajaxReturn(array("status" => 0, "info" => "参数异常"));
+        }
+        $post_data['uid'] = session('userId');
+        //超级管理员
+        if($post_data['uid'] == 100){
+            if(empty($_POST['seller_id'])){
+                $this->ajaxReturn(array("status" => 0, "info" => "请选择产业园ID"));
+            }
+            $post_data['ownSellerId'] = $_POST['seller_id'];
+        }
+        //处理图片上传
+        if ($_FILES['file']['name']) {
+            $file = new Upfile($_FILES['file']);
+//            p($_FILES['file']);die;
+            $post_data['image'] = $file->get_url();
+        }
+        $id = I("id", 0, intval);
+        $contract = new ContractModel();
+        if ($id == 0) {
+            $apiData = $contract->add($post_data);
+        } else {
+//            $apiData = $contract->save($post_data);
+        }
+
+        $info = "";
+        if ($apiData['returnState'] != 1) {
+            $info = get_error_info($apiData['returnState']);
+        } else {
+            $id = $apiData['returnData']['contract']['id'];
+        }
+
+        $this->ajaxReturn(array("status" => $apiData['returnState'], "info" => $info, "id" => $id), json);
     }
 
 }
