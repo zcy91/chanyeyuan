@@ -51,5 +51,19 @@ class SysController extends BaseController {
         $this->event->Display();
         return 0;
     }
+    public function actionSysbanneradd($data) {
+        $this->behavior->changeDB(\Yii::$app->db);
+        $this->event->set($data, BaseBehavior::FETCH_ALL_ACTION);
+        parent::fetch_all($this->getModels_SysBannerAdd(), $this->event, false);
+        $this->event->Display();
+        return 0;
+    }
+    public function actionSysbanneredit($data) {
+        $this->behavior->changeDB(\Yii::$app->db);
+        $this->event->set($data, BaseBehavior::FETCH_ALL_ACTION);
+        parent::fetch_all($this->getModels_SysBannerEdit(), $this->event, false);
+        $this->event->Display();
+        return 0;
+    }
 
 }

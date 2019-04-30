@@ -2,9 +2,10 @@
 namespace console\models\system;
 
 use console\models\BaseModel;
+use console\models\user\View_UserLogin;
 
 class InitData_Sys extends BaseModel {
-    
+    private $Id;
     public function logAdd($event){
         
         $data = &$event->RequestArgs;
@@ -42,6 +43,28 @@ class InitData_Sys extends BaseModel {
             "message" => $data["message"],
             "sys_trace" => $data["sys_trace"]        
         );        
-    }    
+    }
+
+    public function bannerAdd($event){
+        $data = &$event->RequestArgs;
+        if (empty($data) || !isset($data["banner"]) ) {
+            return parent::go_error($event, -12);
+        }
+        $ownSellerId = $this->Id = View_UserLogin::getOperateSellerId($data);
+        if (empty($ownSellerId)) {
+            return parent::go_error($event, -2011);
+        }
+        $nowTime = date('Y-m-d H:i:s');
+        $event->system_banner_data = array(
+            "banner" => $data["banner"],
+            "url" => $data["url"],
+            "seller_id" => $ownSellerId,
+            "creatTime" => $nowTime,
+            "uid" => $data['uid'],
+            'title'=>$data['title'],
+            'sort'=>$data['sort']
+        );
+//        var_dump($event->system_banner_data);
+    }
 
 }

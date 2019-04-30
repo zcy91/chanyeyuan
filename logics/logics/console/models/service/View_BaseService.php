@@ -20,6 +20,22 @@ class View_BaseService extends BaseModel {
         }
         return $result;
     }
+    public function getOneBanner($event, $productId, $sellerId){
+        $sql = "SELECT *
+                FROM service_banner AS bp
+                WHERE bp.seller_id = :sellerId AND bp.id = :Id ";
+        $params = array(
+            ":sellerId" => $sellerId,
+            ":Id" => $productId
+        );
+        $result = $this->query_SQL($sql, $event, null, $params);
+
+        if (!empty($result)) {
+            $result = $result[0];
+        }
+        return $result;
+    }
+
     public function checkName($id=0,$name,$event,$table_name='service'){
         $condition = "name = :name AND id != :id";
         $args = array(

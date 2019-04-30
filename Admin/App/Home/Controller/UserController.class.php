@@ -93,6 +93,7 @@ class UserController extends CommonController {
             $user_info = $apiData['returnData'];
             
             session("userId",$user_info['userId']);
+            session("seller_id",$user_info['seller_id']);
             session("ADMIN_ID",$user_info['userId']);
             session("currentRoleId",$user_info['currentRoleId']);
 //           var_dump($sellerInfo);

@@ -7,6 +7,7 @@ class BusinessServiceEvent extends BaseEvent {
 
     public $Id;
     public $business_service_data;
+    public $business_service_banner_data;
 
     public function  set_business_service_id($seq_no){
         $this->Id = $seq_no;

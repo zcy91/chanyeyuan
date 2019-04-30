@@ -24,7 +24,8 @@ class BaseService extends BaseModel {
             "information",
             "creatTime",
             "nowTime",
-            'uid'
+            'uid',
+            'is_hot'
         );
 
         $info_arr = parent::key_values_intersect($v, $subset, $default_arr);
@@ -54,7 +55,7 @@ class BaseService extends BaseModel {
             $event->service_data["icon"] = $newData["icon"];
         }
 
-        if (isset($newData["is_show"]) && !empty($newData["is_show"]) && $newData["is_show"] != $oldData["is_show"]) {
+        if (isset($newData["is_show"])  && $newData["is_show"] != $oldData["is_show"]) {
             $event->service_data["is_show"] = $newData["is_show"];
         }
 
@@ -68,10 +69,30 @@ class BaseService extends BaseModel {
         if (isset($newData["information"]) && !empty($newData["information"]) && $newData["information"] != $oldData["information"]) {
             $event->service_data["information"] = $newData["information"];
         }
+        if (isset($newData["is_hot"]) && !empty($newData["is_hot"]) && $newData["is_hot"] != $oldData["is_hot"]) {
+            $event->service_data["is_hot"] = $newData["is_hot"];
+        }
 
         if (!empty($event->service_data)) {
             $event->service_data["id"] = $id;
             $event->service_data["nowTime"] = $nowTime;
+        }
+    }
+
+    public static function setEditBannerData($event, $id, $nowTime, $newData, $oldData){
+
+        if (isset($newData["url"]) && !empty($newData["url"]) && $newData["url"] != $oldData["url"]) {
+            $event->service_banner_data["url"] = $newData["url"];
+        }
+
+        if (isset($newData["banner"]) && !empty($newData["banner"]) && $newData["banner"] != $oldData["banner"]) {
+            $event->service_banner_data["banner"] = $newData["banner"];
+        }
+
+
+        if (!empty($event->service_banner_data)) {
+            $event->service_banner_data["id"] = $id;
+            $event->service_banner_data["nowTime"] = $nowTime;
         }
     }
 
@@ -82,6 +103,22 @@ class BaseService extends BaseModel {
         if (!empty($data)) {
 
             $sql = "DELETE FROM service WHERE seller_id = :sellerId AND id = :Id";
+            $params = array(
+                ":sellerId" => $data["sellerId"],
+                ":Id" => $data["id"],
+            );
+
+            $this->update_sql($sql, $event, $params);
+
+        }
+    }
+    public function bannerdelete($event) {
+
+        $data = $event->service_banner_data;
+
+        if (!empty($data)) {
+
+            $sql = "DELETE FROM service_banner WHERE seller_id = :sellerId AND id = :Id";
             $params = array(
                 ":sellerId" => $data["sellerId"],
                 ":Id" => $data["id"],

@@ -40,7 +40,7 @@ class List_BaseService extends BaseModel {
         }
 
         //是否展示
-        if (!is_null($data["is_show"])) {
+        if (isset($data["is_show"]) && $data['is_show']!='' ) {
 
             $condition .= " AND bp.is_show = :is_show";
             $params[":is_show"] = $data["is_show"];
@@ -51,7 +51,6 @@ class List_BaseService extends BaseModel {
         }
 
         $View_BaseProduct = new View_BaseProduct();
-
         $dataAttr = $View_BaseProduct->getAllProduct($event, $ispage, $condition, $params, $limit);
 
         unset($View_BaseProduct);

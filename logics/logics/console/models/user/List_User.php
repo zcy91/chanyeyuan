@@ -57,6 +57,7 @@ class List_User extends BaseModel {
         );
         $result = $this->query_SQL($sql, $event, null, $params);
         $_SERVER['seller_info']['seller_id'] = $result[0]['seller_id'];
+
         $isOpenId = 1;
         if (isset($data["openId"])) {
             if (!is_string($data["openId"]) || empty($data["openId"])) {
@@ -109,7 +110,8 @@ class List_User extends BaseModel {
             "currentRoleName" => $Roles[0]["roleNames"],
             "dnames"   => $User['dnames'],
             "images"   => $User['pic'],
-            "mobile"   => $User['mobile']
+            "mobile"   => $User['mobile'],
+            'seller_id'=>$_SERVER['seller_info']['seller_id']
         );
         
         if ($roleId == 1) {

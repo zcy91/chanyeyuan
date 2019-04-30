@@ -56,6 +56,9 @@ class BusinessServiceController extends CommonController
         if(isset($post_data['name']) && !empty($post_data['name'])){
             $params['name'] = $post_data['name'];
         }
+        if(isset($post_data['parent_id']) && !empty($post_data['parent_id'])){
+            $params['parent_id'] = $post_data['naparent_idme'];
+        }
         if(isset($post_data['is_show'])){
             $params['is_show'] = $post_data['is_show'];
         }
@@ -83,8 +86,8 @@ class BusinessServiceController extends CommonController
             $this->ajaxReturn(array("status" => 0, "info" => "参数异常"));
         }
         //处理图片上传
-        if ($_FILES['file']['name']) {
-            $file = new Upfile($_FILES['file']);
+        if ($_FILES['image']['name']) {
+            $file = new Upfile($_FILES['image']);
             $post_data['image'] = $file->get_url();
         }
         $post_data['uid'] = session('userId');
@@ -250,6 +253,89 @@ class BusinessServiceController extends CommonController
             $this->ajaxReturn(array("status"=>1,"data"=>$catrgory,"info"=>'获取成功'));
         }else{
             $this->ajaxReturn(array("status"=>0,"data"=>[],"info"=>'无数据'));
+        }
+    }
+    public function add_banner(){
+        if ($_FILES['banner']) {
+            $file = new Upfile($_FILES['banner']);
+            $data = $file->get_url();
+        }
+        if($data){
+            $this->ajaxReturn(array("status" => 1, "info" => "成功",'data'=>$data));
+        }else{
+            $this->ajaxReturn(array("status" => 0, "info" => "失败",'data'=>[]));
+        }
+    }
+    //添加，编辑banner
+
+    public function add_save_banner(){
+        $seller_id = session('seller_id');
+        if(empty($seller_id)){
+            $this->ajaxReturn(array("status" => 0, "info" => "登录异常"));
+        }
+        $post_data = $_POST;
+        if (empty($post_data)) {
+            $this->ajaxReturn(array("status" => 0, "info" => "参数异常"));
+        }
+
+        $uid = session('userId');
+        //超级管理员
+        if($uid == 100){
+            $ownSellerId = $_POST['seller_id'];
+            $seller_id = $ownSellerId;
+        }else{
+            $ownSellerId = '';
+        }
+        foreach ((array)$post_data as $k=>$v){
+            $data[$k]['url'] = $v['url'];
+            $data[$k]['banner'] = $v['banner'];
+            $data[$k]['uid'] = $uid;
+            $data[$k]['title'] = $v['title'];
+            $data[$k]['sort'] = $v['sort'];
+            if($ownSellerId){
+                $data[$k]['ownSellerId'] = $_POST['seller_id'];
+            }
+        }
+
+        $Service = new BusinessServiceModel();
+            foreach ($data as $key=>$val){
+                $apiData = $Service->banneradd($val);
+            }
+
+        $info = "";
+        if ($apiData['returnState'] != 1) {
+            $info = get_error_info($apiData['returnState']);
+        } else {
+            $id = $apiData['returnData']['base_service']['id'];
+        }
+
+        $this->ajaxReturn(array("status" => $apiData['returnState'], "info" => $info, "id" => $id), json);
+    }
+
+    public function banner_delete(){
+        $post_data = I("post.");
+        if(!isset($post_data['id']) || $post_data['id'] == "" ||  $post_data['id'] == 0){
+            $this->ajaxReturn(array("status"=>0,"info"=>"参数异常"));
+        }
+
+        $Service = new BusinessServiceModel();
+        $apiData = $Service->bannerdelete($post_data);
+        $info = "";
+        if($apiData['returnState'] != 1){
+            $info = get_error_info($apiData['returnState']);
+        }
+        $this->ajaxReturn(array("status"=>$apiData['returnState'],"info"=>$info),json);
+    }
+    public function banner_list(){
+        $seller_id = session('seller_id');
+        if(empty($seller_id)){
+            $this->ajaxReturn(array("status" => 0, "info" => "登录异常"));
+        }
+        $data = M('business_service_banner')->where(['seller_id'=>$seller_id])->order("sort DESC")->select();
+        if($data){
+            $this->ajaxReturn(array("status" => 1, "info" => "成功",'data'=>$data));
+        }else{
+            $this->ajaxReturn(array("status" => 0, "info" => "无数据",'data'=>[]));
         }
     }
 

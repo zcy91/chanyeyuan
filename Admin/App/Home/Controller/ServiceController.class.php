@@ -45,16 +45,17 @@ class ServiceController extends CommonController
         if(isset($post_data['name']) && !empty($post_data['name'])){
             $params['name'] = $post_data['name'];
         }
-        if(($post_data['is_show'])|| $post_data['is_show'] ==0){
+
+        if(!empty($post_data['is_show']) && isset($post_data['is_show'])){
             $params['is_show'] = $post_data['is_show'];
         }
-        if(isset($post_data['id'])){
+        if(isset($post_data['id']) && !empty($post_data['id'])){
             $params['id'] = $post_data['id'];
         }
-        if(isset($post_data['time_limit'])){
+        if(isset($post_data['time_limit']) && !empty($post_data['time_limit'])){
             $params['time_limit'] = $post_data['time_limit'];
         }
-        //var_dump($params);
+
         $apiData = $service->fetchs($params);
         $returnData = array(
             "totalItem" => $apiData['returnData']['recordcount'],
@@ -70,18 +71,14 @@ class ServiceController extends CommonController
     //添加、编辑
     public function add_save()
     {
-//        var_dump($_SESSION);
-//        $memcache_obj = memcache_connect('192.168.0.135', 11211);
-//        memcache_flush($memcache_obj);
+
         $post_data = $_POST;
         if (empty($post_data)) {
             $this->ajaxReturn(array("status" => 0, "info" => "参数异常"));
         }
-        //var_dump($_SERVER);
         //处理图片上传
-        if ($_FILES['file']['name']) {
-            $file = new Upfile($_FILES['file']);
-//            p($_FILES['file']);die;
+        if ($_FILES['icon']['name']) {
+            $file = new Upfile($_FILES['icon']);
             $post_data['icon'] = $file->get_url();
         }
         $post_data['uid'] = session('userId');
@@ -91,8 +88,6 @@ class ServiceController extends CommonController
         }
         $service_id = I("id", 0, intval);
         $Service = new ServiceModel();
-//        var_dump($post_data);echo 99;
-//        var_dump($_SERVER);
         if ($service_id == 0) {
            //var_dump($sellerInfo);
             $apiData = $Service->add($post_data);
@@ -145,5 +140,109 @@ class ServiceController extends CommonController
         }
 
         $this->ajaxReturn(array("status"=>$apiData['returnState'],"info"=>$info),json);
+    }
+
+    public function add_banner(){
+        if ($_FILES['banner']) {
+            $file = new Upfile($_FILES['banner']);
+            $data = $file->get_url();
+        }
+        if($data){
+            $this->ajaxReturn(array("status" => 1, "info" => "成功",'data'=>$data));
+        }else{
+            $this->ajaxReturn(array("status" => 0, "info" => "失败",'data'=>[]));
+        }
+
+    }
+    //添加，编辑banner
+
+    public function add_save_banner(){
+        $seller_id = session('seller_id');
+        if(empty($seller_id)){
+            $this->ajaxReturn(array("status" => 0, "info" => "登录异常"));
+        }
+        $post_data = $_POST;
+        if (empty($post_data)) {
+            $this->ajaxReturn(array("status" => 0, "info" => "参数异常"));
+        }
+        $uid = session('userId');
+        //超级管理员
+        if($uid == 100){
+            $ownSellerId = $_POST['seller_id'];
+            $seller_id = $ownSellerId;
+        }else{
+            $ownSellerId = '';
+        }
+
+        foreach ((array)$post_data as $k=>$v){
+            $data[$k]['url'] = $v['url'];
+            $data[$k]['banner'] = $v['banner'];
+            $data[$k]['sort'] = $v['sort'];
+            $data[$k]['title'] = $v['title'];
+            $data[$k]['uid'] = $uid;
+            if($ownSellerId){
+                $data[$k]['ownSellerId'] = $_POST['seller_id'];
+            }
+        }
+
+//        $service_id = I("id", 0, intval);
+        $Service = new ServiceModel();
+//        if ($service_id == 0) {
+        if(!empty($data)){
+            M('service_banner')->where(['seller_id'=>$seller_id])->delete();
+        }
+            foreach ($data as $key=>$val){
+
+                $apiData = $Service->banneradd($val);
+            }
+
+//        } else {
+//            $apiData = $Service->bannersave($post_data);
+//        }
+
+        $info = "";
+        if ($apiData['returnState'] != 1) {
+            $info = get_error_info($apiData['returnState']);
+        } else {
+            $id = $apiData['returnData']['base_service']['id'];
+        }
+
+        $this->ajaxReturn(array("status" => $apiData['returnState'], "info" => $info, "id" => $id), json);
+    }
+    function object2array($object) {
+        if (is_object($object)) {
+            foreach ($object as $key => $value) {
+                $array[$key] = $value;
+            }
+        }
+        else {
+            $array = $object;
+        }
+        return $array;
+    }
+    public function banner_delete(){
+        $post_data = I("post.");
+        if(!isset($post_data['id']) || $post_data['id'] == "" ||  $post_data['id'] == 0){
+            $this->ajaxReturn(array("status"=>0,"info"=>"参数异常"));
+        }
+
+        $Service = new ServiceModel();
+        $apiData = $Service->bannerdelete($post_data);
+        $info = "";
+        if($apiData['returnState'] != 1){
+            $info = get_error_info($apiData['returnState']);
+        }
+        $this->ajaxReturn(array("status"=>$apiData['returnState'],"info"=>$info),json);
+    }
+    public function banner_list(){
+        $site_url = $_SESSION['site_url'];
+        $seller_id = M('user_shop') ->where(['shop_url_self'=>$site_url])->field('seller_id')->find();
+        $seller_id = $seller_id['seller_id'];
+        $data = M('service_banner')->where(['seller_id'=>$seller_id])->order("sort DESC")->select();
+        if($data){
+            $this->ajaxReturn(array("status" => 1, "info" => "成功",'data'=>$data));
+        }else{
+            $this->ajaxReturn(array("status" => 0, "info" => "无数据",'data'=>[]));
+        }
     }
 }

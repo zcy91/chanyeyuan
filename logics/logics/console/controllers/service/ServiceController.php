@@ -22,6 +22,19 @@ class ServiceController extends BaseController {
         return 0;
     }
 
+    public function actionServicebanneradd($data) {
+        $this->event->set($data, BaseBehavior::ADD_ACTION);
+        parent::add($this->getModels_ServiceBannerAdd(), $this->event);
+        $this->event->Display();
+        return 0;
+    }
+    public function actionServicebanneredit($data) {
+        $this->event->set($data, BaseBehavior::ADD_ACTION);
+        parent::add($this->getModels_ServiceBannerEdit(), $this->event);
+        $this->event->Display();
+        return 0;
+    }
+
     public function actionServiceedit($data) {
         $this->event->set($data, BaseBehavior::ADD_ACTION);
         parent::modify($this->getModels_ServiceEdit(), $this->event);
@@ -39,6 +52,12 @@ class ServiceController extends BaseController {
     public function actionServicedelete($data) {
         $this->event->set($data, BaseBehavior::ADD_ACTION);
         parent::delete($this->getModels_ServiceDelete(), $this->event);
+        $this->event->Display();
+        return 0;
+    }
+    public function actionServicebannerdelete($data) {
+        $this->event->set($data, BaseBehavior::ADD_ACTION);
+        parent::delete($this->getModels_ServiceBannerDelete(), $this->event);
         $this->event->Display();
         return 0;
     }

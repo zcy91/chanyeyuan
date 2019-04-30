@@ -9,9 +9,13 @@ class ServiceBehavior extends BaseBehavior {
         return array(
             'console\models\service\InitData_BaseService' => 'serviceAdd',
             'console\models\service\BaseService' => 'add',
-//            'console\models\base\BaseProductAttr' => 'add',
-//            'console\models\base\BaseProductAttrItem' => 'add',
-//            'console\models\base\BaseProductOperate' => 'add',
+        );
+    }
+
+    public function getModels_ServiceBannerAdd() {
+        return array(
+            'console\models\service\InitData_BaseService' => 'serviceBannerAdd',
+            'console\models\service\BaseServiceBanner' => 'add',
         );
     }
     
@@ -19,12 +23,16 @@ class ServiceBehavior extends BaseBehavior {
         return array(
             'console\models\service\InitData_BaseService' => 'serviceEdit',
             'console\models\service\BaseService' => 'modify',
-//            'console\models\base\BaseProductAttr' => 'deleteAdd',
-//            'console\models\base\BaseProductAttrItem' => 'deleteAdd',
-//            'console\models\base\BaseProductOperate' => 'add',
         );
-    }   
-            
+    }
+
+    public function getModels_ServiceBannerEdit() {
+        return array(
+            'console\models\service\InitData_BaseService' => 'serviceBannerEdit',
+            'console\models\service\BaseServiceBanner' => 'modify',
+        );
+    }
+
     public function getModels_ServiceDisplay() {
         return array(
             'console\models\base\InitData_BaseProduct' => 'serviceDisplay',
@@ -37,11 +45,15 @@ class ServiceBehavior extends BaseBehavior {
         return array(
             'console\models\service\InitData_BaseService' => 'serviceDelete',
             'console\models\service\BaseService' => 'delete',
-//            'console\models\base\BaseProductAttr' => 'delete',
-//            'console\models\base\BaseProductAttrItem' => 'delete',
-//            'console\models\base\BaseProductCommissionQuot' => 'delete',
-//            'console\models\base\BaseProductCommissionPercentage' => 'delete',
-//            'console\models\base\BaseProductOperate' => 'add',
+//
+        );
+    }
+
+    public function getModels_ServiceBannerDelete() {
+        return array(
+            'console\models\service\InitData_BaseService' => 'serviceBannerDelete',
+            'console\models\service\BaseService' => 'bannerdelete',
+//
         );
     }
     

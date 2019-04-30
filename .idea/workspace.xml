@@ -2,22 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22fd88f0-4086-4d99-9ce7-dcaaf5086a7e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Admin/App/Home/Controller/CustomerController.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/App/Home/Controller/IndexController.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/App/Home/Controller/SystemController.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/App/Home/View/index/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logics/logics/console/models/businessService/BaseBusinessServiceBanner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logics/logics/console/models/service/BaseServiceBanner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logics/logics/console/models/system/BaseBanner.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/App/Home/Controller/BuildingController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Home/Controller/BuildingController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/App/Home/Controller/BusinessServiceController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Home/Controller/BusinessServiceController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/App/Home/Controller/ContractController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Home/Controller/ContractController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/App/Home/Controller/HousingController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Home/Controller/HousingController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/App/Home/Controller/RepairController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Home/Controller/RepairController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/App/Home/Controller/ServiceController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Home/Controller/ServiceController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/App/Runtime/Logs/Home/19_04_26.log" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Runtime/Logs/Home/19_04_26.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logics/logics/console/behaviors/contract/ContractBehavior.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/behaviors/contract/ContractBehavior.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logics/logics/console/controllers/contract/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/controllers/contract/ContractController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logics/logics/console/events/contract/ContractEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/events/contract/ContractEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/contract/BaseContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/contract/BaseContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/contract/InitData_BaseContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/contract/InitData_BaseContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/contract/List_BaseContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/contract/List_BaseContract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/contract/View_BaseContract.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/contract/View_BaseContract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/App/Home/Controller/UserController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Home/Controller/UserController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/App/Home/Model/BusinessServiceModel.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Home/Model/BusinessServiceModel.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/App/Home/Model/ServiceModel.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Home/Model/ServiceModel.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/App/Home/View/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Home/View/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/App/Runtime/Logs/Home/19_04_27.log" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/App/Runtime/Logs/Home/19_04_27.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/behaviors/businessService/BusinessServiceBehavior.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/behaviors/businessService/BusinessServiceBehavior.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/behaviors/service/ServiceBehavior.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/behaviors/service/ServiceBehavior.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/behaviors/system/SysBehavior.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/behaviors/system/SysBehavior.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/controllers/businessservice/BusinessServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/controllers/businessservice/BusinessServiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/controllers/service/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/controllers/service/ServiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/controllers/system/SysController.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/controllers/system/SysController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/events/business_service/BusinessServiceEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/events/business_service/BusinessServiceEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/events/service/ServiceEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/events/service/ServiceEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/events/system/SysEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/events/system/SysEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/base/View_BaseProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/base/View_BaseProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/businessService/BaseBusinessService.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/businessService/BaseBusinessService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/businessService/InitData_BaseBusiness.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/businessService/InitData_BaseBusiness.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/businessService/View_BaseBusinessService.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/businessService/View_BaseBusinessService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/BaseBusinessServiceCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/BaseBusinessServiceCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/InitData_BaseBusinessCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/InitData_BaseBusinessCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/repair/ServiceController.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/service/BaseService.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/service/BaseService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/service/InitData_BaseService.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/service/InitData_BaseService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logics/logics/console/models/service/List_BaseService.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/service/List_BaseService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/service/View_BaseService.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/service/View_BaseService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/system/InitData_Sys.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/system/InitData_Sys.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/models/user/List_User.php" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/models/user/List_User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logics/logics/console/runtime/cache/23/2312bb20320d03a324b7461de7e12af3.bin" beforeDir="false" afterPath="$PROJECT_DIR$/logics/logics/console/runtime/cache/23/2312bb20320d03a324b7461de7e12af3.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,75 +53,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/contract/ContractController.php">
+      <file leaf-file-name="BusinessServiceController.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/BusinessServiceController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="396">
+              <caret line="89" column="45" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
               <folding>
-                <element signature="e#47#95#0#PHP" expanded="true" />
+                <element signature="e#129#173#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContractEvent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logics/logics/console/events/contract/ContractEvent.php">
+      <file leaf-file-name="BusinessServiceCategoryModel.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/App/Home/Model/BusinessServiceCategoryModel.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="704">
+              <caret line="32" column="85" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BusinessServiceCategoryController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/businessservicecategory/BusinessServiceCategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="View_BaseContract.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logics/logics/console/models/contract/View_BaseContract.php">
+      <file leaf-file-name="BusinessServiceCategoryBehavior.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logics/logics/console/behaviors/businessServiceCategory/BusinessServiceCategoryBehavior.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="61" column="50" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
+            <state relative-caret-position="154">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InitData_BaseContract.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logics/logics/console/models/contract/InitData_BaseContract.php">
+      <file leaf-file-name="InitData_BaseBusiness.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessService/InitData_BaseBusiness.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+            <state relative-caret-position="484">
+              <caret line="47" column="120" selection-start-line="47" selection-start-column="120" selection-end-line="47" selection-end-column="120" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseContract.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/logics/logics/console/models/contract/BaseContract.php">
+      <file leaf-file-name="InitData_BaseBusinessCategory.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/InitData_BaseBusinessCategory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3692">
-              <caret line="198" column="37" selection-start-line="198" selection-start-column="25" selection-end-line="198" selection-end-column="37" />
-              <folding>
-                <element signature="e#42#71#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="484">
+              <caret line="35" column="111" selection-start-line="35" selection-start-column="111" selection-end-line="35" selection-end-column="111" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="List_BaseService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logics/logics/console/models/service/List_BaseService.php">
+      <file leaf-file-name="BaseBusinessServiceCategory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/BaseBusinessServiceCategory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="682">
+              <caret line="73" column="9" lean-forward="true" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="List_BaseBusinessServiceCategory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/List_BaseBusinessServiceCategory.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="View_BaseBusinessServiceCategory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/View_BaseBusinessServiceCategory.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="BaseBusinessService.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessService/BaseBusinessService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="726">
+              <caret line="78" column="9" selection-start-line="76" selection-start-column="7" selection-end-line="78" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>operate(</find>
-      <find>set_category_id</find>
-      <find>businessservicecategoryadd</find>
-      <find>businessservicecategoryedit</find>
-      <find>businessservicecategorylist</find>
       <find>service</find>
       <find>Service</find>
       <find>businessService</find>
@@ -109,11 +158,8 @@
       <find>123456</find>
       <find>$token</find>
       <find>var_d</find>
-      <find>getModels_Login</find>
-      <find>getModels_ServiceDelete</find>
       <find>Housing</find>
       <find>$seq_no</find>
-      <find>add(</find>
       <find>modify(</find>
       <find>building_data</find>
       <find>updateAllCounters</find>
@@ -124,6 +170,14 @@
       <find>127.0.0.1</find>
       <find>webserver_ip</find>
       <find>getModels_ServiceList</find>
+      <find>refer_to</find>
+      <find>getModels_AttrAdd</find>
+      <find>getModels_ServiceDelete</find>
+      <find>getModels_ServiceBannerDelete</find>
+      <find>getModels_SysBannerAdd</find>
+      <find>add(</find>
+      <find>getModels_Login</find>
+      <find>getModels_ServiceBannerAdd</find>
       <find>getModels_ServiceAdd</find>
     </findStrings>
     <replaceStrings>
@@ -143,49 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/logics/logics/console/behaviors/Repair/RepairBehavior.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/events/repair/RepairEvent.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/service/InitData_BaseService.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/controllers/repair/RepairController.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/repair/View_BaseRapair.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/businessService/List_BaseBusinessService.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/repair/List_BaseRepair.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Home/Model/BuildingModel.class.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/events/business_service/BusinessServiceEvent.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/events/building/BuildingEvent.php" />
-        <option value="$PROJECT_DIR$/Admin/ThinkPHP/Library/Org/Api/ServiceProxy.class.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Common/Common/function.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/building/View_BaseBuilding.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/controllers/building/BuildingController.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/behaviors/building/BuildingBehavior.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/building/List_BaseBuilding.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Home/Model/HousingModel.class.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/events/housing/HousingEvent.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/UserController.class.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/user/List_User.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/repair/InitData_BaseRepair.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/repair/BaseRepair.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/controllers/housing/HousingController.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/building/BaseBuilding.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/housing/BaseHousing.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/building/InitData_BaseBuilding.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/housing/InitData_BaseHousing.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/behaviors/housing/HousingBehavior.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/housing/List_BaseHousing.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/housing/View_BaseHousing.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Home/Model/ContractModel.class.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/BaseModel.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/contract/Contract.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/building/Building.php" />
-        <option value="$PROJECT_DIR$/logics/gateway/services.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/CommonController.class.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/BuildingController.class.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/BusinessServiceController.class.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/HousingController.class.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/RepairController.class.php" />
-        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/ServiceController.class.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/base/View_BaseProduct.php" />
-        <option value="$PROJECT_DIR$/logics/logics/console/models/service/List_BaseService.php" />
         <option value="$PROJECT_DIR$/logics/logics/console/models/contract/View_BaseContract.php" />
         <option value="$PROJECT_DIR$/logics/logics/console/models/contract/List_BaseContract.php" />
         <option value="$PROJECT_DIR$/Admin/App/Home/Controller/ContractController.class.php" />
@@ -194,6 +205,49 @@
         <option value="$PROJECT_DIR$/logics/logics/console/events/contract/ContractEvent.php" />
         <option value="$PROJECT_DIR$/logics/logics/console/models/contract/InitData_BaseContract.php" />
         <option value="$PROJECT_DIR$/logics/logics/console/models/contract/BaseContract.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/Model/CustomerModel.class.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/behaviors/customer/CustomerBehavior.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/events/customer/CustomerEvent.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/controllers/customer/CustomerController.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/customer/List_BaseCustomer.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/customer/View_BaseCustomer.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/CustomerController.class.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/customer/InitData_BaseCustomer.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/customer/BaseCustomer.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/base/View_BaseProduct.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/service/List_BaseService.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/View/index.html" />
+        <option value="$PROJECT_DIR$/logics/logics/console/events/service/ServiceEvent.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/service/View_BaseService.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/Model/ServiceModel.class.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/controllers/service/ServiceController.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/behaviors/service/ServiceBehavior.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/events/business_service/BusinessServiceEvent.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/Model/BusinessServiceModel.class.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/businessService/View_BaseBusinessService.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/behaviors/businessService/BusinessServiceBehavior.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/controllers/businessservice/BusinessServiceController.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/Model/SystemModel.class.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/events/system/SysEvent.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/controllers/system/SysController.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/behaviors/system/SysBehavior.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/IndexController.class.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/View/index/index.html" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/service/BaseServiceBanner.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/system/BaseBanner.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/businessService/BaseBusinessServiceBanner.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/system/InitData_Sys.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/user/List_User.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/UserController.class.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/ServiceController.class.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/SystemController.class.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/service/InitData_BaseService.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/service/BaseService.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/businessService/BaseBusinessService.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/businessService/InitData_BaseBusiness.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/BaseBusinessServiceCategory.php" />
+        <option value="$PROJECT_DIR$/Admin/App/Home/Controller/BusinessServiceController.class.php" />
+        <option value="$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/InitData_BaseBusinessCategory.php" />
       </list>
     </option>
   </component>
@@ -203,7 +257,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -215,7 +269,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,13 +292,6 @@
               <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Common" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -262,27 +308,16 @@
               <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
               <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ThinkPHP" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ThinkPHP" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Conf" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ThinkPHP" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Library" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="index" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
@@ -324,42 +359,7 @@
               <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="behaviors" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="building" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="behaviors" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="contract" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="behaviors" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="housing" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="behaviors" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="businessServiceCategory" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
@@ -376,7 +376,7 @@
               <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="building" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="businessservicecategory" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
@@ -384,8 +384,7 @@
               <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="contract" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="events" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
@@ -393,16 +392,7 @@
               <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="housing" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="events" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="service" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -411,43 +401,8 @@
               <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="events" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="events" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="building" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="events" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="contract" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="events" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="housing" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="system" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
@@ -456,15 +411,6 @@
               <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="building" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
@@ -482,25 +428,7 @@
               <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="contract" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="housing" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chanyeyuan" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logics" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="repair" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="businessServiceCategory" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="chanyeyuan" type="b2602c69:ProjectViewProjectNode" />
@@ -515,15 +443,20 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/phpstudy/PHPTutorial/WWW/basic" />
+    <property name="last_opened_file_path" value="D:/phpstudy/PHPTutorial/WWW/Finance" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\chanyeyuan\logics\logics\console\models\repair" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\wamp\www\park\logics\logics\console\events\service" />
       <recent name="D:\wamp\www\park\logics\logics\console\behaviors\service" />
@@ -572,12 +505,15 @@
       <workItem from="1556066267913" duration="23117000" />
       <workItem from="1556153259596" duration="22792000" />
       <workItem from="1556239684247" duration="25905000" />
-      <workItem from="1556325677290" duration="13354000" />
+      <workItem from="1556325677290" duration="21077000" />
+      <workItem from="1556413309011" duration="18947000" />
+      <workItem from="1556499384732" duration="26221000" />
+      <workItem from="1556585138487" duration="14512000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258509000" />
+    <option name="totallyTimeSpent" value="325912000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -589,10 +525,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1053" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.43763676" visible="true" weight="0.33959228" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.43763676" visible="true" weight="0.35407725" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295711" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32844242" />
@@ -625,356 +561,346 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/service/List_BaseService.php">
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/customer/BaseCustomer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="2741">
+          <caret line="162" column="32" selection-start-line="162" selection-start-column="32" selection-end-line="162" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logics/logics/console/models/base/View_BaseProduct.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
+        <state relative-caret-position="2090">
+          <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/contract/InitData_BaseContract.php">
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/service/List_BaseService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="902">
+          <caret line="64" column="56" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/repair/InitData_BaseRepair.php">
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/View/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="39" column="59" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/repair/View_BaseRapair.php">
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/behaviors/BaseBehavior.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="32" column="52" selection-end-line="58" />
+        <state relative-caret-position="-220">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/building/BaseBuilding.php">
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Model/ServiceModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="102" column="94" lean-forward="true" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="94" />
+        <state relative-caret-position="277">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/repair/BaseRepair.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1214">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/building/InitData_BaseBuilding.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="100" column="12" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/housing/InitData_BaseHousing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="92" column="23" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/housing/BaseHousing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="88" column="39" selection-start-line="88" selection-start-column="39" selection-end-line="88" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/housing/List_BaseHousing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="44" column="47" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/housing/View_BaseHousing.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="48" column="63" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Model/HousingModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="46" lean-forward="true" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/housing/HousingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="40" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/behaviors/housing/HousingBehavior.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="31" column="59" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/events/housing/HousingEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="1" lean-forward="true" selection-end-line="16" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/ThinkPHP/Conf/convention.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-726" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessService/List_BaseBusinessService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3498" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessService/InitData_BaseBusiness.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1056" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/building/List_BaseBuilding.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="44" column="17" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/building/Building.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/contract/Contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="24" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/vendor/yiisoft/yii2/db/ActiveRecord.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="209" column="15" selection-start-line="209" selection-start-column="7" selection-end-line="209" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/ThinkPHP/Mode/Lite/Dispatcher.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="206" column="16" selection-start-line="206" selection-start-column="16" selection-end-line="206" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/gateway/services.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/user/View_UserLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/CommonController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/BuildingController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/BusinessServiceController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/CateController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-660" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/DepartmentController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-858" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/HousingController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/RepairController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/UserController.class.php">
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/service/View_BaseService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
-          <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/service/ServiceController.php">
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/events/business_service/BusinessServiceEvent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        <state relative-caret-position="242">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/behaviors/service/ServiceBehavior.php">
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessService/View_BaseBusinessService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="57" column="41" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="41" />
+        <state relative-caret-position="484">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/base/View_BaseProduct.php">
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Plugin/Upfile.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/service/List_BaseService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/ThinkPHP/Library/Org/Api/ServiceProxy.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1430">
-          <caret line="926" column="20" selection-start-line="926" selection-start-column="20" selection-end-line="926" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Common/Common/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/ServiceController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="85" column="9" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="85" selection-end-column="9" />
+        <state relative-caret-position="330">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logics/logics/console/models/BaseModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="178" column="21" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="21" />
+        <state relative-caret-position="2377">
+          <caret line="1489" lean-forward="true" selection-start-line="1489" selection-end-line="1489" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/contract/View_BaseContract.php">
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/events/service/ServiceEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/vendor/yiisoft/yii2/base/Application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Model/SystemModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="47" column="86" selection-start-line="47" selection-start-column="75" selection-end-line="47" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/system/SysController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/behaviors/service/ServiceBehavior.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="568">
-          <caret line="61" column="50" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
+          <caret line="31" column="65" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/ContractController.class.php">
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/behaviors/system/SysBehavior.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="249" column="48" selection-start-line="249" selection-start-column="38" selection-end-line="249" selection-end-column="48" />
+        <state relative-caret-position="660">
+          <caret line="48" column="57" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Model/ContractModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="29" column="85" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/behaviors/contract/ContractBehavior.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/contract/ContractController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding>
-            <element signature="e#47#95#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/contract/List_BaseContract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/events/contract/ContractEvent.php">
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/IndexController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/contract/InitData_BaseContract.php">
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/View/index/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        <state relative-caret-position="242">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/contract/BaseContract.php">
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/right/PostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3692">
-          <caret line="198" column="37" selection-start-line="198" selection-start-column="25" selection-end-line="198" selection-end-column="37" />
+        <state relative-caret-position="-396" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/GoodsController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1386" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Model/GoodsModel.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/right/SectionController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/events/system/SysEvent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/system/InitData_Sys.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
           <folding>
-            <element signature="e#42#71#0#PHP" expanded="true" />
+            <element signature="e#40#69#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/service/BaseServiceBanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/behaviors/user/UserBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/user/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Model/UserModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="46" column="93" selection-start-line="46" selection-start-column="81" selection-end-line="46" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/UserController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="95" column="53" selection-start-line="95" selection-start-column="53" selection-end-line="95" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/user/List_User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="113" column="61" selection-start-line="113" selection-start-column="61" selection-end-line="113" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/system/BaseBanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Model/BusinessServiceModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="40" column="85" selection-start-line="40" selection-start-column="75" selection-end-line="40" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/behaviors/businessService/BusinessServiceBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="16" column="65" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessService/BaseBusinessServiceBanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-462">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/SystemController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="87" column="5" selection-start-line="76" selection-start-column="3" selection-end-line="87" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/ServiceController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3912">
+          <caret line="246" column="5" selection-start-line="236" selection-start-column="3" selection-end-line="246" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/service/ServiceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-396">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/service/InitData_BaseService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/service/BaseService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="959">
+          <caret line="71" column="109" selection-start-line="71" selection-start-column="109" selection-end-line="71" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/businessservice/BusinessServiceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessService/BaseBusinessService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="78" column="9" selection-start-line="76" selection-start-column="7" selection-end-line="78" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Model/BusinessServiceCategoryModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="32" column="85" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/controllers/businessservicecategory/BusinessServiceCategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/behaviors/businessServiceCategory/BusinessServiceCategoryBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessService/InitData_BaseBusiness.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="47" column="120" selection-start-line="47" selection-start-column="120" selection-end-line="47" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/List_BaseBusinessServiceCategory.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/View_BaseBusinessServiceCategory.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/App/Home/Controller/BusinessServiceController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="89" column="45" selection-start-line="89" selection-start-column="45" selection-end-line="89" selection-end-column="45" />
+          <folding>
+            <element signature="e#129#173#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/BaseBusinessServiceCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="73" column="9" lean-forward="true" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logics/logics/console/models/businessServiceCategory/InitData_BaseBusinessCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="35" column="111" selection-start-line="35" selection-start-column="111" selection-end-line="35" selection-end-column="111" />
         </state>
       </provider>
     </entry>

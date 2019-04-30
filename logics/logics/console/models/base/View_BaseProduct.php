@@ -93,14 +93,14 @@ class View_BaseProduct extends BaseModel {
         
     }    
     
-    public function getAllProduct($event, $ispage, $condition, $params, $limit) { 
+    public function getAllProduct($event, $ispage, $condition, $params, $limit) {
 
         $sql = "SELECT " . ($ispage ? " sql_calc_found_rows " : "") . "
                       *
                 FROM service AS bp 
                 WHERE bp.seller_id = :sellerId
                       $condition
-                ORDER BY bp.creatTime";
+                ORDER BY bp.creatTime DESC";
         $result = $this->query_SQL($sql, $event, $limit, $params);
 
         return $result;        

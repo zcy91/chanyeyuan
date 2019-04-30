@@ -8,6 +8,7 @@ class ServiceEvent extends BaseEvent {
     public $serviceId;
 
     public $service_data;
+    public $service_banner_data;
 //    public $base_product_attr_data;
 //    public $base_product_attr_item_data;
 //    public $base_product_operate_data;

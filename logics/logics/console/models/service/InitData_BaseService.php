@@ -13,54 +13,7 @@ use console\models\base\View_BaseProductCommission;
 class InitData_BaseService extends BaseModel {
 
     private $sellerId;
-    private $attrs;
 
-    private function handlAttr($event){
-
-        $View_BaseAttr = new View_BaseAttr();
-
-        $index = 1;
-        foreach ($this->attrs as $attrItem){
-
-            if (!isset($attrItem["id"]) || !is_numeric($attrItem["id"]) || empty($attrItem["id"]) ||
-                !isset($attrItem["required"]) || !is_numeric($attrItem["required"]) || !in_array($attrItem["required"],[0,1])){
-                continue;
-            }
-
-            $attrId = $attrItem["id"];
-            $attrData = $View_BaseAttr->getOne($event, $attrId, $this->sellerId);
-
-            if (!empty($attrData)) {
-                $event->base_product_attr_data[] = array(
-                    "seller_id" => $this->sellerId,
-                    "productId" => &$event->productId,
-                    "attrId" => $attrId,
-                    "attrName" => $attrData["dnames"],
-                    "genre" => $attrData["genre"],
-                    "required" => $attrItem["required"],
-                    "imageCount" => $attrData["imageCount"],
-                    "sort" => $index++,
-                );
-                $genre = $attrData["genre"];
-                if (in_array($genre, [3,4])) {
-                    $attrItemsData = $View_BaseAttr->getAttrItems($event, $attrId, $this->sellerId);
-
-                    foreach ($attrItemsData as $attrItemsItem) {
-                        $event->base_product_attr_item_data[] = array(
-                            "seller_id" => $this->sellerId,
-                            "productId" => &$event->productId,
-                            "attrId" => $attrId,
-                            "attrItemId" => $attrItemsItem["id"],
-                            "attrItemName" => $attrItemsItem["dnames"],
-                            "sort" => $attrItemsItem["sort"]
-                        );
-                    }
-                }
-            }
-
-        }
-        unset($View_BaseAttr);
-    }
     public function serviceAdd($event){
         $data = &$event->RequestArgs;
         if (empty($data) || !isset($data["name"]) || empty($data["icon"])) {
@@ -86,7 +39,60 @@ class InitData_BaseService extends BaseModel {
             "seller_id" => $ownSellerId,
             "creatTime" => $nowTime,
             "uid" => $data['uid'],
+            "sort" => (isset($data["sort"]) && is_string($data["sort"]) && !empty($data["sort"])) ? $data["sort"] : 0,
+            "information" => (isset($data["information"]) && is_string($data["information"]) && !empty($data["information"])) ? $data["information"] : '',
+
         );
+    }
+
+    public function serviceBannerAdd($event){
+        $data = &$event->RequestArgs;
+
+        if (empty($data) || !isset($data["banner"]) ) {
+            return parent::go_error($event, -12);
+        }
+
+        $ownSellerId = $this->sellerId = View_UserLogin::getOperateSellerId($data);
+        if (empty($ownSellerId)) {
+            return parent::go_error($event, -2011);
+        }
+        $nowTime = date('Y-m-d H:i:s');
+        $event->service_banner_data = array(
+            "banner" => $data["banner"],
+            "url" => $data["url"],
+            "seller_id" => $ownSellerId,
+            "creatTime" => $nowTime,
+            "uid" => $data['uid'],
+            "title"=>$data['title'],
+            "sort"=>$data['sort'],
+            'is_hot'=>$data['is_hot']
+        );
+//        var_dump($event->service_banner_data);
+    }
+
+    public function serviceBannerEdit($event){
+        $data = &$event->RequestArgs;
+        if (empty($data) ||
+            !isset($data["id"]) || empty($data["id"]) || !is_numeric($data["id"])) {
+            return $this->go_error($event, -12);
+        }
+
+        $ownSellerId = $this->sellerId = View_UserLogin::getOperateSellerId($data);
+        if (empty($ownSellerId)) {
+            return parent::go_error($event, -2011);
+        }
+        $View_BaseService = new View_BaseService();
+
+        $id = $event->serviceId = $data["id"];
+        $oldProduct = $View_BaseService->getOneBanner($event, $id, $ownSellerId);
+        unset($View_BaseProduct);
+        if (empty($oldProduct)) {
+            return parent::go_error($event, -2132);
+        }
+        $nowTime = date('Y-m-d H:i:s');
+        $newProduct = $data;
+        $newProduct['url'] = !empty($newProduct['url'][0])?$newProduct['url'][0]:'';
+        BaseService::setEditBannerData($event,$id,$nowTime,$newProduct,$oldProduct);
     }
 
     public function serviceEdit($event){
@@ -94,12 +100,6 @@ class InitData_BaseService extends BaseModel {
         if (empty($data) ||
             !isset($data["id"]) || empty($data["id"]) || !is_numeric($data["id"])) {
             return $this->go_error($event, -12);
-        }
-        if (!(isset($data["name"]) && !empty($data["name"]) && is_string($data["name"])) ||
-            !(isset($data["des"]) && !empty($data["des"]) && is_string($data["des"])) ||
-            !(isset($data["is_show"]) && is_numeric($data["is_show"]))
-        ) {
-            return parent::go_error($event, -12);
         }
 
         $ownSellerId = $this->sellerId = View_UserLogin::getOperateSellerId($data);
@@ -145,6 +145,33 @@ class InitData_BaseService extends BaseModel {
         }
 
         $event->service_data = array(
+            "id" => $id,
+            "sellerId" => $ownSellerId
+        );
+    }
+
+    public function serviceBannerDelete($event){
+
+        $data = &$event->RequestArgs;
+
+        if (empty($data) || !isset($data["id"]) || empty($data["id"]) || !is_numeric($data["id"])) {
+            return parent::go_error($event, -12);
+        }
+
+        $ownSellerId = View_UserLogin::getOperateSellerId($data);
+        if (empty($ownSellerId)) {
+            return parent::go_error($event, -2011);
+        }
+
+        $id = $event->serviceId = $data["id"];
+
+        $View_BaseService = new View_BaseService();
+        $oldProduct = $View_BaseService->getOneBanner($event, $id, $ownSellerId);
+        unset($View_BaseProduct);
+        if (empty($oldProduct)) {
+            return parent::go_error($event, -2132);
+        }
+        $event->service_banner_data = array(
             "id" => $id,
             "sellerId" => $ownSellerId
         );

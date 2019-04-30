@@ -25,7 +25,8 @@ class BaseBusinessServiceCategory extends BaseModel {
             'uid',
             'parent_id',
             'des',
-            'level'
+            'level',
+            'is_hot'
         );
 
         $info_arr = parent::key_values_intersect($v, $subset, $default_arr);
@@ -67,6 +68,9 @@ class BaseBusinessServiceCategory extends BaseModel {
         }
         if (isset($newData["des"]) && !empty($newData["des"]) && $newData["des"] != $oldData["des"]) {
             $event->business_service_category_data["des"] = $newData["des"];
+        }
+        if (isset($newData["is_hot"]) && !empty($newData["is_hot"]) && $newData["is_hot"] != $oldData["is_hot"]) {
+            $event->business_service_category_data["is_hot"] = $newData["is_hot"];
         }
 
 

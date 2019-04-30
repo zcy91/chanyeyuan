@@ -13,54 +13,7 @@ use console\models\base\View_BaseProductCommission;
 class InitData_BaseBusinessCategory extends BaseModel {
 
     private $sellerId;
-    private $attrs;
 
-    private function handlAttr($event){
-
-        $View_BaseAttr = new View_BaseAttr();
-
-        $index = 1;
-        foreach ($this->attrs as $attrItem){
-
-            if (!isset($attrItem["id"]) || !is_numeric($attrItem["id"]) || empty($attrItem["id"]) ||
-                !isset($attrItem["required"]) || !is_numeric($attrItem["required"]) || !in_array($attrItem["required"],[0,1])){
-                continue;
-            }
-
-            $attrId = $attrItem["id"];
-            $attrData = $View_BaseAttr->getOne($event, $attrId, $this->sellerId);
-
-            if (!empty($attrData)) {
-                $event->base_product_attr_data[] = array(
-                    "seller_id" => $this->sellerId,
-                    "productId" => &$event->productId,
-                    "attrId" => $attrId,
-                    "attrName" => $attrData["dnames"],
-                    "genre" => $attrData["genre"],
-                    "required" => $attrItem["required"],
-                    "imageCount" => $attrData["imageCount"],
-                    "sort" => $index++,
-                );
-                $genre = $attrData["genre"];
-                if (in_array($genre, [3,4])) {
-                    $attrItemsData = $View_BaseAttr->getAttrItems($event, $attrId, $this->sellerId);
-
-                    foreach ($attrItemsData as $attrItemsItem) {
-                        $event->base_product_attr_item_data[] = array(
-                            "seller_id" => $this->sellerId,
-                            "productId" => &$event->productId,
-                            "attrId" => $attrId,
-                            "attrItemId" => $attrItemsItem["id"],
-                            "attrItemName" => $attrItemsItem["dnames"],
-                            "sort" => $attrItemsItem["sort"]
-                        );
-                    }
-                }
-            }
-
-        }
-        unset($View_BaseAttr);
-    }
     public function add($event){
         $data = &$event->RequestArgs;
 
@@ -80,12 +33,14 @@ class InitData_BaseBusinessCategory extends BaseModel {
         $event->business_service_category_data = array(
             "name" => $data["name"],
             "image" => $data["image"],
+            'des' =>(isset($data["des"]) && is_string($data["des"]) && !empty($data["des"])) ? $data["des"] : '',
             "is_show" => (isset($data["is_show"]) && is_string($data["is_show"]) && !empty($data["is_show"])) ? $data["is_show"] : 0,
             'parent_id' =>(isset($data["parent_id"]) && is_string($data["parent_id"]) && !empty($data["parent_id"])) ? $data["parent_id"] : 0,
             "seller_id" => $ownSellerId,
             "creatTime" => $nowTime,
             "uid" => $data['uid'],
-            "level"=> $level
+            "level"=> $level,
+            'is_hot'=>(isset($data["is_hot"]) && is_string($data["is_hot"]) && !empty($data["is_hot"])) ? $data["is_hot"] : 2,
         );
     }
 

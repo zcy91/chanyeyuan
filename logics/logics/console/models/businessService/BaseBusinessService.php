@@ -27,7 +27,8 @@ class BaseBusinessService extends BaseModel {
             'remarks',
             'address',
             'cat_id',
-            'phone'
+            'phone',
+            'is_hot'
         );
 
         $info_arr = parent::key_values_intersect($v, $subset, $default_arr);

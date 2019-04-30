@@ -9,8 +9,11 @@ class ServiceModel extends BaseModel{
     
     private $fetchs_router = "servicelist";
     private $add_router = "serviceadd";
+    private $add_banner = "servicebanneradd";
+    private $save_banner = "servicebanneredit";
     private $save_router = "serviceedit";
     private $delete_router = "servicedelete";
+    private $delete_banner = "servicebannerdelete";
     private $setvisible_router = "servicedisplay";
     private $singleview_router = "servicedesc";
    
@@ -33,10 +36,18 @@ class ServiceModel extends BaseModel{
         $apiData = c_call_service($this->Module, $this->Controller, $this->add_router,$params);
         return $apiData;
     }
-    
+
+    public function banneradd($params){
+        $apiData = c_call_service($this->Module, $this->Controller, $this->add_banner,$params);
+        return $apiData;
+    }
     /*
     修改
      *      */
+    public function bannersave($params){
+        $apiData = c_call_service($this->Module, $this->Controller, $this->save_banner,$params);
+        return $apiData;
+    }
     public function save($params) {
         $apiData = c_call_service($this->Module, $this->Controller, $this->save_router,$params);
         return $apiData;
@@ -45,6 +56,11 @@ class ServiceModel extends BaseModel{
     //删除
     public function delete($params) {
         $apiData = c_call_service($this->Module, $this->Controller, $this->delete_router,$params);
+        return $apiData;
+    }
+    //删除
+    public function bannerdelete($params) {
+        $apiData = c_call_service($this->Module, $this->Controller, $this->delete_banner,$params);
         return $apiData;
     }
     
