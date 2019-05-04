@@ -262,7 +262,7 @@
       <path value="$PROJECT_DIR$/logics/logics/vendor/bower/typeahead.js/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -489,12 +489,12 @@
       <workItem from="1556499384732" duration="26221000" />
       <workItem from="1556585138487" duration="15915000" />
       <workItem from="1556930813558" duration="3818000" />
-      <workItem from="1556935617732" duration="5048000" />
+      <workItem from="1556935617732" duration="5200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="336181000" />
+    <option name="totallyTimeSpent" value="336333000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -507,9 +507,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.43763676" visible="true" weight="0.22654584" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.43763676" visible="true" weight="0.22654584" />
       <window_info id="Favorites" order="1" sideWeight="0.5011287" side_tool="true" weight="0.26502147" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295711" />
@@ -520,7 +519,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295711" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.19864559" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19761129" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32844242" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
