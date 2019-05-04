@@ -8,9 +8,10 @@
  <form method="post" enctype="multipart/form-data">
 <!--       <input name='uploads[]' type="file" multiple>-->
 <!--       <input type="submit" name="uploadpic" value="上传">-->
-                <input type="file" name="image[]"><br>
+                <input type="file" name="banner[]"><br>
+                <input type="text" value="">
                 <input type="text" name="url[]"><br>
-                <input type="file" name="image[]"><br>
+                <input type="file" name="banner[]"><br>
                 <input type="text" name="url[]"><br>
     <input name="submit" type="submit" value="提交"><br>
   </form>

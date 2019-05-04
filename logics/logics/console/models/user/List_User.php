@@ -50,6 +50,9 @@ class List_User extends BaseModel {
     }
     public function userLogin($event) {
         $data = &$event->RequestArgs;
+        if(empty($data['site_url'])){
+            return parent::go_error($event, -2);
+        }
         $site_url = ($data['site_url']);
         $sql = "SELECT `seller_id` FROM user_shop where shop_url_self = :shop_url_self";
         $params = array(

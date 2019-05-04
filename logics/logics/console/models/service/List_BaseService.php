@@ -45,6 +45,11 @@ class List_BaseService extends BaseModel {
             $condition .= " AND bp.is_show = :is_show";
             $params[":is_show"] = $data["is_show"];
         }
+        //是否热门
+        if (isset($data["is_hot"]) && $data['is_hot']!='' ) {
+            $condition .= " AND bp.is_hot = :is_hot";
+            $params[":is_hot"] = $data["is_hot"];
+        }
         if (isset($data["id"]) && $data["id"]!= "") {
             $condition .= " AND bp.id = :id";
             $params[":id"] = $data["id"];

@@ -62,6 +62,9 @@ class BusinessServiceController extends CommonController
         if(isset($post_data['is_show'])){
             $params['is_show'] = $post_data['is_show'];
         }
+        if(isset($post_data['is_hot']) && !empty($post_data['is_hot'])){
+            $params['is_hot'] = $post_data['is_hot'];
+        }
         if(isset($post_data['time_limit'])){
             $params['time_limit'] = $post_data['time_limit'];
         }
@@ -112,6 +115,90 @@ class BusinessServiceController extends CommonController
         }
 
         $this->ajaxReturn(array("status" => $apiData['returnState'], "info" => $info, "id" => $id), json);
+    }
+
+
+    //添加，编辑banner
+
+    public function add_save_category_banner(){
+        $seller_id = session('seller_id');
+        if(empty($seller_id)){
+            $this->ajaxReturn(array("status" => 0, "info" => "登录异常"));
+        }
+        $post_data = $_POST;
+
+        if (empty($post_data)) {
+            $this->ajaxReturn(array("status" => 0, "info" => "参数异常"));
+        }
+        if(empty($post_data[0]['cid'])){
+            $this->ajaxReturn(array("status" => 0, "info" => "分类参数异常"));
+        }
+        $uid = session('userId');
+        //超级管理员
+        if($uid == 100){
+            $ownSellerId = $_POST['seller_id'];
+            $seller_id = $ownSellerId;
+        }else{
+            $ownSellerId = '';
+        }
+
+        foreach ((array)$post_data as $k=>$v){
+            $data[$k]['url'] = $v['url'];
+            $data[$k]['cid'] = $post_data[0]['cid'];
+            $data[$k]['banner'] = $v['banner'];
+            $data[$k]['sort'] = $v['sort'];
+            $data[$k]['title'] = $v['title'];
+            $data[$k]['uid'] = $uid;
+            if($ownSellerId){
+                $data[$k]['ownSellerId'] = $_POST['seller_id'];
+            }
+        }
+
+        $Service = new BusinessServiceCategoryModel();
+
+        if(!empty($data)){
+            M('business_service_category_banner')->where(['seller_id'=>$seller_id])->delete();
+        }
+        foreach ($data as $key=>$val){
+
+            $apiData = $Service->banneradd($val);
+        }
+
+        $info = "";
+        if ($apiData['returnState'] != 1) {
+            $info = get_error_info($apiData['returnState']);
+        } else {
+            $id = $apiData['returnData']['base_service']['id'];
+        }
+
+        $this->ajaxReturn(array("status" => $apiData['returnState'], "info" => $info, "id" => $id), json);
+    }
+
+    public function category_banner_delete(){
+        $post_data = I("post.");
+        if(!isset($post_data['id']) || $post_data['id'] == "" ||  $post_data['id'] == 0){
+            $this->ajaxReturn(array("status"=>0,"info"=>"参数异常"));
+        }
+
+        $Service = new BusinessServiceCategoryModel();
+        $apiData = $Service->bannerdelete($post_data);
+        $info = "";
+        if($apiData['returnState'] != 1){
+            $info = get_error_info($apiData['returnState']);
+        }
+        $this->ajaxReturn(array("status"=>$apiData['returnState'],"info"=>$info),json);
+    }
+    public function category_banner_list(){
+        $seller_id = session('seller_id');
+        if(empty($seller_id)){
+            $this->ajaxReturn(array("status" => 0, "info" => "登录异常"));
+        }
+        $data = M('business_service_category_banner')->where(['seller_id'=>$seller_id])->order("sort DESC")->select();
+        if($data){
+            $this->ajaxReturn(array("status" => 1, "info" => "成功",'data'=>$data));
+        }else{
+            $this->ajaxReturn(array("status" => 0, "info" => "无数据",'data'=>[]));
+        }
     }
     //删除分类
     public function category_delete(){

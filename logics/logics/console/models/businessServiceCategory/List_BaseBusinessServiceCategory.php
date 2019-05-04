@@ -47,9 +47,14 @@ class List_BaseBusinessServiceCategory extends BaseModel {
         }
 
         //是否展示
-        if (isset($data["display"]) && $data["display"]!= "") {
+        if (isset($data["is_show"]) && $data["is_show"]!= "") {
             $condition .= " AND bp.is_show = :is_show";
             $params[":is_show"] = $data["is_show"];
+        }
+        //是否热门
+        if (isset($data["is_hot"]) && $data["is_hot"]!= "") {
+            $condition .= " AND bp.is_hot = :is_hot";
+            $params[":is_hot"] = $data["is_hot"];
         }
         //1级还是2级展示
         if (isset($data["level"]) && !empty($data["level"])) {

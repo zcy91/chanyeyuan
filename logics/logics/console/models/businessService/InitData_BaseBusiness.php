@@ -68,7 +68,7 @@ class InitData_BaseBusiness extends BaseModel {
             "uid" => $data['uid'],
             'title'=>$data['title'],
             'sort'=>$data['sort'],
-            'is_hot'=>$data['is_hot']
+//            'is_hot'=>$data['is_hot']
         );
 
     }

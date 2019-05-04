@@ -9,8 +9,10 @@ class BusinessServiceCategoryModel extends BaseModel{
 
     private $fetchs_router = "businessservicecategorylist";
     private $add_router = "businessservicecategoryadd";
+    private $add_banner = "businessservicecategorybanneradd";
     private $save_router = "businessservicecategoryedit";
     private $delete_router = "businessservicecategorydelete";
+    private $delete_banner = "businessservicecategorybannerdelete";
     private $setvisible_router = "servicedisplay";
     private $singleview_router = "servicedesc";
 
@@ -33,6 +35,10 @@ class BusinessServiceCategoryModel extends BaseModel{
         $apiData = c_call_service($this->Module, $this->Controller, $this->add_router,$params);
         return $apiData;
     }
+    public function banneradd($params) {
+        $apiData = c_call_service($this->Module, $this->Controller, $this->add_banner,$params);
+        return $apiData;
+    }
 
     /*
     修改
@@ -45,6 +51,10 @@ class BusinessServiceCategoryModel extends BaseModel{
     //删除
     public function delete($params) {
         $apiData = c_call_service($this->Module, $this->Controller, $this->delete_router,$params);
+        return $apiData;
+    }
+    public function bannerdelete($params) {
+        $apiData = c_call_service($this->Module, $this->Controller, $this->delete_banner,$params);
         return $apiData;
     }
 

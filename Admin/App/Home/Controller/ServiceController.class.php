@@ -52,6 +52,9 @@ class ServiceController extends CommonController
         if(isset($post_data['id']) && !empty($post_data['id'])){
             $params['id'] = $post_data['id'];
         }
+        if(isset($post_data['is_hot']) && !empty($post_data['is_hot'])){
+            $params['is_hot'] = $post_data['is_hot'];
+        }
         if(isset($post_data['time_limit']) && !empty($post_data['time_limit'])){
             $params['time_limit'] = $post_data['time_limit'];
         }
@@ -235,9 +238,15 @@ class ServiceController extends CommonController
         $this->ajaxReturn(array("status"=>$apiData['returnState'],"info"=>$info),json);
     }
     public function banner_list(){
-        $site_url = $_SESSION['site_url'];
-        $seller_id = M('user_shop') ->where(['shop_url_self'=>$site_url])->field('seller_id')->find();
-        $seller_id = $seller_id['seller_id'];
+        $seller_id = session('seller_id');
+        if(empty($seller_id)){
+            $this->ajaxReturn(array("status" => 0, "info" => "登录异常"));
+        }
+        $uid = session('userId');
+        //超级管理员
+        if($uid == 100){
+            $seller_id = $_POST['seller_id'];
+        }
         $data = M('service_banner')->where(['seller_id'=>$seller_id])->order("sort DESC")->select();
         if($data){
             $this->ajaxReturn(array("status" => 1, "info" => "成功",'data'=>$data));

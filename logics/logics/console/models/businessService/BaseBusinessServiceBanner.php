@@ -61,9 +61,7 @@ class BaseBusinessServiceBanner extends BaseModel {
 
 
     public function delete($event) {
-
         $data = $event->business_service_banner_data;
-
         if (!empty($data)) {
 
             $sql = "DELETE FROM business_service_banner WHERE seller_id = :sellerId AND id = :Id";
@@ -71,7 +69,6 @@ class BaseBusinessServiceBanner extends BaseModel {
                 ":sellerId" => $data["sellerId"],
                 ":Id" => $data["id"],
             );
-
             $this->update_sql($sql, $event, $params);
 
         }
